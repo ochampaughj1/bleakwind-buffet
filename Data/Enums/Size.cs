@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Jonathan Ochampaugh
  * Class name: Size.cs
  * Purpose: Class used to represent sizes through an enumeration
  */
@@ -14,5 +14,15 @@ namespace BleakwindBuffet.Data.Enums
         Small,
         Medium,
         Large
+    }
+
+    public enum SodaFlavor
+    {
+        Blackberry,
+        Cherry,
+        Grapefruit,
+        Lemon,
+        Peach,
+        Watermelon
     }
 }
