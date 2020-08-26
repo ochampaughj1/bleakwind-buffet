@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Jonathan Ochampaugh
- * Class Name: BriarheartBurger.cs
- * Purpose: Class used to represent the Briarheart Burger
+ * Class Name: ThalmorTriple.cs
+ * Purpose: Class used to represent the Thalmor Triple
  */
 
 using System;
@@ -10,18 +10,18 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class BriarheartBurger
+    class ThalmorTriple
     {
         /// <summary>
         /// List to store instructions on holding toppings.
         /// </summary>
         private List<string> _instructions;
-        
+
         /// <summary>
-        /// Toppings available on the Briarheart Burger.
+        /// Toppings available on the Thalmor Triple.
         /// </summary>
-        private bool bun, ketchup, mustard, pickle, cheese;
-        
+        private bool bun, ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, eggs;
+
         /// <summary>
         /// Price property to get and set the burger price.
         /// </summary>
@@ -33,7 +33,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
             set
             {
-                Price = 6.32; 
+                Price = 8.32;
             }
         }
 
@@ -48,7 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
             set
             {
-                Calories = 743;
+                Calories = 943;
             }
         }
 
@@ -80,10 +80,29 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     _instructions.Add("Hold Cheese");
                 }
+                if (!tomato)
+                {
+                    _instructions.Add("Hold tomato");
+                }
+                if (!lettuce)
+                {
+                    _instructions.Add("Hold lettuce");
+                }
+                if (!mayo)
+                {
+                    _instructions.Add("Hold mayo");
+                }
+                if(!bacon)
+                {
+                    _instructions.Add("Hold bacon");
+                }
+                if(!eggs)
+                {
+                    _instructions.Add("Hold egg");
+                }
 
                 return _instructions;
             }
-
         }
 
         /// <summary>
@@ -92,7 +111,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <returns></returns>
         public override string ToString()
         {
-            return "Briarheart Burger";
+            return "Thalmor Triple";
         }
     }
 }

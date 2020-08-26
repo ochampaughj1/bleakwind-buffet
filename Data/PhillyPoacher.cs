@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Jonathan Ochampaugh
- * Class Name: BriarheartBurger.cs
- * Purpose: Class used to represent the Briarheart Burger
+ * Class Name: PhillyPoacher.cs
+ * Purpose: Class used to represent the Philly Poacher
  */
 
 using System;
@@ -10,20 +10,20 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class BriarheartBurger
+    class PhillyPoacher
     {
         /// <summary>
-        /// List to store instructions on holding toppings.
+        /// List to store instructions on holding ingredients.
         /// </summary>
         private List<string> _instructions;
-        
+
         /// <summary>
-        /// Toppings available on the Briarheart Burger.
+        /// Ingredients available on the Philly Poacher.
         /// </summary>
-        private bool bun, ketchup, mustard, pickle, cheese;
-        
+        private bool sirloin, onion, roll;
+
         /// <summary>
-        /// Price property to get and set the burger price.
+        /// Price property to get and set the sandwich price.
         /// </summary>
         public double Price
         {
@@ -33,12 +33,12 @@ namespace BleakwindBuffet.Data.Entrees
             }
             set
             {
-                Price = 6.32; 
+                Price = 7.23;
             }
         }
 
         /// <summary>
-        /// Calories property to get and set the burger calories.
+        /// Calories property to get and set the sandwich calories.
         /// </summary>
         public uint Calories
         {
@@ -48,51 +48,42 @@ namespace BleakwindBuffet.Data.Entrees
             }
             set
             {
-                Calories = 743;
+                Calories = 784;
             }
         }
 
         /// <summary>
-        /// List property to get or set whether a topping is on the burger.
+        /// List property to get or set whether a ingredients are on the sandwich.
         /// </summary>
         private List<String> SpecialInstructions
         {
             get
             {
                 _instructions = new List<string>();
-                if (!bun)
+                if (!sirloin)
                 {
-                    _instructions.Add("Hold Bun");
+                    _instructions.Add("Hold sirloin");
                 }
-                if (!ketchup)
+                if(!onion)
                 {
-                    _instructions.Add("Hold Ketchup");
+                    _instructions.Add("Hold Onions");
                 }
-                if (!mustard)
+                if(!roll)
                 {
-                    _instructions.Add("Hold Mustard");
-                }
-                if (!pickle)
-                {
-                    _instructions.Add("Hold Pickle");
-                }
-                if (!cheese)
-                {
-                    _instructions.Add("Hold Cheese");
+                    _instructions.Add("Hold roll");
                 }
 
                 return _instructions;
             }
-
         }
 
         /// <summary>
-        /// Override string method to return the name of the burger.
+        /// Override string method to return the name of the sandwich.
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return "Briarheart Burger";
+            return "Philly Poacher";
         }
     }
 }

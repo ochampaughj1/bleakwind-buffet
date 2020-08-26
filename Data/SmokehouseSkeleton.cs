@@ -1,29 +1,28 @@
 ﻿/*
  * Author: Jonathan Ochampaugh
- * Class Name: BriarheartBurger.cs
- * Purpose: Class used to represent the Briarheart Burger
+ * Class Name: SmokehouseSkeleton.cs
+ * Purpose: Class used to represent the Smokehouse Skeleton
  */
-
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class BriarheartBurger
+    class SmokehouseSkeleton
     {
         /// <summary>
-        /// List to store instructions on holding toppings.
+        /// List to store instructions on holding food.
         /// </summary>
         private List<string> _instructions;
-        
+
         /// <summary>
-        /// Toppings available on the Briarheart Burger.
+        /// Food available with the Smokehouse Skeleton breakfast combo.
         /// </summary>
-        private bool bun, ketchup, mustard, pickle, cheese;
-        
+        private bool sausageLink, egg, hashBrowns, pancake;
+
         /// <summary>
-        /// Price property to get and set the burger price.
+        /// Price property to get and set the breakfast combo price.
         /// </summary>
         public double Price
         {
@@ -33,12 +32,12 @@ namespace BleakwindBuffet.Data.Entrees
             }
             set
             {
-                Price = 6.32; 
+                Price = 5.62;
             }
         }
 
         /// <summary>
-        /// Calories property to get and set the burger calories.
+        /// Calories property to get and set the breakfast combo calories.
         /// </summary>
         public uint Calories
         {
@@ -48,51 +47,46 @@ namespace BleakwindBuffet.Data.Entrees
             }
             set
             {
-                Calories = 743;
+                Calories = 602;
             }
         }
 
         /// <summary>
-        /// List property to get or set whether a topping is on the burger.
+        /// List property to get or set whether a food comes with the Smokehouse Skeleton breakfast combo.
         /// </summary>
         private List<String> SpecialInstructions
         {
             get
             {
                 _instructions = new List<string>();
-                if (!bun)
+                if(!sausageLink)
                 {
-                    _instructions.Add("Hold Bun");
+                    _instructions.Add("Hold sausage");
                 }
-                if (!ketchup)
+                if (!egg)
                 {
-                    _instructions.Add("Hold Ketchup");
+                    _instructions.Add("Hold eggs");
                 }
-                if (!mustard)
+                if(!hashBrowns)
                 {
-                    _instructions.Add("Hold Mustard");
+                    _instructions.Add("Hold hash browns");
                 }
-                if (!pickle)
+                if(!pancake)
                 {
-                    _instructions.Add("Hold Pickle");
-                }
-                if (!cheese)
-                {
-                    _instructions.Add("Hold Cheese");
+                    _instructions.Add("Hold pancakes");
                 }
 
                 return _instructions;
             }
-
         }
 
         /// <summary>
-        /// Override string method to return the name of the burger.
+        /// Override string method to return the name of the Smokehouse Skeleton.
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return "Briarheart Burger";
+            return "Smokehouse Skeleton";
         }
     }
 }
