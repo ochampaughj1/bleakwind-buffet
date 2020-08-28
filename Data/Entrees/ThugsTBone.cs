@@ -22,14 +22,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public double Price
         {
-            get
-            {
-                return Price;
-            }
-            set
-            {
-                Price = 6.44;
-            }
+            get { return 6.44; }
         }
 
         /// <summary>
@@ -37,14 +30,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories
         {
-            get
-            {
-                return Calories;
-            }
-            set
-            {
-                Calories = 982;
-            }
+            get { return 982; }
         }
 
         /// <summary>

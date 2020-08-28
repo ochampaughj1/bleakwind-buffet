@@ -18,23 +18,79 @@ namespace BleakwindBuffet.Data.Entrees
         private List<string> _instructions;
 
         /// <summary>
-        /// Toppings available on the Thalmor Triple.
+        /// Variables for topping available on the Briarheart Burger.
         /// </summary>
-        private bool bun, ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, eggs;
+        private bool bun = true;
+        private bool ketchup = true;
+        private bool mustard = true;
+        private bool pickle = true;
+        private bool cheese = true;
+        private bool tomato = true;
+        private bool lettuce = true;
+        private bool mayo = true;
+        private bool bacon = true;
+        private bool eggs = true;
+
+        /// <summary>
+        /// Getters and setters for backing variables
+        /// </summary>
+        public bool Bun
+        {
+            get { return bun; }
+            set { bun = value; }
+        }
+        public bool Ketchup
+        {
+            get { return ketchup; }
+            set { ketchup = value; }
+        }
+        public bool Mustard
+        {
+            get { return mustard; }
+            set { mustard = value; }
+        }
+        public bool Pickle
+        {
+            get { return pickle; }
+            set { pickle = value; }
+        }
+        public bool Cheese
+        {
+            get { return cheese; }
+            set { cheese = value; }
+        }
+        public bool Tomato
+        {
+            get { return tomato; }
+            set { tomato = value; }
+        }
+        public bool Lettuce
+        {
+            get { return lettuce; }
+            set { lettuce = value; }
+        }
+        public bool Mayo
+        {
+            get { return mayo; }
+            set { mayo = value; }
+        }
+        public bool Bacon
+        {
+            get { return bacon; }
+            set { bacon = value; }
+        }
+        public bool Eggs
+        {
+            get { return eggs; }
+            set { eggs = value; }
+        }
 
         /// <summary>
         /// Price property to get and set the burger price.
         /// </summary>
         public double Price
         {
-            get
-            {
-                return Price;
-            }
-            set
-            {
-                Price = 8.32;
-            }
+            get { return 8.32; }
         }
 
         /// <summary>
@@ -42,14 +98,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories
         {
-            get
-            {
-                return Calories;
-            }
-            set
-            {
-                Calories = 943;
-            }
+            get { return 943; }
         }
 
         /// <summary>

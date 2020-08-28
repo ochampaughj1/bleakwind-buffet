@@ -16,25 +16,51 @@ namespace BleakwindBuffet.Data.Entrees
         /// List to store instructions on holding toppings.
         /// </summary>
         private List<string> _instructions;
-        
+
         /// <summary>
-        /// Toppings available on the Briarheart Burger.
+        /// Variables for topping available on the Briarheart Burger.
         /// </summary>
-        private bool bun, ketchup, mustard, pickle, cheese;
-        
+        private bool bun = true;
+        private bool ketchup = true;
+        private bool mustard = true;
+        private bool pickle = true;
+        private bool cheese = true;
+
+        /// <summary>
+        /// Getters and setters for backing variables
+        /// </summary>
+        public bool Bun
+        {
+            get { return bun; }
+            set { bun= value; }
+        }
+        public bool Ketchup
+        {
+            get { return ketchup; }
+            set { ketchup= value; }
+        }
+        public bool Mustard
+        {
+            get { return mustard; }
+            set { mustard= value; }
+        }
+        public bool Pickle
+        {
+            get { return pickle; }
+            set { pickle= value; }
+        }
+        public bool Cheese
+        {
+            get { return cheese; }
+            set { cheese = value; }
+        }
+
         /// <summary>
         /// Price property to get and set the burger price.
         /// </summary>
         public double Price
         {
-            get
-            {
-                return Price;
-            }
-            set
-            {
-                Price = 6.32; 
-            }
+            get { return 6.32; }
         }
 
         /// <summary>
@@ -42,14 +68,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories
         {
-            get
-            {
-                return Calories;
-            }
-            set
-            {
-                Calories = 743;
-            }
+            get { return 743; }
         }
 
         /// <summary>

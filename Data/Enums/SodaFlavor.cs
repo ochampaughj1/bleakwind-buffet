@@ -20,6 +20,6 @@ namespace BleakwindBuffet.Data.Enums
         Grapefruit,
         Lemon,
         Peach,
-
+        Watermelon
     }
 }

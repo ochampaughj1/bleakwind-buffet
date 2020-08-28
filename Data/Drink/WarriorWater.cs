@@ -16,7 +16,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Stores the current size of the drink
         /// </summary>
-        private Size currentSize = Size.Small;
+        private Size size = Size.Small;
 
         /// <summary>
         /// List to store instructions on holding ingredients
@@ -24,35 +24,39 @@ namespace BleakwindBuffet.Data.Drinks
         private List<string> _instructions;
 
         /// <summary>
-        /// Choice to hold items from the drink
+        /// Variable to hold ice from the drink
         /// </summary>
-        public bool ice;
-        public bool lemon = false;
+        private bool ice = true;
+
+        /// <summary>
+        /// Variable to add lemon to the drink
+        /// </summary>
+        private bool lemon = false;
+
+        /// <summary>
+        /// Getter and setter for the backing variable
+        /// </summary>
+        public bool Ice
+        {
+            get { return ice; }
+            set { ice = value; }
+        }
+
+        /// <summary>
+        /// Getter and setter for the backing variable
+        /// </summary>
+        public bool Lemon
+        {
+            get { return lemon; }
+            set { lemon = value; }
+        }
 
         /// <summary>
         /// Property to get and set the price of the drink
         /// </summary>
         public double Price
         {
-            get
-            {
-                return Price;
-            }
-            set
-            {
-                if (currentSize == Size.Small)
-                {
-                    Price = 0.00;
-                }
-                if (currentSize == Size.Medium)
-                {
-                    Price = 0.00;
-                }
-                if (currentSize == Size.Large)
-                {
-                    Price = 0.00;
-                }
-            }
+            get { return 0.00; }
         }
 
         /// <summary>
@@ -60,25 +64,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public uint Calories
         {
-            get
-            {
-                return Calories;
-            }
-            set
-            {
-                if (currentSize == Size.Small)
-                {
-                    Calories = 0;
-                }
-                if (currentSize == Size.Medium)
-                {
-                    Calories = 0;
-                }
-                if (currentSize == Size.Large)
-                {
-                    Calories = 0;
-                }
-            }
+            get { return 0; }
         }
 
         /// <summary>
@@ -86,14 +72,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public Size Size
         {
-            get
-            {
-                return currentSize;
-            }
-            set
-            {
-                currentSize = value;
-            }
+            get { return size; }
+            set { size = value; }
         }
 
         /// <summary>
@@ -123,8 +103,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            string size;
-            return "Warrior Water";
+            return size.ToString() + "Warrior Water";
         }
     }
 }

@@ -17,23 +17,43 @@ namespace BleakwindBuffet.Data.Entrees
         private List<string> _instructions;
 
         /// <summary>
-        /// Food available with the Smokehouse Skeleton breakfast combo.
+        /// Variables for food available with the Smokehouse Skeleton breakfast combo.
         /// </summary>
-        private bool sausageLink, egg, hashBrowns, pancake;
+        private bool sausageLink = true;
+        private bool egg = true;
+        private bool hashBrowns = true;
+        private bool pancake = true;
+
+        /// <summary>
+        /// Getters and setters for backing variables
+        /// </summary>
+        public bool SausageLink
+        {
+            get { return sausageLink; }
+            set { sausageLink = value; }
+        }
+        public bool Egg
+        {
+            get { return egg; }
+            set { egg = value; }
+        }
+        public bool HashBrowns
+        {
+            get { return hashBrowns; }
+            set { hashBrowns = value; }
+        }
+        public bool Pancake
+        {
+            get { return pancake; }
+            set { pancake = value; }
+        }
 
         /// <summary>
         /// Price property to get and set the breakfast combo price.
         /// </summary>
         public double Price
         {
-            get
-            {
-                return Price;
-            }
-            set
-            {
-                Price = 5.62;
-            }
+            get { return 5.62; }
         }
 
         /// <summary>
@@ -41,14 +61,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories
         {
-            get
-            {
-                return Calories;
-            }
-            set
-            {
-                Calories = 602;
-            }
+            get { return 602; }
         }
 
         /// <summary>

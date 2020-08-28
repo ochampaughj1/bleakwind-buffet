@@ -18,23 +18,43 @@ namespace BleakwindBuffet.Data.Entrees
         private List<string> _instructions;
 
         /// <summary>
-        /// Toppings available with the Garden Orc Omelette.
+        /// Variables for toppings available with the Garden Orc Omelette.
         /// </summary>
-        private bool broccoli, mushrooms, tomato, cheddar;
+        private bool broccoli = true;
+        private bool mushrooms = true;
+        private bool tomato = true;
+        private bool cheddar = true;
+
+        /// <summary>
+        /// Getters and setters for backing variables
+        /// </summary>
+        public bool Broccoli
+        {
+            get { return broccoli; }
+            set { broccoli = value; }
+        }
+        public bool Mushrooms
+        {
+            get { return mushrooms; }
+            set { mushrooms = value; }
+        }
+        public bool Tomato
+        {
+            get { return tomato; }
+            set { tomato = value; }
+        }
+        public bool Cheddar
+        {
+            get { return cheddar; }
+            set { cheddar = value; }
+        }
 
         /// <summary>
         /// Price property to get and set the omelette price.
         /// </summary>
         public double Price
         {
-            get
-            {
-                return Price;
-            }
-            set
-            {
-                Price = 4.57;
-            }
+            get { return 4.57; }
         }
 
         /// <summary>
@@ -42,14 +62,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories
         {
-            get
-            {
-                return Calories;
-            }
-            set
-            {
-                Calories = 404;
-            }
+            get { return 404; }
         }
 
         /// <summary>

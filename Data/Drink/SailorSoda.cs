@@ -16,22 +16,31 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Stores the current size of the drink
         /// </summary>
-        private Size currentSize = Size.Small;
+        private Size size = Size.Small;
 
         /// <summary>
         /// Stores the current flavor of the drink
         /// </summary>
-        private SodaFlavor currentFlavor = SodaFlavor.Cherry;
+        private SodaFlavor flavor = SodaFlavor.Cherry;
 
+        /// <summary>
+        /// Choice to hold items from the drink
+        /// </summary>
+        private bool ice = true;
+        
         /// <summary>
         /// List to store instructions on holding ingredients
         /// </summary>
         private List<string> _instructions;
 
         /// <summary>
-        /// Choice to hold items from the drink
+        /// Getter and setter for backing variable
         /// </summary>
-        public bool ice;
+        public bool Ice
+        {
+            get { return ice; }
+            set { ice = value; }
+        }
 
         /// <summary>
         /// Property to get and set the price of the drink
@@ -40,21 +49,17 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                return Price;
-            }
-            set
-            {
-                if(currentSize == Size.Small)
+                if(size == Size.Small)
                 {
-                    Price = 1.42;
+                    return 1.42;
                 }
-                if(currentSize == Size.Medium)
+                else if(size == Size.Medium)
                 {
-                    Price = 1.74;
+                    return 1.74;
                 }
-                if(currentSize == Size.Large)
+                else
                 {
-                    Price = 2.07;
+                    return 2.07;
                 }
             }
         }
@@ -63,24 +68,20 @@ namespace BleakwindBuffet.Data.Drinks
         /// Property to get and set the calories of the drink.
         /// </summary>
         public uint Calories
-        {
+        { 
             get
             {
-                return Calories;
-            }
-            set
-            {
-                if (currentSize == Size.Small)
+                if(size == Size.Small)
                 {
-                    Calories = 117;
+                    return 117;
                 }
-                if (currentSize == Size.Medium)
+                else if(size == Size.Medium)
                 {
-                    Calories = 153;
+                    return 153;
                 }
-                if (currentSize == Size.Large)
+                else 
                 {
-                    Calories = 205;
+                    return 205;
                 }
             }
         }
@@ -90,14 +91,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public Size Size
         {
-            get
-            {
-                return currentSize;
-            }
-            set
-            {
-                currentSize = value;
-            }
+            get { return size; }
+            set { size = value; }
         }
 
         /// <summary>
@@ -105,20 +100,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public SodaFlavor SodaFlavor
         {
-            get
-            {
-                return currentFlavor;
-            }
-            set
-            {
-                currentFlavor = value;
-            }
+            get { return flavor;}
+            set { flavor = value; }
         }
 
         /// <summary>
         /// List to store items to hold from the drink
         /// </summary>
-        private List<String> SpecialInstructions
+        public List<String> SpecialInstructions
         {
             get
             {
@@ -137,10 +126,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         /// <returns></returns>
         public override string ToString()
-        {
-            //CHECK THE PRINT TOSTRING
-            string size, flavor;
-            return "Sailor Soda";
+        {   
+            return Size.ToString() + SodaFlavor.ToString() + "Sailor Soda";
         }
     }
 }

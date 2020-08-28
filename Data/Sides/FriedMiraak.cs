@@ -16,7 +16,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Stores the current size of the side
         /// </summary>
-        private Size currentSize = Size.Small;
+        private Size size = Size.Small;
 
         /// <summary>
         /// Property to get and set the price of the side
@@ -25,21 +25,17 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                return Price;
-            }
-            set
-            {
-                if (currentSize == Size.Small)
+                if (size == Size.Small)
                 {
-                    Price = 1.78;
+                    return 1.78;
                 }
-                if (currentSize == Size.Medium)
+                else if (size == Size.Medium)
                 {
-                    Price = 2.01;
+                    return 2.01;
                 }
-                if (currentSize == Size.Large)
+                else 
                 {
-                    Price = 2.88;
+                    return 2.88;
                 }
             }
         }
@@ -51,21 +47,17 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                return Calories;
-            }
-            set
-            {
-                if (currentSize == Size.Small)
+                if (size == Size.Small)
                 {
-                    Calories = 151;
+                    return 151;
                 }
-                if (currentSize == Size.Medium)
+                else if (size == Size.Medium)
                 {
-                    Calories = 236;
+                    return 236;
                 }
-                if (currentSize == Size.Large)
+                else 
                 {
-                    Calories = 306;
+                    return 306;
                 }
             }
         }
@@ -75,14 +67,8 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public Size Size
         {
-            get
-            {
-                return currentSize;
-            }
-            set
-            {
-                currentSize = value;
-            }
+            get { return size; }
+            set { size = value; }
         }
 
         /// <summary>
@@ -91,8 +77,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <returns></returns>
         public override string ToString()
         {
-            string size;
-            return "Fried Miraak";
+            return size.ToString() + "Fried Miraak";
         }
     }
 }

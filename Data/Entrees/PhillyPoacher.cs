@@ -18,23 +18,38 @@ namespace BleakwindBuffet.Data.Entrees
         private List<string> _instructions;
 
         /// <summary>
-        /// Ingredients available on the Philly Poacher.
+        /// Variables for ingredients available on the Philly Poacher.
         /// </summary>
-        private bool sirloin, onion, roll;
+        private bool sirloin = true;
+        private bool onion = true;
+        private bool roll = true;
+
+        /// <summary>
+        /// Getters and setters for backing variables
+        /// </summary>
+        public bool Sirloin
+        {
+            get { return sirloin; }
+            set { sirloin = value; }
+        }
+        public bool Onion
+        {
+            get { return onion; }
+            set { onion = value; }
+        }
+        public bool Roll
+        {
+            get { return roll; }
+            set { roll = value; }
+        }
+
 
         /// <summary>
         /// Price property to get and set the sandwich price.
         /// </summary>
         public double Price
         {
-            get
-            {
-                return Price;
-            }
-            set
-            {
-                Price = 7.23;
-            }
+            get { return 7.23; }
         }
 
         /// <summary>
@@ -42,14 +57,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories
         {
-            get
-            {
-                return Calories;
-            }
-            set
-            {
-                Calories = 784;
-            }
+            get { return 784; }
         }
 
         /// <summary>
