@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Jonathan Ochampaugh
- * Class Name: SailorSoda.cs
- * Purpose: Class used to represent the Sailor Soda
+ * Class Name: 
+ * Purpose: Class used to represent the 
  */
 
 using System;
@@ -11,17 +11,12 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class SailorSoda
+    class ArentinoAppleJuice
     {
         /// <summary>
         /// Stores the current size of the drink
         /// </summary>
         private Size currentSize = Size.Small;
-
-        /// <summary>
-        /// Stores the current flavor of the drink
-        /// </summary>
-        private SodaFlavor currentFlavor = SodaFlavor.Cherry;
 
         /// <summary>
         /// List to store instructions on holding ingredients
@@ -31,7 +26,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Choice to hold items from the drink
         /// </summary>
-        public bool ice;
+        public bool ice = false;
 
         /// <summary>
         /// Property to get and set the price of the drink
@@ -44,17 +39,17 @@ namespace BleakwindBuffet.Data.Drinks
             }
             set
             {
-                if(currentSize == Size.Small)
+                if (currentSize == Size.Small)
                 {
-                    Price = 1.42;
+                    Price = 0.62;
                 }
-                if(currentSize == Size.Medium)
+                if (currentSize == Size.Medium)
                 {
-                    Price = 1.74;
+                    Price = 0.87;
                 }
-                if(currentSize == Size.Large)
+                if (currentSize == Size.Large)
                 {
-                    Price = 2.07;
+                    Price = 1.01;
                 }
             }
         }
@@ -72,15 +67,15 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 if (currentSize == Size.Small)
                 {
-                    Calories = 117;
+                    Calories = 44;
                 }
                 if (currentSize == Size.Medium)
                 {
-                    Calories = 153;
+                    Calories = 88;
                 }
                 if (currentSize == Size.Large)
                 {
-                    Calories = 205;
+                    Calories = 132;
                 }
             }
         }
@@ -101,21 +96,6 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// Property to get the flavor of the soda
-        /// </summary>
-        public SodaFlavor SodaFlavor
-        {
-            get
-            {
-                return currentFlavor;
-            }
-            set
-            {
-                currentFlavor = value;
-            }
-        }
-
-        /// <summary>
         /// List to store items to hold from the drink
         /// </summary>
         private List<String> SpecialInstructions
@@ -123,9 +103,9 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 _instructions = new List<string>();
-                if(!ice)
+                if (ice == true)
                 {
-                    _instructions.Add("Hold ice");
+                    _instructions.Add("Add ice");
                 }
 
                 return _instructions;
@@ -138,9 +118,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            //CHECK THE PRINT TOSTRING
-            string size, flavor;
-            return "Sailor Soda";
+            string size;
+            return "Arentino Apple Juice";
         }
     }
 }
