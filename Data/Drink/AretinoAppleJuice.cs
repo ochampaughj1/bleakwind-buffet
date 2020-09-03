@@ -1,6 +1,6 @@
 ﻿/*
  * Author: Jonathan Ochampaugh
- * Class Name: ArentinoAppleJuice.cs
+ * Class Name: AretinoAppleJuice.cs
  * Purpose: Class used to represent Arentino Apple Juice
  */
 
@@ -11,7 +11,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class ArentinoAppleJuice
+    public class AretinoAppleJuice
     {
         /// <summary>
         /// Stores the current size of the drink
@@ -113,7 +113,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            return size.ToString() + "Arentino Apple Juice";
+            return size.ToString() + "Aretino Apple Juice";
         }
     }
 }
