@@ -15,6 +15,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {
+            
         }
 
         [Fact]
