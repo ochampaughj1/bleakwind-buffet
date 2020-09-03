@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Jonathan Ochampaugh
- * Class Name: 
- * Purpose: Class used to represent the 
+ * Class Name: ArentinoAppleJuice.cs
+ * Purpose: Class used to represent Arentino Apple Juice
  */
 
 using System;

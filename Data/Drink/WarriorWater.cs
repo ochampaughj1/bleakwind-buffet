@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Jonathan Ochampaugh
- * Class Name: 
- * Purpose: Class used to represent the 
+ * Class Name: WarriorWater
+ * Purpose: Class used to represent Warrior Water
  */
 
 using System;

@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Jonathan Ochampaugh
- * Class Name: 
- * Purpose: Class used to represent the 
+ * Class Name: MarkarthMilk.cs
+ * Purpose: Class used to represent Markarth Milk 
  */
 
 using System;

@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Jonathan Ochampaugh
- * Class Name: 
- * Purpose: Class used to represent the 
+ * Class Name: CandlehearthCoffee.cs
+ * Purpose: Class used to represent Candlehearth Coffee 
  */
 
 using System;
