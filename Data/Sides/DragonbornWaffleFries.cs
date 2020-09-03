@@ -98,7 +98,7 @@ namespace BleakwindBuffet.Data.Sides
         public override string ToString()
         {
             
-            return size.ToString() + "Dragonborn Waffle Fries";
+            return size.ToString() + " Dragonborn Waffle Fries";
         }
     }
 }

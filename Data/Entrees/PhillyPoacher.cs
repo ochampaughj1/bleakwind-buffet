@@ -74,7 +74,7 @@ namespace BleakwindBuffet.Data.Entrees
                 }
                 if(!onion)
                 {
-                    _instructions.Add("Hold Onions");
+                    _instructions.Add("Hold onions");
                 }
                 if(!roll)
                 {

@@ -95,7 +95,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <returns></returns>
         public override string ToString()
         {
-            return size.ToString() + "Fried Miraak";
+            return size.ToString() + " Fried Miraak";
         }
     }
 }

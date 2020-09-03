@@ -5,7 +5,7 @@
  */
 using Xunit;
 
-using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
@@ -15,22 +15,37 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {
-            
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.False(aj.Ice);
         }
 
         [Fact]
         public void ShouldBeSmallByDefault()
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.Equal(Size.Small, aj.Size);
         }
 
         [Fact]
         public void ShouldBeAbleToSetIce()
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Ice = true;
+            Assert.True(aj.Ice);
+            aj.Ice = false;
+            Assert.False(aj.Ice);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Size = Size.Large;
+            Assert.Equal(Size.Large, aj.Size);
+            aj.Size = Size.Medium;
+            Assert.Equal(Size.Medium, aj.Size);
+            aj.Size = Size.Small;
+            Assert.Equal(Size.Small, aj.Size);
         }
 
         [Theory]
@@ -39,6 +54,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 1.01)]
         public void ShouldHaveCorrectPriceForSize(Size size, double price)
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Size = size;
+            Assert.Equal(price, aj.Price);
         }
 
         [Theory]
@@ -47,6 +65,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 132)]
         public void ShouldHaveCorrectCaloriesForSize(Size size, uint cal)
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Size = size;
+            Assert.Equal(cal, aj.Calories);
         }
 
         [Theory]
@@ -54,6 +75,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(false)]
         public void ShouldHaveCorrectSpecialInstructions(bool includeIce)
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Ice = includeIce;
+            if (includeIce) Assert.Contains("Add ice", aj.SpecialInstructions);
+            else Assert.Empty(aj.SpecialInstructions);
         }
 
         [Theory]
@@ -62,6 +87,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, "Large Aretino Apple Juice")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Size = size;
+            Assert.Equal(name, aj.ToString());
         }
     }
 }

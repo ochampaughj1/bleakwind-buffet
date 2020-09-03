@@ -41,8 +41,6 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 _instructions = new List<string>();
-                
-
                 return _instructions;
             }
         }
