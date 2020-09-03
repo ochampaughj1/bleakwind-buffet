@@ -9,7 +9,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class SmokehouseSkeleton
+    public class SmokehouseSkeleton
     {
         /// <summary>
         /// List to store instructions on holding food.
@@ -67,7 +67,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// List property to get or set whether a food comes with the Smokehouse Skeleton breakfast combo.
         /// </summary>
-        private List<String> SpecialInstructions
+        public List<String> SpecialInstructions
         {
             get
             {

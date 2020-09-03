@@ -11,7 +11,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class ArentinoAppleJuice
+    public class ArentinoAppleJuice
     {
         /// <summary>
         /// Stores the current size of the drink
@@ -93,7 +93,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// List to store items to hold from the drink
         /// </summary>
-        private List<String> SpecialInstructions
+        public List<String> SpecialInstructions
         {
             get
             {

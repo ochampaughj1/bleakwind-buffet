@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class BriarheartBurger
+    public class BriarheartBurger
     {
         /// <summary>
         /// List to store instructions on holding toppings.
@@ -74,7 +74,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// List property to get or set whether a topping is on the burger.
         /// </summary>
-        private List<String> SpecialInstructions
+        public List<String> SpecialInstructions
         {
             get
             {

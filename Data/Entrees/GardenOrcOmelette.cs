@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class GardenOrcOmelette
+    public class GardenOrcOmelette
     {
         /// <summary>
         /// List to store instructions on holding ingredients.
@@ -68,7 +68,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// List property to get or set whether a topping is on the omelette.
         /// </summary>
-        private List<String> SpecialInstructions
+        public List<String> SpecialInstructions
         {
             get
             {

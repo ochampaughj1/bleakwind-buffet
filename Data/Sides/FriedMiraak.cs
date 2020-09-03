@@ -11,12 +11,17 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    class FriedMiraak
+    public class FriedMiraak
     {
         /// <summary>
         /// Stores the current size of the side
         /// </summary>
         private Size size = Size.Small;
+
+        /// <summary>
+        /// List to store instructions on holding toppings.
+        /// </summary>
+        private List<string> _instructions;
 
         /// <summary>
         /// Property to get and set the price of the side
@@ -69,6 +74,19 @@ namespace BleakwindBuffet.Data.Sides
         {
             get { return size; }
             set { size = value; }
+        }
+
+        /// <summary>
+        /// List of items being returned
+        /// </summary>
+        /// <return>Nothing since there are no special instructions to add</return>
+        public List<String> SpecialInstructions
+        {
+            get
+            {
+                _instructions = new List<string>();
+                return _instructions;
+            }
         }
 
         /// <summary>
