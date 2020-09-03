@@ -79,7 +79,7 @@ namespace BleakwindBuffet.Data.Entrees
             get { return bacon; }
             set { bacon = value; }
         }
-        public bool Eggs
+        public bool Egg
         {
             get { return eggs; }
             set { eggs = value; }
