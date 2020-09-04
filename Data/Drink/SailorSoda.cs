@@ -98,7 +98,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Property to get the flavor of the soda
         /// </summary>
-        public SodaFlavor SodaFlavor
+        public SodaFlavor Flavor
         {
             get { return flavor;}
             set { flavor = value; }
@@ -127,7 +127,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {   
-            return Size.ToString() + " " + SodaFlavor.ToString() + " Sailor Soda";
+            return Size.ToString() + " " + Flavor.ToString() + " Sailor Soda";
         }
     }
 }
