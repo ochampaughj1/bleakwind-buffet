@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Zachery Brunner & Jonathan Ochampaugh
  * Class: SailorSodaTests.cs
  * Purpose: Test the SailorSoda.cs class in the Data library
  */
@@ -39,7 +39,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void FlavorShouldBeCherryByDefault()
         {
             SailorSoda s = new SailorSoda();
-            Assert.Equal(SodaFlavor.Cherry, s.SodaFlavor);
+            Assert.Equal(SodaFlavor.Cherry, s.Flavor);
         }
 
         [Fact]
@@ -68,18 +68,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ShouldBeAbleToSetFlavor()
         {
             SailorSoda s = new SailorSoda();
-            s.SodaFlavor = SodaFlavor.Blackberry;
-            Assert.Equal(SodaFlavor.Blackberry, s.SodaFlavor);
-            s.SodaFlavor = SodaFlavor.Grapefruit;
-            Assert.Equal(SodaFlavor.Grapefruit, s.SodaFlavor);
-            s.SodaFlavor = SodaFlavor.Lemon;
-            Assert.Equal(SodaFlavor.Lemon, s.SodaFlavor);
-            s.SodaFlavor = SodaFlavor.Peach;
-            Assert.Equal(SodaFlavor.Peach, s.SodaFlavor);
-            s.SodaFlavor = SodaFlavor.Watermelon;
-            Assert.Equal(SodaFlavor.Watermelon, s.SodaFlavor);
-            s.SodaFlavor = SodaFlavor.Cherry;
-            Assert.Equal(SodaFlavor.Cherry, s.SodaFlavor);
+            s.Flavor = SodaFlavor.Blackberry;
+            Assert.Equal(SodaFlavor.Blackberry, s.Flavor);
+            s.Flavor = SodaFlavor.Grapefruit;
+            Assert.Equal(SodaFlavor.Grapefruit, s.Flavor);
+            s.Flavor = SodaFlavor.Lemon;
+            Assert.Equal(SodaFlavor.Lemon, s.Flavor);
+            s.Flavor = SodaFlavor.Peach;
+            Assert.Equal(SodaFlavor.Peach, s.Flavor);
+            s.Flavor = SodaFlavor.Watermelon;
+            Assert.Equal(SodaFlavor.Watermelon, s.Flavor);
+            s.Flavor = SodaFlavor.Cherry;
+            Assert.Equal(SodaFlavor.Cherry, s.Flavor);
         }
 
         [Theory]
@@ -142,7 +142,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ShouldHaveCorrectToStringBasedOnSizeAndFlavor(SodaFlavor flavor, Size size, string name)
         {
             SailorSoda s = new SailorSoda();
-            s.SodaFlavor = flavor;
+            s.Flavor = flavor;
             s.Size = size;
             Assert.Equal(name, s.ToString());
         }

@@ -29,7 +29,7 @@ namespace BleakwindBuffet.Data.Entrees
         private bool lettuce = true;
         private bool mayo = true;
         private bool bacon = true;
-        private bool eggs = true;
+        private bool egg = true;
 
         /// <summary>
         /// Getters and setters for backing variables
@@ -81,8 +81,8 @@ namespace BleakwindBuffet.Data.Entrees
         }
         public bool Egg
         {
-            get { return eggs; }
-            set { eggs = value; }
+            get { return egg; }
+            set { egg = value; }
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     _instructions.Add("Hold bacon");
                 }
-                if(!eggs)
+                if(!egg)
                 {
                     _instructions.Add("Hold egg");
                 }
