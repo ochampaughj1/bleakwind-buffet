@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class PhillyPoacher
+    public class PhillyPoacher : Entree
     {
         /// <summary>
         /// List to store instructions on holding ingredients.
@@ -47,7 +47,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Price property to get and set the sandwich price.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 7.23; }
         }
@@ -55,7 +55,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Calories property to get and set the sandwich calories.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 784; }
         }
@@ -63,7 +63,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// List property to get or set whether a ingredients are on the sandwich.
         /// </summary>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {

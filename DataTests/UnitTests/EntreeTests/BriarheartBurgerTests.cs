@@ -9,8 +9,14 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
-    public class BriarheartBurgerTests
+    public class BriarheartBurgerTests 
     {
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            BriarheartBurger b = new BriarheartBurger();
+            Assert.IsAssignableFrom<Entree>(b);
+        }
         
         [Fact]
         public void ShouldIncludeBunByDefault()

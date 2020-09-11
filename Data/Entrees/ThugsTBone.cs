@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThugsTBone
+    public class ThugsTBone : Entree
     {
         /// <summary>
         /// List to store instructions on holding ingredients.
@@ -20,7 +20,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Price property to get and set the steak price.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 6.44; }
         }
@@ -28,7 +28,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Calories property to get and set the steak calories.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 982; }
         }
@@ -36,7 +36,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// List property to get or set whether ingredients are included with the Thugs T-Bone.
         /// </summary>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {

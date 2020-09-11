@@ -11,13 +11,8 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class MadOtarGrits
+    public class MadOtarGrits : Side
     {
-        /// <summary>
-        /// Stores the current size of the side
-        /// </summary>
-        private Size size = Size.Small;
-
         /// <summary>
         /// List to store instructions on holding toppings.
         /// </summary>
@@ -26,7 +21,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Property to get and set the price of the side
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -48,7 +43,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Property to get and set the calories of the side.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -68,21 +63,10 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
-        /// Property to get the size of the side
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-                
-            set { size = value; }
-                
-        }
-
-        /// <summary>
         /// List of items being returned
         /// </summary>
         /// <return>Nothing since there are no special instructions to add</return>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {

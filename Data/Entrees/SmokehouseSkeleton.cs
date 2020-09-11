@@ -9,7 +9,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree
     {
         /// <summary>
         /// List to store instructions on holding food.
@@ -51,7 +51,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Price property to get and set the breakfast combo price.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 5.62; }
         }
@@ -59,7 +59,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Calories property to get and set the breakfast combo calories.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 602; }
         }
@@ -67,7 +67,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// List property to get or set whether a food comes with the Smokehouse Skeleton breakfast combo.
         /// </summary>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {

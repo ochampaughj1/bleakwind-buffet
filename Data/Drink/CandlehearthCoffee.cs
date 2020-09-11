@@ -11,13 +11,8 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class CandlehearthCoffee
+    public class CandlehearthCoffee : Drink
     {
-        /// <summary>
-        /// Stores the current size of the drink
-        /// </summary>
-        private Size size = Size.Small;
-
         /// <summary>
         /// List to store instructions on holding ingredients
         /// </summary>
@@ -70,7 +65,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Property to get and set the price of the drink
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -92,7 +87,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Property to get and set the calories of the drink.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -112,18 +107,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// Property to get the size of the drink
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
-
-        /// <summary>
         /// List to store items to hold from the drink
         /// </summary>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {
