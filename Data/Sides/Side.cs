@@ -1,6 +1,6 @@
 ﻿/* Author: Jonathan Ochampaugh
  * Class: Side.cs
- * Purpose: Establish a base class representing the common properties of sides.
+ * Purpose: Establish a base class representing the common properties of  a side.
  */
 
 using System;
