@@ -8,12 +8,12 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Sides
+namespace BleakwindBuffet.Data.Sides  
 {
     /// <summary>
     /// A base class representing the common properties of sides.
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IOrderItem
     {
         /// <summary>
         /// Allows base class to access the earlier defined size variable to default small as the size.

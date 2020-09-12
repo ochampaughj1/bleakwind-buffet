@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A base class representing the common properties of drinks
     /// </summary>
-    public abstract class Drink
+    public abstract class  Drink : IOrderItem
     {
         /// <summary>
         /// Allows base class to access the earlier defined size variable to default small as the size.
