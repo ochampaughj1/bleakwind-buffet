@@ -1,6 +1,6 @@
 ﻿/* Author: Jonathan Ochampaugh
  * Class: IOrderItem.cs
- * Purpose: 
+ * Purpose: Interface to get the Price, Calories, and Special Instructions for menu items.
  */
 
 
@@ -12,7 +12,7 @@ using BleakwindBuffet.Data.Enums;
 namespace BleakwindBuffet.Data
 {
     /// <summary>
-    /// 
+    /// Interface to get the Price, Calories, and Special Instructions for menu items.
     /// </summary>
     public interface IOrderItem
     {

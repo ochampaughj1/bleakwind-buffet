@@ -1,6 +1,6 @@
 ﻿/* Author: Jonathan Ochampaugh
  * Class: Menu.cs
- * Purpose: .
+ * Purpose: A class with methods showing the menu.
  */
 
 using System;
@@ -13,9 +13,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data
 {
-
+    /// <summary>
+    /// A class with methods showing the menu.
+    /// </summary>
     public class Menu
     {
+        /// <summary>
+        /// All entrees on the menu.
+        /// </summary>
+        /// <returns>IEnumerable<IOrderItem> of all entrees on the menu.</returns>
         public static IEnumerable<IOrderItem> Entrees()
         {
             List<IOrderItem> entrees = new List<IOrderItem>();
@@ -29,6 +35,10 @@ namespace BleakwindBuffet.Data
             return entrees;
         }
 
+        /// <summary>
+        /// All sides on the menu.
+        /// </summary>
+        /// <returns>IEnumerable<IOrderItem> of all sides on the menu.</returns>
         public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> sides = new List<IOrderItem>();
@@ -42,6 +52,10 @@ namespace BleakwindBuffet.Data
             return sides;
         }
 
+        /// <summary>
+        /// All drinks on the menu.
+        /// </summary>
+        /// <returns>IEnumerable<IOrderItem> of all drinks on the menu.</returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
             List<IOrderItem> drinks = new List<IOrderItem>();
@@ -59,32 +73,16 @@ namespace BleakwindBuffet.Data
             return drinks;
         }
 
+        /// <summary>
+        /// All items on the menu.
+        /// </summary>
+        /// <returns>IEnumerable<IOrderItem> of all items on the menu.</returns>
         public static IEnumerable<IOrderItem> FullMenu()
         {
             List<IOrderItem> fullMenu = new List<IOrderItem>();
-            fullMenu.Add(new BriarheartBurger());
-            fullMenu.Add(new DoubleDraugr());
-            fullMenu.Add(new GardenOrcOmelette());
-            fullMenu.Add(new PhillyPoacher());
-            fullMenu.Add(new SmokehouseSkeleton());
-            fullMenu.Add(new ThalmorTriple());
-            fullMenu.Add(new ThugsTBone());
-
-            foreach (Size size in Enum.GetValues(typeof(Size)))
-            {
-                fullMenu.Add(new DragonbornWaffleFries() { Size = size });
-                fullMenu.Add(new FriedMiraak() { Size = size });
-                fullMenu.Add(new MadOtarGrits() { Size = size });
-                fullMenu.Add(new VokunSalad() { Size = size });
-                fullMenu.Add(new AretinoAppleJuice() { Size = size });
-                fullMenu.Add(new CandlehearthCoffee() { Size = size });
-                fullMenu.Add(new MarkarthMilk() { Size = size });
-                foreach (SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
-                {
-                    fullMenu.Add(new SailorSoda() { Size = size, Flavor = flavor });
-                }
-                fullMenu.Add(new WarriorWater() { Size = size });
-            }
+            fullMenu.AddRange(Entrees());
+            fullMenu.AddRange(Sides());
+            fullMenu.AddRange(Drinks());
             return fullMenu;
         }
     }

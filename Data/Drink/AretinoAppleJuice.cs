@@ -9,12 +9,6 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-/* Added : Drink
- * Deleted Size, private size
- * Overrode Price, Calories, SpecialInstructions
- */
-
-
 namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice : Drink
