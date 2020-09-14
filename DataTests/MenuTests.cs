@@ -101,4 +101,5 @@ namespace BleakwindBuffet.DataTests.UnitTests.MenuTests
             Assert.Contains(Menu.Drinks(), (item) => { return item is Drink; });
             Assert.Contains(Menu.Entrees(), (item) => { return item is Entree; });
         }
+    }
 }

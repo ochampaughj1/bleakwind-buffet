@@ -89,7 +89,7 @@ namespace BleakwindBuffet.DataTests
 
             VokunSalad vs = new VokunSalad();
             Assert.IsAssignableFrom<Side>(vs);
-            Assert.IsAssignableFrom<IOrderItem>(vs)
+            Assert.IsAssignableFrom<IOrderItem>(vs);
         }
     }
 }
