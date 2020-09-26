@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="POS_Milestone_1.MenuSelect"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:POS_Milestone_1"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="580"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--Labels-->
+        <Label Grid.Column="0" Content="Add To Order:" Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Margin="241,36,244,357" />
+        <Label Grid.Column="0" Content="Entrees: " Width="55" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Margin="60,59,425,334" />
+        <Label Grid.Column="0" Content="Drinks:" Width="55" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Margin="261,59,264,334" />
+        <Label Grid.Column="0" Content="Sides:" Width="55" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Margin="446,59,79,334" />
+
+        <!--Borders-->
+        <Border Width="570" BorderThickness="1" BorderBrush="Black" Margin="5,36,5,10"/>
+        <Border Width="190" BorderThickness="1" BorderBrush="Black" Grid.Column="1" Margin="10,36,12,10"/>
+
+        <!--Entree Buttons-->
+        <Button Name="briarheartBurgerButton" Height="30" Width="150" Content="Briarhear Burger" Margin="35,90,395,299"/>
+        <Button Name="doubleDraugrButton" Height="30" Width="150" Content="Double Draugr" Margin="35,130,395,249"/>
+        <Button Name="thalmorTripleButton" Height="30" Width="150" Content="Thalmor Triple" Margin="35,170,395,199"/>
+        <Button Name="smokehouseSkeletonButton" Height="30" Width="150" Content="SmokeHouse Skeleton" Margin="35,210,395,149"/>
+        <Button Name="gardenOrcOmelette" Height="30" Width="150" Content="Garden Orc Omelette" Margin="35,250,395,99"/>
+        <Button Name="thugsTBoneButton" Height="30" Width="150" Content="Thugs T-Bone" Margin="35,290,395,49"/>
+        <Button Name="phillyPoacherButton" Height="30" Width="150" Content="Philly Poacher" Margin="35,330,395,1"/>
+
+        <!--Drink Buttons-->
+        <Button Name="sailorSodaButton" Height="30" Width="150" Content="Sailor Soda" Margin="217,90,213,299"/>
+        <Button Name="markarthMilkButton" Height="30" Width="150" Content="Markarth Milk" Margin="217,140,213,249"/>
+        <Button Name="aretinoAppleJuiceButton" Height="30" Width="150" Content="Aretino Apple Juice" Margin="217,190,213,199"/>
+        <Button Name="candlehearthCoffeeButton" Height="30" Width="150" Content="Candlehearth Coffee" Margin="217,240,213,149"/>
+        <Button Name="warriorWaterButton" Height="30" Width="150" Content="Warrior Water" Margin="217,290,213,99"/>
+
+        <!--Side Buttons-->
+        <Button Name="vokunSaladButton" Height="30" Width="150" Content="Vokun Salad" Margin="394,90,36,299"/>
+        <Button Name="friedMiraakButton" Height="30" Width="150" Content="Fried Miraak" Margin="394,140,36,249"/>
+        <Button Name="madOtarGritsButton" Height="30" Width="150" Content="Mad Otar Grits" Margin="394,190,36,199"/>
+        <Button Name="dragonbornWaffleFries" Height="30" Width="150" Content="Dragonborn Waffle Fries" Margin="394,240,36,149"/>
+
+    </Grid>
+</UserControl>
