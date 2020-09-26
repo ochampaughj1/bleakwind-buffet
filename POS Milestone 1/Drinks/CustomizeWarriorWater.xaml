@@ -24,8 +24,8 @@
         </Grid.RowDefinitions>
 
         <!--Button-->
-        <Button Name="doneButton" Grid.Column="4" Grid.Row="5" Content="Done" Width="100" Height="30"/>
-        <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="5" Content="Cancel" Width="100" Height="30"/>
+        <Button Name="doneButton" Grid.Column="4" Grid.Row="5" Content="Done"/>
+        <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="5" Content="Cancel"/>
 
         <!--Labels-->
         <Label Grid.Column="2" Grid.Row="0" Content="Customize Warrior Water: " Width="179" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
@@ -51,13 +51,13 @@
 
         <!--CheckBoxes-->
         <!--Size-->
-        <CheckBox x:Name="smallCheckBox" Grid.Column="0" Grid.Row="2" Content="Small" Width="80" Height="20"/>
+        <CheckBox x:Name="smallCheckBox" Grid.Column="0" Grid.Row="2" Content="Small" Width="80" Height="20" IsChecked="True"/>
         <CheckBox x:Name="mediumCheckBox" Grid.Column="0" Grid.Row="3" Content="Medium" Width="80" Height="20"/>
         <CheckBox x:Name="largeCheckBox" Grid.Column="0" Grid.Row="4" Content="Large" Width="80" Height="20"/>
         <!--Lemon-->
         <CheckBox x:Name="lemonCheckBox" Grid.Column="1" Grid.Row="4" Content="Lemon" Width="56" Height="20"/>
         <!--Ice-->
-        <CheckBox Name="iceCheckBox" Grid.Column="1" Grid.Row="2" Content="Ice" Width="50" Height="20"/>
+        <CheckBox Name="iceCheckBox" Grid.Column="1" Grid.Row="2" Content="Ice" Width="50" Height="20" IsChecked="True"/>
 
     </Grid>
 </UserControl>

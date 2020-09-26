@@ -35,9 +35,9 @@
         <Label Grid.Column="4" Grid.Row="2" Content="784" Width="55" Height="30"/>
 
         <!--CheckBoxes-->
-        <CheckBox x:Name="sirloinCheckBox" Grid.Column="0" Grid.Row="1" Content="Sirloin" Width="80" Height="20"/>
-        <CheckBox x:Name="onionCheckBox" Grid.Column="0" Grid.Row="2" Content="Onion" Width="80" Height="20"/>
-        <CheckBox x:Name="rollCheckBox" Grid.Column="0" Grid.Row="3" Content="Roll" Width="80" Height="20"/>
+        <CheckBox x:Name="sirloinCheckBox" Grid.Column="0" Grid.Row="1" Content="Sirloin" Width="80" Height="20" IsChecked="True"/>
+        <CheckBox x:Name="onionCheckBox" Grid.Column="0" Grid.Row="2" Content="Onion" Width="80" Height="20" IsChecked="True"/>
+        <CheckBox x:Name="rollCheckBox" Grid.Column="0" Grid.Row="3" Content="Roll" Width="80" Height="20" IsChecked="True"/>
 
     </Grid>
 </UserControl>

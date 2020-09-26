@@ -37,11 +37,11 @@
         <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="6" Content="Cancel"/>
 
         <!--CheckBoxes-->
-        <CheckBox x:Name="bunCheckBox" Grid.Column="0" Grid.Row="1" Content="Bun" Width="80" Height="20"/>
-        <CheckBox x:Name="ketchupCheckBox" Grid.Column="0" Grid.Row="2" Content="Ketchup" Width="80" Height="20"/>
-        <CheckBox x:Name="mustardCheckBox" Grid.Column="0" Grid.Row="3" Content="Mustard" Width="80" Height="20"/>
-        <CheckBox x:Name="pickleCheckBox" Grid.Column="0" Grid.Row="4" Content="Pickle" Width="80" Height="20"/>
-        <CheckBox x:Name="cheeseCheckBox" Grid.Column="0" Grid.Row="5" Content="Cheese" Width="80" Height="20"/>
+        <CheckBox x:Name="bunCheckBox" Grid.Column="0" Grid.Row="1" Content="Bun" Width="80" Height="20" IsChecked="True"/>
+        <CheckBox x:Name="ketchupCheckBox" Grid.Column="0" Grid.Row="2" Content="Ketchup" Width="80" Height="20" IsChecked="True"/>
+        <CheckBox x:Name="mustardCheckBox" Grid.Column="0" Grid.Row="3" Content="Mustard" Width="80" Height="20" IsChecked="True"/>
+        <CheckBox x:Name="pickleCheckBox" Grid.Column="0" Grid.Row="4" Content="Pickle" Width="80" Height="20" IsChecked="True"/>
+        <CheckBox x:Name="cheeseCheckBox" Grid.Column="0" Grid.Row="5" Content="Cheese" Width="80" Height="20" IsChecked="True"/>
 
     </Grid>
 </UserControl>

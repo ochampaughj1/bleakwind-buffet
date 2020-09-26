@@ -26,8 +26,8 @@
         </Grid.RowDefinitions>
 
         <!--Button-->
-        <Button Name="doneButton" Grid.Column="4" Grid.Row="7" Content="Done" Width="100" Height="30"/>
-        <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="7" Content="Cancel" Width="100" Height="30"/>
+        <Button Name="doneButton" Grid.Column="4" Grid.Row="7" Content="Done"/>
+        <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="7" Content="Cancel"/>
 
         <!--Labels-->
         <Label Grid.Column="2" Grid.Row="0" Content="Customize Sailor Soda: " Width="179" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
@@ -53,18 +53,18 @@
 
         <!--CheckBoxes-->
         <!--Flavors-->
-        <CheckBox x:Name="blackberryCheckBox" Grid.Column="0" Grid.Row="2" Content="Blackberry" Width="100" Height="20"/>
-        <CheckBox x:Name="cherryCheckBox" Grid.Column="0" Grid.Row="3" Content="Cherry" Width="100" Height="20"/>
+        <CheckBox x:Name="blackberryCheckBox" Grid.Column="0" Grid.Row="3" Content="Blackberry" Width="100" Height="20"/>
+        <CheckBox x:Name="cherryCheckBox" Grid.Column="0" Grid.Row="2" Content="Cherry" Width="100" Height="20" IsChecked="True"/>
         <CheckBox x:Name="grapefruitCheckBox" Grid.Column="0" Grid.Row="4" Content="Grapefruit" Width="100" Height="20"/>
         <CheckBox x:Name="lemonCheckBox" Grid.Column="0" Grid.Row="5" Content="Lemon" Width="100" Height="20"/>
         <CheckBox x:Name="peachCheckBox" Grid.Column="0" Grid.Row="6" Content="Peach" Width="100" Height="20"/>
         <CheckBox x:Name="watermelonCheckBox" Grid.Column="0" Grid.Row="7" Content="Watermelon" Width="100" Height="20"/>
         <!--Sizes-->
-        <CheckBox x:Name="smallCheckBox" Grid.Column="1" Grid.Row="4" Content="Small" Width="100" Height="20"/>
+        <CheckBox x:Name="smallCheckBox" Grid.Column="1" Grid.Row="4" Content="Small" Width="100" Height="20" IsChecked="True"/>
         <CheckBox x:Name="mediumCheckBox" Grid.Column="1" Grid.Row="5" Content="Medium" Width="100" Height="20"/>
         <CheckBox x:Name="largeCheckBox" Grid.Column="1" Grid.Row="6" Content="Large" Width="100" Height="20"/>
         <!--Ice-->
-        <CheckBox Name="iceCheckBox" Grid.Column="1" Grid.Row="2" Content="Ice" Width="100" Height="20"/>
+        <CheckBox Name="iceCheckBox" Grid.Column="1" Grid.Row="2" Content="Ice" Width="100" Height="20" IsChecked="True"/>
 
     </Grid>
 </UserControl>

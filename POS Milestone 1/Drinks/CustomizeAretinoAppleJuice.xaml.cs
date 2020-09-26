@@ -31,5 +31,26 @@ namespace POS_Milestone_1.Drinks
         {
             ms.orderBorder.Child = ms.menu;
         }
+
+        /*
+        void CheckOnlyOneSizeAtATime(object sender, RoutedEventArgs e)
+        {
+            if(smallCheckBox.IsChecked == true)
+            {
+                mediumCheckBox.IsChecked = false;
+                largeCheckBox.IsChecked = false;
+            }
+            else if(mediumCheckBox.IsChecked == true)
+            {
+                smallCheckBox.IsChecked = false;
+                largeCheckBox.IsChecked = false;
+            }
+            else if(largeCheckBox.IsChecked == true)
+            {
+                smallCheckBox.IsChecked = false;
+                mediumCheckBox.IsChecked = false;
+            }
+        }
+        */
     }
 }

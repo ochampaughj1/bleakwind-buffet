@@ -58,6 +58,9 @@
     <Compile Include="ButtonControlComponent.xaml.cs">
       <DependentUpon>ButtonControlComponent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CurrentOrderControlComponent.xaml.cs">
+      <DependentUpon>CurrentOrderControlComponent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Drinks\CustomizeAretinoAppleJuice.xaml.cs">
       <DependentUpon>CustomizeAretinoAppleJuice.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
       <DependentUpon>CustomizeVokunSalad.xaml</DependentUpon>
     </Compile>
     <Page Include="ButtonControlComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CurrentOrderControlComponent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

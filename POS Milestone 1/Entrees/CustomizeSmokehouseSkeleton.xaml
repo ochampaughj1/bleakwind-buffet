@@ -36,10 +36,10 @@
         <Label Grid.Column="4" Grid.Row="2" Content="602" Width="55" Height="30"/>
 
         <!--CheckBoxes-->
-        <CheckBox x:Name="sausageCheckBox" Grid.Column="0" Grid.Row="1" Content="Sausage Links"  Width="100" Height="20" />
-        <CheckBox x:Name="eggCheckBox" Grid.Column="0" Grid.Row="2" Content="Eggs" Width="100" Height="20"/>
-        <CheckBox x:Name="hashBrownsCheckBox" Grid.Column="0" Grid.Row="3" Content="Hash Browns"  Width="100" Height="20" />
-        <CheckBox x:Name="pancakeCheckBox" Grid.Column="0" Grid.Row="4" Content="Pancake" Width="100" Height="20"/>
+        <CheckBox x:Name="sausageCheckBox" Grid.Column="0" Grid.Row="1" Content="Sausage Links"  Width="100" Height="20" IsChecked="True" />
+        <CheckBox x:Name="eggCheckBox" Grid.Column="0" Grid.Row="2" Content="Eggs" Width="100" Height="20" IsChecked="True"/>
+        <CheckBox x:Name="hashBrownsCheckBox" Grid.Column="0" Grid.Row="3" Content="Hash Browns"  Width="100" Height="20" IsChecked="True" />
+        <CheckBox x:Name="pancakeCheckBox" Grid.Column="0" Grid.Row="4" Content="Pancake" Width="100" Height="20" IsChecked="True"/>
 
     </Grid>
 </UserControl>

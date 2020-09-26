@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Bleakwind Buffet Point of Sale" Height="450" Width="800">
     <Grid>
+        <TextBlock Text="Bleakwind Buffet POS" FontSize="20" TextAlignment="Center" FontWeight="Bold" Height="50" Margin="0,9,0,360"/>
         <local:MenuSelect/>
     </Grid>
 </Window>
