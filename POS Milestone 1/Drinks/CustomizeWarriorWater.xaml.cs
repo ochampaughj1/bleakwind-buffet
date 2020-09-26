@@ -13,16 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace POS_Milestone_1.Entrees
+namespace POS_Milestone_1.Drinks
 {
     /// <summary>
-    /// Interaction logic for DoubleDraugr.xaml
+    /// Interaction logic for CustomizeWarriorWater.xaml
     /// </summary>
-    public partial class DoubleDraugr : UserControl
+    public partial class CustomizeWarriorWater : UserControl
     {
-        public DoubleDraugr()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeWarriorWater(MenuSelect menuItem)
         {
             InitializeComponent();
+        ms = menuItem;
         }
+
+    void CancelButtonClick(object sender, RoutedEventArgs e)
+    {
+        ms.orderBorder.Child = ms.menu;
     }
+}
 }

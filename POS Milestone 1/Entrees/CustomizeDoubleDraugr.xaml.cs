@@ -16,13 +16,20 @@ using System.Windows.Shapes;
 namespace POS_Milestone_1.Entrees
 {
     /// <summary>
-    /// Interaction logic for BriarheartBurger.xaml
+    /// Interaction logic for CustomizeDoubleDraugr.xaml
     /// </summary>
-    public partial class BriarheartBurger : UserControl
+    public partial class CustomizeDoubleDraugr : UserControl
     {
-        public BriarheartBurger()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeDoubleDraugr(MenuSelect menuItem)
         {
             InitializeComponent();
+            ms = menuItem;
+        }
+
+        void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = ms.menu;
         }
     }
 }

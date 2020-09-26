@@ -13,16 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace POS_Milestone_1.Drinks
+namespace POS_Milestone_1.Entrees
 {
     /// <summary>
-    /// Interaction logic for WarriorWater.xaml
+    /// Interaction logic for CustomizeBriarheartBurger.xaml
     /// </summary>
-    public partial class WarriorWater : UserControl
+    public partial class CustomizeBriarheartBurger : UserControl
     {
-        public WarriorWater()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeBriarheartBurger(MenuSelect menuItem)
         {
             InitializeComponent();
+            ms = menuItem;
+        }
+
+        void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = ms.menu;
         }
     }
 }

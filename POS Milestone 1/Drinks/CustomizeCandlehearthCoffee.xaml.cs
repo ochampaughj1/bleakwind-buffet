@@ -16,13 +16,20 @@ using System.Windows.Shapes;
 namespace POS_Milestone_1.Drinks
 {
     /// <summary>
-    /// Interaction logic for AretinoAppleJuice.xaml
+    /// Interaction logic for CustomizeCandlehearthCoffee.xaml
     /// </summary>
-    public partial class AretinoAppleJuice : UserControl
+    public partial class CustomizeCandlehearthCoffee : UserControl
     {
-        public AretinoAppleJuice()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeCandlehearthCoffee(MenuSelect menuItem)
         {
             InitializeComponent();
+        ms = menuItem;
         }
+
+    void CancelButtonClick(object sender, RoutedEventArgs e)
+    {
+        ms.orderBorder.Child = ms.menu;
     }
+}
 }

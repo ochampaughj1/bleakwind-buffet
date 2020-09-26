@@ -16,13 +16,20 @@ using System.Windows.Shapes;
 namespace POS_Milestone_1.Entrees
 {
     /// <summary>
-    /// Interaction logic for PhillyPoacher.xaml
+    /// Interaction logic for CustomizeSmokehouseSkeleton.xaml
     /// </summary>
-    public partial class PhillyPoacher : UserControl
+    public partial class CustomizeSmokehouseSkeleton : UserControl
     {
-        public PhillyPoacher()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeSmokehouseSkeleton(MenuSelect menuItem)
         {
             InitializeComponent();
+            ms = menuItem;
+        }
+
+        void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = ms.menu;
         }
     }
 }

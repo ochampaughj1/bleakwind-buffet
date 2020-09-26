@@ -13,16 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace POS_Milestone_1.Entrees
+namespace POS_Milestone_1.Sides
 {
     /// <summary>
-    /// Interaction logic for SmokehouseSkeleton.xaml
+    /// Interaction logic for CustomizeFriedMiraak.xaml
     /// </summary>
-    public partial class SmokehouseSkeleton : UserControl
+    public partial class CustomizeFriedMiraak : UserControl
     {
-        public SmokehouseSkeleton()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeFriedMiraak(MenuSelect menuItem)
         {
             InitializeComponent();
+            ms = menuItem;
+        }
+
+        void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = ms.menu;
         }
     }
 }

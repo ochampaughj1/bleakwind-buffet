@@ -13,16 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace POS_Milestone_1.Entrees
+namespace POS_Milestone_1.Drinks
 {
     /// <summary>
-    /// Interaction logic for GardenOrcOmelette.xaml
+    /// Interaction logic for CustomizeSailorSoda.xaml
     /// </summary>
-    public partial class GardenOrcOmelette : UserControl
+    public partial class CustomizeSailorSoda : UserControl
     {
-        public GardenOrcOmelette()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeSailorSoda(MenuSelect menuItem)
         {
             InitializeComponent();
+        ms = menuItem;
         }
+
+    void CancelButtonClick(object sender, RoutedEventArgs e)
+    {
+        ms.orderBorder.Child = ms.menu;
     }
+}
 }

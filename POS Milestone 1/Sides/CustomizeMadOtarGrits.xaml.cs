@@ -13,16 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace POS_Milestone_1.Entrees
+namespace POS_Milestone_1.Sides
 {
     /// <summary>
-    /// Interaction logic for ThugsTBone.xaml
+    /// Interaction logic for CustomizeMadOtarGrits.xaml
     /// </summary>
-    public partial class ThugsTBone : UserControl
+    public partial class CustomizeMadOtarGrits : UserControl
     {
-        public ThugsTBone()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeMadOtarGrits(MenuSelect menuItem)
         {
             InitializeComponent();
+            ms = menuItem;
+        }
+
+        void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = ms.menu;
         }
     }
 }

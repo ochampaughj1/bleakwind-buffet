@@ -13,16 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace POS_Milestone_1.Drinks
+namespace POS_Milestone_1.Sides
 {
     /// <summary>
-    /// Interaction logic for SailorSoda.xaml
+    /// Interaction logic for CustomizeDragonbornWaffleFries.xaml
     /// </summary>
-    public partial class SailorSoda : UserControl
+    public partial class CustomizeDragonbornWaffleFries : UserControl
     {
-        public SailorSoda()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeDragonbornWaffleFries(MenuSelect menuItem)
         {
             InitializeComponent();
+            ms = menuItem;
+        }
+
+        void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = ms.menu;
         }
     }
 }

@@ -16,13 +16,20 @@ using System.Windows.Shapes;
 namespace POS_Milestone_1.Entrees
 {
     /// <summary>
-    /// Interaction logic for ThalmorTriple.xaml
+    /// Interaction logic for CustomizeGardenOrcOmelette.xaml
     /// </summary>
-    public partial class ThalmorTriple : UserControl
+    public partial class CustomizeGardenOrcOmelette : UserControl
     {
-        public ThalmorTriple()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeGardenOrcOmelette(MenuSelect menuItem)
         {
             InitializeComponent();
+            ms = menuItem;
+        }
+
+        void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = ms.menu;
         }
     }
 }

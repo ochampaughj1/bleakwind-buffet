@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="POS_Milestone_1.Entrees.CustomizeSmokehouseSkeleton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:POS_Milestone_1.Entrees"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Button-->
+        <Button Name="doneButton" Grid.Column="4" Grid.Row="5" Content="Done"/>
+        <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="5" Content="Cancel"/>
+
+
+        <!--Labels-->
+        <Label Grid.Column="2" Grid.Row="0" Content="Customize Smokehouse Skeleton: " Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+        <Label Grid.Column="3" Grid.Row="1" Content="Price:" FontWeight="Bold" Width="50" Height="30"/>
+        <Label Grid.Column="4" Grid.Row="1" Content="Calories:" FontWeight="Bold" Width="60" Height="30"/>
+        <Label Grid.Column="3" Grid.Row="2" Content="$5.62" Width="50" Height="30"/>
+        <Label Grid.Column="4" Grid.Row="2" Content="602" Width="55" Height="30"/>
+
+        <!--CheckBoxes-->
+        <CheckBox x:Name="sausageCheckBox" Grid.Column="0" Grid.Row="1" Content="Sausage Links"  Width="100" Height="20" />
+        <CheckBox x:Name="eggCheckBox" Grid.Column="0" Grid.Row="2" Content="Eggs" Width="100" Height="20"/>
+        <CheckBox x:Name="hashBrownsCheckBox" Grid.Column="0" Grid.Row="3" Content="Hash Browns"  Width="100" Height="20" />
+        <CheckBox x:Name="pancakeCheckBox" Grid.Column="0" Grid.Row="4" Content="Pancake" Width="100" Height="20"/>
+
+    </Grid>
+</UserControl>

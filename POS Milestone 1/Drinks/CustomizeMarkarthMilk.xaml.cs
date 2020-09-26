@@ -16,13 +16,20 @@ using System.Windows.Shapes;
 namespace POS_Milestone_1.Drinks
 {
     /// <summary>
-    /// Interaction logic for CandlehearthCoffee.xaml
+    /// Interaction logic for CustomizeMarkarthMilk.xaml
     /// </summary>
-    public partial class CandlehearthCoffee : UserControl
+    public partial class CustomizeMarkarthMilk : UserControl
     {
-        public CandlehearthCoffee()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeMarkarthMilk(MenuSelect menuItem)
         {
             InitializeComponent();
+        ms = menuItem;
         }
+
+    void CancelButtonClick(object sender, RoutedEventArgs e)
+    {
+        ms.orderBorder.Child = ms.menu;
     }
+}
 }

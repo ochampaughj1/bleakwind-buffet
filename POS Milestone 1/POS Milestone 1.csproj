@@ -55,90 +55,110 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Drinks\AretinoAppleJuice.xaml.cs">
-      <DependentUpon>AretinoAppleJuice.xaml</DependentUpon>
+    <Compile Include="ButtonControlComponent.xaml.cs">
+      <DependentUpon>ButtonControlComponent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Drinks\CandlehearthCoffee.xaml.cs">
-      <DependentUpon>CandlehearthCoffee.xaml</DependentUpon>
+    <Compile Include="Drinks\CustomizeAretinoAppleJuice.xaml.cs">
+      <DependentUpon>CustomizeAretinoAppleJuice.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Drinks\MarkarthMilk.xaml.cs">
-      <DependentUpon>MarkarthMilk.xaml</DependentUpon>
+    <Compile Include="Drinks\CustomizeCandlehearthCoffee.xaml.cs">
+      <DependentUpon>CustomizeCandlehearthCoffee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Drinks\SailorSoda.xaml.cs">
-      <DependentUpon>SailorSoda.xaml</DependentUpon>
+    <Compile Include="Drinks\CustomizeMarkarthMilk.xaml.cs">
+      <DependentUpon>CustomizeMarkarthMilk.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Drinks\WarriorWater.xaml.cs">
-      <DependentUpon>WarriorWater.xaml</DependentUpon>
+    <Compile Include="Drinks\CustomizeSailorSoda.xaml.cs">
+      <DependentUpon>CustomizeSailorSoda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entrees\BriarheartBurger.xaml.cs">
-      <DependentUpon>BriarheartBurger.xaml</DependentUpon>
+    <Compile Include="Drinks\CustomizeWarriorWater.xaml.cs">
+      <DependentUpon>CustomizeWarriorWater.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entrees\DoubleDraugr.xaml.cs">
-      <DependentUpon>DoubleDraugr.xaml</DependentUpon>
+    <Compile Include="Entrees\CustomizeBriarheartBurger.xaml.cs">
+      <DependentUpon>CustomizeBriarheartBurger.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entrees\GardenOrcOmelette.xaml.cs">
-      <DependentUpon>GardenOrcOmelette.xaml</DependentUpon>
+    <Compile Include="Entrees\CustomizeDoubleDraugr.xaml.cs">
+      <DependentUpon>CustomizeDoubleDraugr.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entrees\PhillyPoacher.xaml.cs">
-      <DependentUpon>PhillyPoacher.xaml</DependentUpon>
+    <Compile Include="Entrees\CustomizeGardenOrcOmelette.xaml.cs">
+      <DependentUpon>CustomizeGardenOrcOmelette.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entrees\SmokehouseSkeleton.xaml.cs">
-      <DependentUpon>SmokehouseSkeleton.xaml</DependentUpon>
+    <Compile Include="Entrees\CustomizePhillyPoacher.xaml.cs">
+      <DependentUpon>CustomizePhillyPoacher.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entrees\ThalmorTriple.xaml.cs">
-      <DependentUpon>ThalmorTriple.xaml</DependentUpon>
+    <Compile Include="Entrees\CustomizeSmokehouseSkeleton.xaml.cs">
+      <DependentUpon>CustomizeSmokehouseSkeleton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entrees\ThugsTBone.xaml.cs">
-      <DependentUpon>ThugsTBone.xaml</DependentUpon>
+    <Compile Include="Entrees\CustomizeThalmorTriple.xaml.cs">
+      <DependentUpon>CustomizeThalmorTriple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Entrees\CustomizeThugsTBone.xaml.cs">
+      <DependentUpon>CustomizeThugsTBone.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuSelect.xaml.cs">
       <DependentUpon>MenuSelect.xaml</DependentUpon>
     </Compile>
-    <Page Include="Drinks\AretinoAppleJuice.xaml">
+    <Compile Include="SelectionEventHandler.cs" />
+    <Compile Include="Sides\CustomizeDragonbornWaffleFries.xaml.cs">
+      <DependentUpon>CustomizeDragonbornWaffleFries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sides\CustomizeFriedMiraak.xaml.cs">
+      <DependentUpon>CustomizeFriedMiraak.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sides\CustomizeMadOtarGrits.xaml.cs">
+      <DependentUpon>CustomizeMadOtarGrits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sides\CustomizeVokunSalad.xaml.cs">
+      <DependentUpon>CustomizeVokunSalad.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ButtonControlComponent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Drinks\CandlehearthCoffee.xaml">
+    <Page Include="Drinks\CustomizeAretinoAppleJuice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Drinks\MarkarthMilk.xaml">
+    <Page Include="Drinks\CustomizeCandlehearthCoffee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Drinks\SailorSoda.xaml">
+    <Page Include="Drinks\CustomizeMarkarthMilk.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Drinks\WarriorWater.xaml">
+    <Page Include="Drinks\CustomizeSailorSoda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Entrees\BriarheartBurger.xaml">
+    <Page Include="Drinks\CustomizeWarriorWater.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Entrees\DoubleDraugr.xaml">
+    <Page Include="Entrees\CustomizeBriarheartBurger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Entrees\GardenOrcOmelette.xaml">
+    <Page Include="Entrees\CustomizeDoubleDraugr.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Entrees\PhillyPoacher.xaml">
+    <Page Include="Entrees\CustomizeGardenOrcOmelette.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Entrees\SmokehouseSkeleton.xaml">
+    <Page Include="Entrees\CustomizePhillyPoacher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Entrees\ThalmorTriple.xaml">
+    <Page Include="Entrees\CustomizeSmokehouseSkeleton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Entrees\ThugsTBone.xaml">
+    <Page Include="Entrees\CustomizeThalmorTriple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Entrees\CustomizeThugsTBone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,6 +175,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MenuSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sides\CustomizeDragonbornWaffleFries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sides\CustomizeFriedMiraak.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sides\CustomizeMadOtarGrits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sides\CustomizeVokunSalad.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,7 +222,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sides\" />
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{b66b462c-da57-4db7-9053-debd3953f479}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

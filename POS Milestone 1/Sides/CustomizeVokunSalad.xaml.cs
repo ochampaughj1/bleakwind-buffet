@@ -13,16 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace POS_Milestone_1.Drinks
+namespace POS_Milestone_1.Sides
 {
     /// <summary>
-    /// Interaction logic for MarkarthMilk.xaml
+    /// Interaction logic for CustomizeVokunSalad.xaml
     /// </summary>
-    public partial class MarkarthMilk : UserControl
+    public partial class CustomizeVokunSalad : UserControl
     {
-        public MarkarthMilk()
+        private MenuSelect ms = new MenuSelect();
+        public CustomizeVokunSalad(MenuSelect menuItem)
         {
             InitializeComponent();
+            ms = menuItem;
+        }
+
+        void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = ms.menu;
         }
     }
 }
