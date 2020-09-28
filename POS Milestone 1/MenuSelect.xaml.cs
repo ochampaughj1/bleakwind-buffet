@@ -1,5 +1,5 @@
 ﻿/* Author: Jonathan Ochampaugh
- * Class Name: ButtonOrderControlComponent.cs
+ * Class Name: MenuSelect.cs
  * Purpose: Switches between screens based on buttons clicked
  */
 

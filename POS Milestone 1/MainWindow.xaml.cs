@@ -1,5 +1,5 @@
 ﻿/* Author: Jonathan Ochampaugh
- * Class Name: ButtonOrderControlComponent.cs
+ * Class Name: MainWindow.cs
  * Purpose: Switches between screens based on buttons clicked
  */
 
