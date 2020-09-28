@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Jonathan Ochampaugh
+ * Class Name: CustomizeMarkarthMilk.cs
+ * Purpose: Switches between screens based on buttons clicked
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +31,27 @@ namespace POS_Milestone_1.Drinks
         ms = menuItem;
         }
 
-    void CancelButtonClick(object sender, RoutedEventArgs e)
-    {
-        ms.orderBorder.Child = ms.menu;
+        void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = ms.menu;
+        }
+        void SmallSizeChecked(object sender, RoutedEventArgs e)
+        {
+            mediumCheckBox.IsChecked = false;
+            largeCheckBox.IsChecked = false;
+        }
+
+        void MediumSizeChecked(object sender, RoutedEventArgs e)
+        {
+            smallCheckBox.IsChecked = false;
+            largeCheckBox.IsChecked = false;
+
+        }
+
+        void LargeSizeChecked(object sender, RoutedEventArgs e)
+        {
+            smallCheckBox.IsChecked = false;
+            mediumCheckBox.IsChecked = false;
+        }
     }
-}
 }

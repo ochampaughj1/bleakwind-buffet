@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Jonathan Ochampaugh
+ * Class Name: CustomizeAretinoAppleJuice.cs
+ * Purpose: Switches between screens based on buttons clicked
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace POS_Milestone_1.Drinks
 {
@@ -32,25 +37,25 @@ namespace POS_Milestone_1.Drinks
             ms.orderBorder.Child = ms.menu;
         }
 
-        /*
-        void CheckOnlyOneSizeAtATime(object sender, RoutedEventArgs e)
+        
+        void SmallSizeChecked(object sender, RoutedEventArgs e)
         {
-            if(smallCheckBox.IsChecked == true)
-            {
-                mediumCheckBox.IsChecked = false;
-                largeCheckBox.IsChecked = false;
-            }
-            else if(mediumCheckBox.IsChecked == true)
-            {
-                smallCheckBox.IsChecked = false;
-                largeCheckBox.IsChecked = false;
-            }
-            else if(largeCheckBox.IsChecked == true)
-            {
-                smallCheckBox.IsChecked = false;
-                mediumCheckBox.IsChecked = false;
-            }
+            mediumCheckBox.IsChecked = false;
+            largeCheckBox.IsChecked = false;
         }
-        */
+
+        void MediumSizeChecked(object sender, RoutedEventArgs e)
+        {
+            smallCheckBox.IsChecked = false;
+            largeCheckBox.IsChecked = false;
+            
+        }
+
+        void LargeSizeChecked(object sender, RoutedEventArgs e)
+        {
+            smallCheckBox.IsChecked = false;
+            mediumCheckBox.IsChecked = false;
+        }
+        
     }
 }

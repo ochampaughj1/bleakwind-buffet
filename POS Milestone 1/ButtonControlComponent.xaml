@@ -50,5 +50,8 @@
         <Button Name="friedMiraakButton" Click="FriedMiraakClick" Grid.Row="3" Grid.Column="2" Margin="5"  Content="Fried Miraak"/>
         <Button Name="madOtarGritsButton" Click="MadOtarGritsClick" Grid.Row="4" Grid.Column="2" Margin="5"  Content="Mad Otar Grits"/>
         <Button Name="dragonbornWaffleFries" Click="DragonbornWaffleFriesClick" Grid.Row="5" Grid.Column="2" Margin="5"  Content="Dragonborn Waffle Fries"/>
+        
+        <!--Finish/Pay Button-->
+        <Button Name ="finishPayButton" Grid.Column="2" Grid.Row="8" Margin="2" Content="Finish/Pay" IsEnabled="False"/>
     </Grid>
 </UserControl>

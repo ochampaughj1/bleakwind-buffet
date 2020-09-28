@@ -50,9 +50,9 @@
 
         <!--CheckBoxes-->
         <!--Size-->
-        <CheckBox Name="smallCheckBox" Grid.Column="0" Grid.Row="2" Content="Small" Width="80" Height="20" IsChecked="True"/>
-        <CheckBox Name="mediumCheckBox" Grid.Column="0" Grid.Row="3" Content="Medium" Width="80" Height="20" IsChecked="False"/>
-        <CheckBox Name="largeCheckBox" Grid.Column="0" Grid.Row="4" Content="Large" Width="80" Height="20" IsChecked="False"/>
+        <CheckBox Name="smallCheckBox" Click="SmallSizeChecked" Grid.Column="0" Grid.Row="2" Content="Small" Width="80" Height="20" IsChecked="True"/>
+        <CheckBox Name="mediumCheckBox" Click="MediumSizeChecked" Grid.Column="0" Grid.Row="3" Content="Medium" Width="80" Height="20" IsChecked="False"/>
+        <CheckBox Name="largeCheckBox" Click="LargeSizeChecked" Grid.Column="0" Grid.Row="4" Content="Large" Width="80" Height="20" IsChecked="False"/>
         <!--Ice-->
         <CheckBox Name="iceCheckBox" Grid.Column="1" Grid.Row="2" Content="Ice" Width="50" Height="20"/>
 

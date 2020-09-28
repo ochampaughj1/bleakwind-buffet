@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTests", "DataTests\DataTests.csproj", "{B58727B9-F783-46C8-BCC7-5122A1A4537E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS Milestone 1", "POS Milestone 1\POS Milestone 1.csproj", "{D5ACE2F2-7577-4B1B-B80C-30A335A20593}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS_Milestone_1", "POS Milestone 1\POS_Milestone_1.csproj", "{D5ACE2F2-7577-4B1B-B80C-30A335A20593}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

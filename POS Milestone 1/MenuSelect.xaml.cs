@@ -1,4 +1,9 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿/* Author: Jonathan Ochampaugh
+ * Class Name: ButtonOrderControlComponent.cs
+ * Purpose: Switches between screens based on buttons clicked
+ */
+
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using POS_Milestone_1.Drinks;
@@ -26,8 +31,14 @@ namespace POS_Milestone_1
     /// </summary>
     public partial class MenuSelect : UserControl
     {
+        /// <summary>
+        /// Button Control Component variable
+        /// </summary>
         public ButtonControlComponent menu = new ButtonControlComponent();
 
+        /// <summary>
+        /// Constuctor to initialize values and click events
+        /// </summary>
         public MenuSelect()
         {
             InitializeComponent();
@@ -35,6 +46,11 @@ namespace POS_Milestone_1
             orderBorder.Child = menu;
         }
 
+        /// <summary>
+        /// Click Event for a new order that switches the windows
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void NewOrderClick(object sender, SelectionEventHandler e)
         {
 

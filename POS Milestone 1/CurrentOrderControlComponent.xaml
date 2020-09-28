@@ -8,6 +8,9 @@
              d:DesignHeight="450" d:DesignWidth="300">
     <DockPanel>
         <TextBlock Name="currentOrderTextBlock" TextAlignment="Center" DockPanel.Dock="Top" Text="Order #100"/>
+        <TextBlock Name="totalTextBlock" TextAlignment="Center" DockPanel.Dock="Bottom" Text="Total: "/>
+        <TextBlock Name="taxTextBlock" TextAlignment="Center" DockPanel.Dock="Bottom" Text="Tax: "/>
+        <TextBlock Name="subTotalTextBlock" TextAlignment="Center" DockPanel.Dock="Bottom" Text="Subtotal: "/>
         <ListView Name="orderListView"/>
     </DockPanel>
 </UserControl>
