@@ -7,11 +7,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThalmorTriple : Entree
+    public class ThalmorTriple : Entree, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// List to store instructions on holding toppings.
         /// </summary>
@@ -37,52 +43,132 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Bun
         {
             get { return bun; }
-            set { bun = value; }
+            set
+            {
+                if (bun != value)
+                {
+                    bun = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+
+                }
+            }
         }
         public bool Ketchup
         {
             get { return ketchup; }
-            set { ketchup = value; }
+            set
+            {
+                if (ketchup != value)
+                {
+                    ketchup = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+
+                }
+            }
         }
         public bool Mustard
         {
             get { return mustard; }
-            set { mustard = value; }
+            set
+            {
+                if (mustard != value)
+                {
+                    mustard = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+
+                }
+            }
         }
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = value; }
+            set
+            {
+                if (pickle != value)
+                {
+                    pickle = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+
+                }
+            }
         }
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set
+            {
+                if (cheese != value)
+                {
+                    cheese = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+
+                }
+            }
         }
         public bool Tomato
         {
             get { return tomato; }
-            set { tomato = value; }
+            set
+            {
+                if (tomato != value)
+                {
+                    tomato = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+
+                }
+            }
         }
         public bool Lettuce
         {
             get { return lettuce; }
-            set { lettuce = value; }
+            set
+            {
+                if (lettuce != value)
+                {
+                    lettuce = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
+
+                }
+            }
         }
         public bool Mayo
         {
             get { return mayo; }
-            set { mayo = value; }
+            set
+            {
+                if (mayo != value)
+                {
+                    mayo = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
+
+                }
+            }
         }
         public bool Bacon
         {
             get { return bacon; }
-            set { bacon = value; }
+            set
+            {
+                if (bacon != value)
+                {
+                    bacon = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bacon"));
+
+                }
+            }
         }
         public bool Egg
         {
             get { return egg; }
-            set { egg = value; }
+            set
+            {
+                if (egg != value)
+                {
+                    egg = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+
+                }
+            }
         }
 
         /// <summary>

@@ -8,11 +8,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class AretinoAppleJuice : Drink
+    public class AretinoAppleJuice : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// List to store instructions on holding ingredients
         /// </summary>
@@ -29,7 +35,15 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set
+            {
+                if (ice != value)
+                {
+                    ice = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+
+                }
+            }
         }
 
         /// <summary>
@@ -39,17 +53,15 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (size == Size.Small)
+                switch(Size)
                 {
-                    return 0.62;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 0.87;
-                }
-                else
-                {
-                    return 1.01;
+                    case Size.Small:
+                        return 0.62;
+                    case Size.Medium:
+                        return 0.87;
+                    case Size.Large:
+                        return 1.01;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
@@ -61,17 +73,15 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    return 44;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 88;
-                }
-                else
-                {
-                    return 132;
+                    case Size.Small:
+                        return 44;
+                    case Size.Medium:
+                        return 88;
+                    case Size.Large:
+                        return 132;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }

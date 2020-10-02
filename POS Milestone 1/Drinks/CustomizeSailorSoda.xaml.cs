@@ -2,6 +2,7 @@
  * Class Name: CustomizeSailorSoda.cs
  * Purpose: Switches between screens based on buttons clicked
  */
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Size = BleakwindBuffet.Data.Enums.Size;
+using Flavor = BleakwindBuffet.Data.Enums.SodaFlavor;
+
 namespace POS_Milestone_1.Drinks
 {
     /// <summary>
@@ -24,6 +28,11 @@ namespace POS_Milestone_1.Drinks
     /// </summary>
     public partial class CustomizeSailorSoda : UserControl
     {
+        /// <summary>
+        /// Temporary object made available to help change the size
+        /// </summary>
+        SailorSoda temp;
+
         /// <summary>
         /// New Menu Select instance
         /// </summary>
@@ -33,10 +42,12 @@ namespace POS_Milestone_1.Drinks
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeSailorSoda(MenuSelect menuItem)
+        public CustomizeSailorSoda(MenuSelect menuItem, SailorSoda ss)
         {
             InitializeComponent();
-        ms = menuItem;
+            ms = menuItem;
+            DataContext = ss;
+            ss = temp;
         }
 
         /// <summary>
@@ -50,109 +61,105 @@ namespace POS_Milestone_1.Drinks
         }
 
         /// <summary>
-        /// Small Check Box Click Event Handler
+        /// Check box event handler to make sure only one size is checked at a time.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void SmallSizeChecked(object sender, RoutedEventArgs e) { mediumCheckBox.IsChecked = false; largeCheckBox.IsChecked = false; }
-
-        /// <summary>
-        /// Medium Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void MediumSizeChecked(object sender, RoutedEventArgs e) { smallCheckBox.IsChecked = false; largeCheckBox.IsChecked = false; }
-
-        /// <summary>
-        /// Large Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void LargeSizeChecked(object sender, RoutedEventArgs e) { smallCheckBox.IsChecked = false; mediumCheckBox.IsChecked = false; }
-            
-        /// <summary>
-        /// Cherry Flavor Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void CherryFlavorChecked(object sender, RoutedEventArgs e) 
-        { 
-            blackberryCheckBox.IsChecked = false; 
-            grapefruitCheckBox.IsChecked = false; 
-            lemonCheckBox.IsChecked = false; 
-            peachCheckBox.IsChecked = false; 
-            watermelonCheckBox.IsChecked = false; 
-        }
-
-        /// <summary>
-        /// Blackberry Flavor Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void BlackberryFlavorChecked(object sender, RoutedEventArgs e)
+        private void checkBoxChecked(object sender, RoutedEventArgs e)
         {
-            cherryCheckBox.IsChecked = false;
-            grapefruitCheckBox.IsChecked = false;
-            lemonCheckBox.IsChecked = false;
-            peachCheckBox.IsChecked = false;
-            watermelonCheckBox.IsChecked = false;
-        }
+            Size s;
+            Flavor f;
+            if (sender is CheckBox cb)
+            {
+                switch (cb.Name)
+                {
+                    case "smallCheckBox":
+                        smallCheckBox.IsChecked = true;
+                        mediumCheckBox.IsChecked = false;
+                        largeCheckBox.IsChecked = false;
+                        s = Size.Small;
+                        break;
 
-        /// <summary>
-        /// Grapefruit Flavor Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void GrapefruitFlavorChecked(object sender, RoutedEventArgs e)
-        {
-            blackberryCheckBox.IsChecked = false;
-            cherryCheckBox.IsChecked = false;
-            lemonCheckBox.IsChecked = false;
-            peachCheckBox.IsChecked = false;
-            watermelonCheckBox.IsChecked = false;
-        }
+                    case "mediumCheckBox":
+                        mediumCheckBox.IsChecked = true;
+                        smallCheckBox.IsChecked = false;
+                        largeCheckBox.IsChecked = false;
+                        s = Size.Medium;
+                        break;
 
-        /// <summary>
-        /// Lemon Flavor Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void LemonFlavorChecked(object sender, RoutedEventArgs e)
-        {
-            blackberryCheckBox.IsChecked = false;
-            grapefruitCheckBox.IsChecked = false;
-            cherryCheckBox.IsChecked = false;
-            peachCheckBox.IsChecked = false;
-            watermelonCheckBox.IsChecked = false;
-        }
+                    case "largeCheckBox":
+                        largeCheckBox.IsChecked = true;
+                        mediumCheckBox.IsChecked = false;
+                        smallCheckBox.IsChecked = false;
+                        s = Size.Large;
+                        break;
 
-        /// <summary>
-        /// Peach Flavor Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void PeachFlavorChecked(object sender, RoutedEventArgs e)
-        {
-            blackberryCheckBox.IsChecked = false;
-            grapefruitCheckBox.IsChecked = false;
-            lemonCheckBox.IsChecked = false;
-            cherryCheckBox.IsChecked = false;
-            watermelonCheckBox.IsChecked = false;
-        }
+                    case "blackberryCheckBox":
+                        blackberryCheckBox.IsChecked = true;
+                        cherryCheckBox.IsChecked = false;
+                        grapefruitCheckBox.IsChecked = false;
+                        lemonCheckBox.IsChecked = false;
+                        peachCheckBox.IsChecked = false;
+                        watermelonCheckBox.IsChecked = false;
+                        f = Flavor.Blackberry;
+                        break;
 
-        /// <summary>
-        /// Watermelon Flavor Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void WatermelonFlavorChecked(object sender, RoutedEventArgs e)
-        {
-            blackberryCheckBox.IsChecked = false;
-            grapefruitCheckBox.IsChecked = false;
-            lemonCheckBox.IsChecked = false;
-            peachCheckBox.IsChecked = false;
-            cherryCheckBox.IsChecked = false;
-        }
+                    case "cherryCheckBox":
+                        blackberryCheckBox.IsChecked = false;
+                        cherryCheckBox.IsChecked = true;
+                        grapefruitCheckBox.IsChecked = false;
+                        lemonCheckBox.IsChecked = false;
+                        peachCheckBox.IsChecked = false;
+                        watermelonCheckBox.IsChecked = false;
+                        f = Flavor.Cherry;
+                        break;
 
+                    case "grapefruitCheckBox":
+                        blackberryCheckBox.IsChecked = false;
+                        cherryCheckBox.IsChecked = false;
+                        grapefruitCheckBox.IsChecked = true;
+                        lemonCheckBox.IsChecked = false;
+                        peachCheckBox.IsChecked = false;
+                        watermelonCheckBox.IsChecked = false;
+                        f = Flavor.Grapefruit;
+                        break;
+
+                    case "lemonCheckBox":
+                        blackberryCheckBox.IsChecked = false;
+                        cherryCheckBox.IsChecked = false;
+                        grapefruitCheckBox.IsChecked = false;
+                        lemonCheckBox.IsChecked = true;
+                        peachCheckBox.IsChecked = false;
+                        watermelonCheckBox.IsChecked = false;
+                        f = Flavor.Lemon;
+                        break;
+
+                    case "peachCheckBox":
+                        blackberryCheckBox.IsChecked = false;
+                        cherryCheckBox.IsChecked = false;
+                        grapefruitCheckBox.IsChecked = false;
+                        lemonCheckBox.IsChecked = false;
+                        peachCheckBox.IsChecked = true;
+                        watermelonCheckBox.IsChecked = false;
+                        f = Flavor.Peach;
+                        break;
+
+                    case "watermelonCheckBox":
+                        blackberryCheckBox.IsChecked = false;
+                        cherryCheckBox.IsChecked = false;
+                        grapefruitCheckBox.IsChecked = false;
+                        lemonCheckBox.IsChecked = false;
+                        peachCheckBox.IsChecked = false;
+                        watermelonCheckBox.IsChecked = true;
+                        f = Flavor.Watermelon;
+                        break;
+
+                    default:
+                        throw new NotImplementedException();
+                }
+                temp.Size = s;
+                temp.Flavor = f;
+            }
+        }
     }
 }

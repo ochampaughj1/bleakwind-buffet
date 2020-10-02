@@ -6,13 +6,19 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class CandlehearthCoffee : Drink
+    public class CandlehearthCoffee : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// List to store instructions on holding ingredients
         /// </summary>
@@ -28,7 +34,6 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         private bool roomForCream = false;
 
-
         /// <summary>
         /// Variable to make the drink decaf
         /// </summary>
@@ -40,7 +45,14 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set
+            {
+                if(ice != value)
+                {
+                    ice = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                }
+            }
         }
 
         /// <summary>
@@ -49,7 +61,14 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Decaf
         {
             get { return decaf; }
-            set { decaf = value; }
+            set
+            {
+                if (decaf != value)
+                {
+                    decaf = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                }
+            }
         }
 
         /// <summary>
@@ -58,7 +77,14 @@ namespace BleakwindBuffet.Data.Drinks
         public bool RoomForCream
         {
             get { return roomForCream; }
-            set { roomForCream = value; }
+            set
+            {
+                if (roomForCream != value)
+                {
+                    roomForCream = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                }
+            }
         }
 
 
@@ -69,17 +95,15 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    return 0.75;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 1.25;
-                }
-                else 
-                {
-                    return 1.75;
+                    case Size.Small:
+                        return 0.75;
+                    case Size.Medium:
+                        return 1.25;
+                    case Size.Large:
+                        return 1.75;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
@@ -91,17 +115,15 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    return 7;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 10;
-                }
-                else 
-                {
-                    return 20;
+                    case Size.Small:
+                        return 7;
+                    case Size.Medium:
+                        return 10;
+                    case Size.Large:
+                        return 20;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }

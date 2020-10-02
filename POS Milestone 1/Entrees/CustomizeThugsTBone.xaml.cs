@@ -3,6 +3,7 @@
  * Purpose: Switches between screens based on buttons clicked
  */
 
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,10 +35,11 @@ namespace POS_Milestone_1.Entrees
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeThugsTBone(MenuSelect menuItem)
+        public CustomizeThugsTBone(MenuSelect menuItem, ThugsTBone ttb)
         {
             InitializeComponent();
             ms = menuItem;
+            DataContext = ttb;
         }
 
         /// <summary>

@@ -12,6 +12,51 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class PhillyPoacherTests
     {
         [Fact]
+        public void ChangingSirloinNotifiesSirloinProperty()
+        {
+            var php = new PhillyPoacher();
+            Assert.PropertyChanged(php, "Sirloin", () =>
+            {
+                php.Sirloin = true;
+            });
+
+            Assert.PropertyChanged(php, "Sirloin", () =>
+            {
+                php.Sirloin = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingOnionNotifiesOnionProperty()
+        {
+            var php = new PhillyPoacher();
+            Assert.PropertyChanged(php, "Onion", () =>
+            {
+                php.Onion = true;
+            });
+
+            Assert.PropertyChanged(php, "Onion", () =>
+            {
+                php.Onion = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingRollNotifiesRollProperty()
+        {
+            var php = new PhillyPoacher();
+            Assert.PropertyChanged(php, "Roll", () =>
+            {
+                php.Roll = true;
+            });
+
+            Assert.PropertyChanged(php, "Roll", () =>
+            {
+                php.Roll = false;
+            });
+        }
+
+        [Fact]
         public void ShouldBeAnEntree()
         {
             PhillyPoacher p = new PhillyPoacher();

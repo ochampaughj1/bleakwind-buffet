@@ -54,14 +54,14 @@
 
         <!--CheckBoxes-->
         <!--Size-->
-        <CheckBox Name="smallCheckBox" Click="SmallSizeChecked" Grid.Column="0" Grid.Row="2" Content="Small" Width="80" Height="20" IsChecked="True"/>
-        <CheckBox Name="mediumCheckBox" Click="MediumSizeChecked" Grid.Column="0" Grid.Row="3" Content="Medium" Width="80" Height="20" IsChecked="False"/>
-        <CheckBox Name="largeCheckBox" Click="LargeSizeChecked" Grid.Column="0" Grid.Row="4" Content="Large" Width="80" Height="20" IsChecked="False"/>
+        <CheckBox Name="smallCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="2" Content="Small" Width="80" Height="20"/>
+        <CheckBox Name="mediumCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="3" Content="Medium" Width="80" Height="20"/>
+        <CheckBox Name="largeCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="4" Content="Large" Width="80" Height="20"/>
         <!--Cream-->
-        <CheckBox x:Name="creamCheckBox" Grid.Column="1" Grid.Row="4" Content="Cream" Width="60" Height="20"/>
+        <CheckBox x:Name="creamCheckBox" IsChecked="{Binding Path= RoomForCream}" Grid.Column="1" Grid.Row="4" Content="Cream" Width="60" Height="20"/>
         <!--Ice-->
-        <CheckBox Name="iceCheckBox" Grid.Column="1" Grid.Row="2" Content="Ice" Width="60" Height="20"/>
+        <CheckBox Name="iceCheckBox" IsChecked="{Binding Path= Ice}" Grid.Column="1" Grid.Row="2" Content="Ice" Width="60" Height="20"/>
         <!--Decaf-->
-        <CheckBox x:Name="decafCheckBox" Grid.Column="1" Grid.Row="6" Content="Decaf" Width="60" Height="20"/>
+        <CheckBox x:Name="decafCheckBox" IsChecked="{Binding Path= Decaf}" Grid.Column="1" Grid.Row="6" Content="Decaf" Width="60" Height="20"/>
     </Grid>
 </UserControl>

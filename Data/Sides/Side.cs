@@ -7,14 +7,20 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides  
 {
     /// <summary>
     /// A base class representing the common properties of sides.
     /// </summary>
-    public abstract class Side : IOrderItem
+    public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Allows base class to access the earlier defined size variable to default small as the size.
         /// </summary>
@@ -32,6 +38,9 @@ namespace BleakwindBuffet.Data.Sides
             set
             {
                 size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             }
         }
 

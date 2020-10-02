@@ -8,11 +8,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class VokunSalad : Side
+    public class VokunSalad : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// List to store instructions on holding toppings.
         /// </summary>
@@ -25,17 +31,15 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    return 0.93;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 1.28;
-                }
-                else 
-                {
-                    return 1.82;
+                    case Size.Small:
+                        return 0.93;
+                    case Size.Medium:
+                        return 1.28;
+                    case Size.Large:
+                        return 1.82;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
@@ -47,17 +51,15 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    return 41;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 52;
-                }
-                else 
-                {
-                    return 73;
+                    case Size.Small:
+                        return 41;
+                    case Size.Medium:
+                        return 52;
+                    case Size.Large:
+                        return 73;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }

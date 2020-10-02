@@ -7,12 +7,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class WarriorWater : Drink
+    public class WarriorWater : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// List to store instructions on holding ingredients
         /// </summary>
@@ -34,7 +40,15 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set
+            {
+                if (ice != value)
+                {
+                    ice = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+
+                }
+            }
         }
 
         /// <summary>
@@ -43,7 +57,15 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Lemon
         {
             get { return lemon; }
-            set { lemon = value; }
+            set
+            {
+                if (lemon != value)
+                {
+                    lemon = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+
+                }
+            }
         }
 
         /// <summary>
@@ -51,7 +73,19 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override double Price
         {
-            get { return 0.00; }
+            get
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return 0.00;
+                    case Size.Medium:
+                        return 0.00;
+                    case Size.Large:
+                        return 0.00;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
+            }
         }
 
         /// <summary>
@@ -59,7 +93,19 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override uint Calories
         {
-            get { return 0; }
+            get
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return 0;
+                    case Size.Medium:
+                        return 0;
+                    case Size.Large:
+                        return 0;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
+            }
         }
 
         /// <summary>

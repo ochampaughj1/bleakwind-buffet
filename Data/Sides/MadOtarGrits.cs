@@ -8,11 +8,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class MadOtarGrits : Side
+    public class MadOtarGrits : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// List to store instructions on holding toppings.
         /// </summary>
@@ -25,17 +31,15 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    return 1.22;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 1.58;
-                }
-                else 
-                {
-                    return 1.93;
+                    case Size.Small:
+                        return 1.22;
+                    case Size.Medium:
+                        return 1.58;
+                    case Size.Large:
+                        return 1.93;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
@@ -47,17 +51,15 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    return 105;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 142;
-                }
-                else 
-                {
-                    return 179;
+                    case Size.Small:
+                        return 105;
+                    case Size.Medium:
+                        return 142;
+                    case Size.Large:
+                        return 179;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }

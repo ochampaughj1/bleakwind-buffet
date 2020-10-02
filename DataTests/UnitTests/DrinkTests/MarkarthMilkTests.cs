@@ -13,6 +13,21 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class MarkarthMilkTests
     {
         [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var mm = new MarkarthMilk();
+            Assert.PropertyChanged(mm, "Ice", () =>
+            {
+                mm.Ice = true;
+            });
+
+            Assert.PropertyChanged(mm, "Ice", () =>
+            {
+                mm.Ice = false;
+            });
+        }
+
+        [Fact]
         public void ShouldBeADrink()
         {
             MarkarthMilk m = new MarkarthMilk();
@@ -76,6 +91,46 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             m.Size = size;
             Assert.Equal(cal, m.Calories);
         }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifySizeProperty(Size size)
+        {
+            var m = new MarkarthMilk();
+            Assert.PropertyChanged(m, "Size", () =>
+            {
+                m.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyPriceProperty(Size size)
+        {
+            var m = new MarkarthMilk();
+            Assert.PropertyChanged(m, "Price", () =>
+            {
+                m.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
+        {
+            var m = new MarkarthMilk();
+            Assert.PropertyChanged(m, "Calories", () =>
+            {
+                m.Size = size;
+            });
+        }
+
 
         [Theory]
         [InlineData(true)]

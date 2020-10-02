@@ -16,6 +16,36 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class WarriorWaterTests
     {
         [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.Ice = true;
+            });
+
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingLemonNotifiesLemonProperty()
+        {
+            var ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.Lemon = true;
+            });
+
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.Lemon = false;
+            });
+        }
+
+        [Fact]
         public void ShouldBeADrink()
         {
             WarriorWater w = new WarriorWater();
@@ -95,6 +125,45 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             WarriorWater w = new WarriorWater();
             w.Size = size;
             Assert.Equal(cal, w.Calories);
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifySizeProperty(Size size)
+        {
+            var ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Size", () =>
+            {
+                ww.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyPriceProperty(Size size)
+        {
+            var ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Price", () =>
+            {
+                ww.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
+        {
+            var ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Calories", () =>
+            {
+                ww.Size = size;
+            });
         }
 
         [Theory]

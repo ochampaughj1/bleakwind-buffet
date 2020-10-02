@@ -68,6 +68,45 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         }
 
         [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifySizeProperty(Size size)
+        {
+            var dwf = new DragonbornWaffleFries();
+            Assert.PropertyChanged(dwf, "Size", () =>
+            {
+                dwf.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyPriceProperty(Size size)
+        {
+            var dwf = new DragonbornWaffleFries();
+            Assert.PropertyChanged(dwf, "Price", () =>
+            {
+                dwf.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
+        {
+            var dwf = new DragonbornWaffleFries();
+            Assert.PropertyChanged(dwf, "Calories", () =>
+            {
+                dwf.Size = size;
+            });
+        }
+
+        [Theory]
         [InlineData(Size.Small, "Small Dragonborn Waffle Fries")]
         [InlineData(Size.Medium, "Medium Dragonborn Waffle Fries")]
         [InlineData(Size.Large, "Large Dragonborn Waffle Fries")]

@@ -3,6 +3,7 @@
  * Purpose: Switches between screens based on buttons clicked
  */
 
+using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Size = BleakwindBuffet.Data.Enums.Size;
+
 namespace POS_Milestone_1.Sides
 {
     /// <summary>
@@ -25,6 +28,11 @@ namespace POS_Milestone_1.Sides
     /// </summary>
     public partial class CustomizeMadOtarGrits : UserControl
     {
+        /// <summary>
+        /// Temporary object made available to help change the size
+        /// </summary>
+        MadOtarGrits temp;
+
         /// <summary>
         /// New Menu Select instance
         /// </summary>
@@ -34,10 +42,12 @@ namespace POS_Milestone_1.Sides
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeMadOtarGrits(MenuSelect menuItem)
+        public CustomizeMadOtarGrits(MenuSelect menuItem, MadOtarGrits mog)
         {
             InitializeComponent();
             ms = menuItem;
+            DataContext = mog;
+            mog = temp;
         }
 
         /// <summary>
@@ -70,5 +80,45 @@ namespace POS_Milestone_1.Sides
         /// <param name="sender"></param>
         /// <param name="e"></param>
         void LargeSizeChecked(object sender, RoutedEventArgs e) { smallCheckBox.IsChecked = false; mediumCheckBox.IsChecked = false; }
+
+        /// <summary>
+        /// Check box event handler to make sure only one size is checked at a time.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void checkBoxChecked(object sender, RoutedEventArgs e)
+        {
+            Size s;
+            if (sender is CheckBox cb)
+            {
+                switch (cb.Name)
+                {
+                    case "smallCheckBox":
+                        smallCheckBox.IsChecked = true;
+                        mediumCheckBox.IsChecked = false;
+                        largeCheckBox.IsChecked = false;
+                        s = Size.Small;
+                        break;
+
+                    case "mediumCheckBox":
+                        mediumCheckBox.IsChecked = true;
+                        smallCheckBox.IsChecked = false;
+                        largeCheckBox.IsChecked = false;
+                        s = Size.Medium;
+                        break;
+
+                    case "largeCheckBox":
+                        largeCheckBox.IsChecked = true;
+                        mediumCheckBox.IsChecked = false;
+                        smallCheckBox.IsChecked = false;
+                        s = Size.Large;
+                        break;
+
+                    default:
+                        throw new NotImplementedException();
+                }
+                temp.Size = s;
+            }
+        }
     }
 }

@@ -68,6 +68,45 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         }
 
         [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifySizeProperty(Size size)
+        {
+            var vs = new VokunSalad();
+            Assert.PropertyChanged(vs, "Size", () =>
+            {
+                vs.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyPriceProperty(Size size)
+        {
+            var vs = new VokunSalad();
+            Assert.PropertyChanged(vs, "Price", () =>
+            {
+                vs.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
+        {
+            var vs = new VokunSalad();
+            Assert.PropertyChanged(vs, "Calories", () =>
+            {
+                vs.Size = size;
+            });
+        }
+
+        [Theory]
         [InlineData(Size.Small, "Small Vokun Salad")]
         [InlineData(Size.Medium, "Medium Vokun Salad")]
         [InlineData(Size.Large, "Large Vokun Salad")]

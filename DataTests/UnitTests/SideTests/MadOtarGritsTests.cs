@@ -68,6 +68,45 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         }
 
         [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifySizeProperty(Size size)
+        {
+            var mog = new MadOtarGrits();
+            Assert.PropertyChanged(mog, "Size", () =>
+            {
+                mog.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyPriceProperty(Size size)
+        {
+            var mog = new MadOtarGrits();
+            Assert.PropertyChanged(mog, "Price", () =>
+            {
+                mog.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
+        {
+            var mog = new MadOtarGrits();
+            Assert.PropertyChanged(mog, "Calories", () =>
+            {
+                mog.Size = size;
+            });
+        }
+
+        [Theory]
         [InlineData(Size.Small, "Small Mad Otar Grits")]
         [InlineData(Size.Medium, "Medium Mad Otar Grits")]
         [InlineData(Size.Large, "Large Mad Otar Grits")]

@@ -7,11 +7,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class PhillyPoacher : Entree
+    public class PhillyPoacher : Entree, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// List to store instructions on holding ingredients.
         /// </summary>
@@ -30,17 +36,41 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Sirloin
         {
             get { return sirloin; }
-            set { sirloin = value; }
+            set
+            {
+                if (sirloin != value)
+                {
+                    sirloin = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+
+                }
+            }
         }
         public bool Onion
         {
             get { return onion; }
-            set { onion = value; }
+            set
+            {
+                if (onion != value)
+                {
+                    onion = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+
+                }
+            }
         }
         public bool Roll
         {
             get { return roll; }
-            set { roll = value; }
+            set
+            {
+                if (roll != value)
+                {
+                    roll = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+
+                }
+            }
         }
 
 

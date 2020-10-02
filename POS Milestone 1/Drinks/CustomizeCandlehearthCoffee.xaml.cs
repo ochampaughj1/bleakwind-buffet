@@ -2,6 +2,7 @@
  * Class Name: CustomizeCandlehearthCoffee.cs
  * Purpose: Switches between screens based on buttons clicked
  */
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Size = BleakwindBuffet.Data.Enums.Size;
+
 namespace POS_Milestone_1.Drinks
 {
     /// <summary>
@@ -24,6 +27,11 @@ namespace POS_Milestone_1.Drinks
     /// </summary>
     public partial class CustomizeCandlehearthCoffee : UserControl
     {
+        /// <summary>
+        /// Temporary object made available to help change the size
+        /// </summary>
+        CandlehearthCoffee temp;
+
         /// <summary>
         /// New Menu Select instance
         /// </summary>
@@ -33,10 +41,12 @@ namespace POS_Milestone_1.Drinks
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeCandlehearthCoffee(MenuSelect menuItem)
+        public CustomizeCandlehearthCoffee(MenuSelect menuItem, CandlehearthCoffee chc)
         {
             InitializeComponent();
-        ms = menuItem;
+            ms = menuItem;
+            DataContext = chc;
+            chc = temp;
         }
 
 
@@ -51,37 +61,43 @@ namespace POS_Milestone_1.Drinks
         }
 
         /// <summary>
-        /// Small Check Box Click Event Handler
+        /// Check box event handler to make sure only one size is checked at a time.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void SmallSizeChecked(object sender, RoutedEventArgs e)
+        private void checkBoxChecked(object sender, RoutedEventArgs e)
         {
-            mediumCheckBox.IsChecked = false;
-            largeCheckBox.IsChecked = false;
-        }
+            Size s;
+            if (sender is CheckBox cb)
+            {
+                switch (cb.Name)
+                {
+                    case "smallCheckBox":
+                        smallCheckBox.IsChecked = true;
+                        mediumCheckBox.IsChecked = false;
+                        largeCheckBox.IsChecked = false;
+                        s = Size.Small;
+                        break;
 
-        /// <summary>
-        /// Medium Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void MediumSizeChecked(object sender, RoutedEventArgs e)
-        {
-            smallCheckBox.IsChecked = false;
-            largeCheckBox.IsChecked = false;
+                    case "mediumCheckBox":
+                        mediumCheckBox.IsChecked = true;
+                        smallCheckBox.IsChecked = false;
+                        largeCheckBox.IsChecked = false;
+                        s = Size.Medium;
+                        break;
 
-        }
+                    case "largeCheckBox":
+                        largeCheckBox.IsChecked = true;
+                        mediumCheckBox.IsChecked = false;
+                        smallCheckBox.IsChecked = false;
+                        s = Size.Large;
+                        break;
 
-        /// <summary>
-        /// Large Check Box Click Event Handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void LargeSizeChecked(object sender, RoutedEventArgs e)
-        {
-            smallCheckBox.IsChecked = false;
-            mediumCheckBox.IsChecked = false;
+                    default:
+                        throw new NotImplementedException();
+                }
+                temp.Size = s;
+            }
         }
     }
 }

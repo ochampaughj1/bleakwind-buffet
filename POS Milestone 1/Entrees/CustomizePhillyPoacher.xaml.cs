@@ -2,6 +2,7 @@
  * Class Name: CustomizePhillyPoacher.cs
  * Purpose: Switches between screens based on buttons clicked
  */
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,10 +34,11 @@ namespace POS_Milestone_1.Entrees
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizePhillyPoacher(MenuSelect menuItem)
+        public CustomizePhillyPoacher(MenuSelect menuItem, PhillyPoacher php)
         {
             InitializeComponent();
             ms = menuItem;
+            DataContext = php;
         }
 
         /// <summary>

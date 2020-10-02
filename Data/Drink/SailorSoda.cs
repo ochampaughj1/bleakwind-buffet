@@ -7,12 +7,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorSoda : Drink
-    { 
+    public class SailorSoda : Drink, INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Stores the current flavor of the drink
         /// </summary>
@@ -34,7 +40,15 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set
+            {
+                if (ice != value)
+                {
+                    ice = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+
+                }
+            }
         }
 
         /// <summary>
@@ -44,17 +58,15 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if(size == Size.Small)
+                switch (Size)
                 {
-                    return 1.42;
-                }
-                else if(size == Size.Medium)
-                {
-                    return 1.74;
-                }
-                else
-                {
-                    return 2.07;
+                    case Size.Small:
+                        return 1.42;
+                    case Size.Medium:
+                        return 1.74;
+                    case Size.Large:
+                        return 2.07;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
@@ -66,17 +78,15 @@ namespace BleakwindBuffet.Data.Drinks
         { 
             get
             {
-                if(size == Size.Small)
+                switch (Size)
                 {
-                    return 117;
-                }
-                else if(size == Size.Medium)
-                {
-                    return 153;
-                }
-                else 
-                {
-                    return 205;
+                    case Size.Small:
+                        return 117;
+                    case Size.Medium:
+                        return 153;
+                    case Size.Large:
+                        return 205;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
@@ -86,8 +96,15 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public SodaFlavor Flavor
         {
-            get { return flavor;}
-            set { flavor = value; }
+            get { return flavor; }
+            set
+            {
+                if (flavor != value)
+                {
+                    flavor = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                }
+            }
         }
 
         /// <summary>

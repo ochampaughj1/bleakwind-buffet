@@ -27,6 +27,21 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Ice", () =>
+            {
+                aj.Ice = true;
+            });
+
+            Assert.PropertyChanged(aj, "Ice", () =>
+            {
+                aj.Ice = false;
+            });
+        }
+
+        [Fact]
         public void ShouldBeSmallByDefault()
         {
             AretinoAppleJuice aj = new AretinoAppleJuice();
@@ -75,6 +90,45 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             AretinoAppleJuice aj = new AretinoAppleJuice();
             aj.Size = size;
             Assert.Equal(cal, aj.Calories);
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifySizeProperty(Size size)
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Size", () =>
+            {
+                aj.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyPriceProperty(Size size)
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Price", () =>
+            {
+                aj.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Calories", () =>
+            {
+                aj.Size = size;
+            });
         }
 
         [Theory]

@@ -8,11 +8,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class DragonbornWaffleFries : Side
+    public class DragonbornWaffleFries : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// List to store instructions on holding toppings.
         /// </summary>
@@ -24,18 +30,16 @@ namespace BleakwindBuffet.Data.Sides
         public override double Price
         {
             get
-            { 
-                if (size == Size.Small)
+            {
+                switch (Size)
                 {
-                    return 0.42;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 0.76;
-                }
-                else 
-                {
-                    return 0.96;
+                    case Size.Small:
+                        return 0.42;
+                    case Size.Medium:
+                        return 0.76;
+                    case Size.Large:
+                        return 0.96;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
@@ -47,17 +51,15 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    return 77;
-                }
-                else if (size == Size.Medium)
-                {
-                    return 89;
-                }
-                else 
-                {
-                    return 100;
+                    case Size.Small:
+                        return 77;
+                    case Size.Medium:
+                        return 89;
+                    case Size.Large:
+                        return 100;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }

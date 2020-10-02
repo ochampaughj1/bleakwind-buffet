@@ -5,21 +5,28 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.Runtime.CompilerServices;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// A base class representing the common properties of drinks
     /// </summary>
-    public abstract class  Drink : IOrderItem
+    public abstract class  Drink : IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Allows base class to access the earlier defined size variable to default small as the size.
         /// </summary>
         protected Size size = Size.Small;
-        
+
         /// <summary>
         /// The size of the drink
         /// </summary>
@@ -32,6 +39,9 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             }
         }
         

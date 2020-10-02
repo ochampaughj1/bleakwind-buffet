@@ -35,10 +35,10 @@
         <Label Grid.Column="4" Grid.Row="2" Content="404" Width="55" Height="30"/>
 
         <!--CheckBoxes-->
-        <CheckBox x:Name="broccoliCheckBox" Grid.Column="0" Grid.Row="1" Content="Broccoli" Width="100" Height="20" IsChecked="True"/>
-        <CheckBox x:Name="mushroomsCheckBox" Grid.Column="0" Grid.Row="2" Content="Mushrooms" Width="100" Height="20" IsChecked="True"/>
-        <CheckBox x:Name="tomatoCheckBox" Grid.Column="0" Grid.Row="3" Content="Tomato" Width="100" Height="20" IsChecked="True"/>
-        <CheckBox x:Name="cheddarCheckBox" Grid.Column="0" Grid.Row="4" Content="Cheddar" Width="100" Height="20" IsChecked="True"/>
+        <CheckBox x:Name="broccoliCheckBox" IsChecked="{Binding Path= Broccoli}" Grid.Column="0" Grid.Row="1" Content="Broccoli" Width="100" Height="20"/>
+        <CheckBox x:Name="mushroomsCheckBox" IsChecked="{Binding Path= Mushrooms}" Grid.Column="0" Grid.Row="2" Content="Mushrooms" Width="100" Height="20"/>
+        <CheckBox x:Name="tomatoCheckBox" IsChecked="{Binding Path= Tomato}" Grid.Column="0" Grid.Row="3" Content="Tomato" Width="100" Height="20"/>
+        <CheckBox x:Name="cheddarCheckBox" IsChecked="{Binding Path= Cheddar}" Grid.Column="0" Grid.Row="4" Content="Cheddar" Width="100" Height="20"/>
 
     </Grid>
 </UserControl>
