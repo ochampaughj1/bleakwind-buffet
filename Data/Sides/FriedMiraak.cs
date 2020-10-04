@@ -12,13 +12,8 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class FriedMiraak : Side, INotifyPropertyChanged
+    public class FriedMiraak : Side
     {
-        /// <summary>
-        /// Implements the interface of INotifyPropertyChanged
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// List to store instructions on holding toppings.
         /// </summary>

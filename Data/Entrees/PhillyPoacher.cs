@@ -11,13 +11,8 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class PhillyPoacher : Entree, INotifyPropertyChanged
+    public class PhillyPoacher : Entree
     {
-        /// <summary>
-        /// Implements the interface of INotifyPropertyChanged
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// List to store instructions on holding ingredients.
         /// </summary>
@@ -41,8 +36,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (sirloin != value)
                 {
                     sirloin = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
-
+                    OnPropertyChanged("Sirloin");
                 }
             }
         }
@@ -54,8 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (onion != value)
                 {
                     onion = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
-
+                    OnPropertyChanged("Onion");
                 }
             }
         }
@@ -67,8 +60,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (roll != value)
                 {
                     roll = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
-
+                    OnPropertyChanged("Roll");
                 }
             }
         }

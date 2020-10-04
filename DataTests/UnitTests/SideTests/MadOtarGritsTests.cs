@@ -74,6 +74,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifySizeProperty(Size size)
         {
             var mog = new MadOtarGrits();
+            if (size == Size.Small) { mog.Size = Size.Medium; }
             Assert.PropertyChanged(mog, "Size", () =>
             {
                 mog.Size = size;
@@ -87,6 +88,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifyPriceProperty(Size size)
         {
             var mog = new MadOtarGrits();
+            if (size == Size.Small) { mog.Size = Size.Medium; }
             Assert.PropertyChanged(mog, "Price", () =>
             {
                 mog.Size = size;
@@ -100,6 +102,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
         {
             var mog = new MadOtarGrits();
+            if (size == Size.Small) { mog.Size = Size.Medium; }
             Assert.PropertyChanged(mog, "Calories", () =>
             {
                 mog.Size = size;

@@ -14,15 +14,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ChangingSausageLinkNotifiesSausageLinkProperty()
         {
-            var smks = new SmokehouseSkeleton();
-            Assert.PropertyChanged(smks, "SausageLink", () =>
+            var sks = new SmokehouseSkeleton();
+            Assert.PropertyChanged(sks, "SausageLink", () =>
             {
-                smks.SausageLink = true;
+                sks.SausageLink = false;
             });
 
-            Assert.PropertyChanged(smks, "SausageLink", () =>
+            Assert.PropertyChanged(sks, "SausageLink", () =>
             {
-                smks.SausageLink = false;
+                sks.SausageLink = true;
             });
         }
 
@@ -32,12 +32,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var smks = new SmokehouseSkeleton();
             Assert.PropertyChanged(smks, "Egg", () =>
             {
-                smks.Egg = true;
+                smks.Egg = false;
             });
 
             Assert.PropertyChanged(smks, "Egg", () =>
             {
-                smks.Egg = false;
+                smks.Egg = true;
             });
         }
 
@@ -47,12 +47,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var smks = new SmokehouseSkeleton();
             Assert.PropertyChanged(smks, "HashBrowns", () =>
             {
-                smks.HashBrowns = true;
+                smks.HashBrowns = false;
             });
 
             Assert.PropertyChanged(smks, "HashBrowns", () =>
             {
-                smks.HashBrowns = false;
+                smks.HashBrowns = true;
             });
         }
 
@@ -62,12 +62,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var smks = new SmokehouseSkeleton();
             Assert.PropertyChanged(smks, "Pancake", () =>
             {
-                smks.Pancake = true;
+                smks.Pancake = false;
             });
 
             Assert.PropertyChanged(smks, "Pancake", () =>
             {
-                smks.Pancake = false;
+                smks.Pancake = true;
             });
         }
 

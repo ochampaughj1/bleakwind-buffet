@@ -17,12 +17,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var dd = new DoubleDraugr();
             Assert.PropertyChanged(dd, "Bun", () =>
             {
-                dd.Bun = true;
+                dd.Bun = false;
             });
 
             Assert.PropertyChanged(dd, "Bun", () =>
             {
-                dd.Bun = false;
+                dd.Bun = true;
             });
         }
 
@@ -32,12 +32,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var dd = new DoubleDraugr();
             Assert.PropertyChanged(dd, "Ketchup", () =>
             {
-                dd.Ketchup = true;
+                dd.Ketchup = false;
             });
 
             Assert.PropertyChanged(dd, "Ketchup", () =>
             {
-                dd.Ketchup = false;
+                dd.Ketchup = true;
             });
         }
 
@@ -47,12 +47,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var dd = new DoubleDraugr();
             Assert.PropertyChanged(dd, "Mustard", () =>
             {
-                dd.Mustard = true;
+                dd.Mustard = false;
             });
 
             Assert.PropertyChanged(dd, "Mustard", () =>
             {
-                dd.Mustard = false;
+                dd.Mustard = true;
             });
         }
 
@@ -62,12 +62,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var dd = new DoubleDraugr();
             Assert.PropertyChanged(dd, "Pickle", () =>
             {
-                dd.Pickle = true;
+                dd.Pickle = false;
             });
 
             Assert.PropertyChanged(dd, "Pickle", () =>
             {
-                dd.Pickle = false;
+                dd.Pickle = true;
             });
         }
 
@@ -77,12 +77,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var dd = new DoubleDraugr();
             Assert.PropertyChanged(dd, "Cheese", () =>
             {
-                dd.Cheese = true;
+                dd.Cheese = false;
             });
 
             Assert.PropertyChanged(dd, "Cheese", () =>
             {
-                dd.Cheese = false;
+                dd.Cheese = true;
             });
         }
 
@@ -92,12 +92,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var dd = new DoubleDraugr();
             Assert.PropertyChanged(dd, "Tomato", () =>
             {
-                dd.Tomato = true;
+                dd.Tomato = false;
             });
 
             Assert.PropertyChanged(dd, "Tomato", () =>
             {
-                dd.Tomato = false;
+                dd.Tomato = true;
             });
         }
 
@@ -107,12 +107,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var dd = new DoubleDraugr();
             Assert.PropertyChanged(dd, "Lettuce", () =>
             {
-                dd.Lettuce = true;
+                dd.Lettuce = false;
             });
 
             Assert.PropertyChanged(dd, "Lettuce", () =>
             {
-                dd.Lettuce = false;
+                dd.Lettuce = true;
             });
         }
 
@@ -122,12 +122,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var dd = new DoubleDraugr();
             Assert.PropertyChanged(dd, "Mayo", () =>
             {
-                dd.Mayo = true;
+                dd.Mayo = false;
             });
 
             Assert.PropertyChanged(dd, "Mayo", () =>
             {
-                dd.Mayo = false;
+                dd.Mayo = true;
             });
         }
 

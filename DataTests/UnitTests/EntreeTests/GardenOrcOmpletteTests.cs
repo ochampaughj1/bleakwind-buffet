@@ -17,12 +17,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var goo = new GardenOrcOmelette();
             Assert.PropertyChanged(goo, "Broccoli", () =>
             {
-                goo.Broccoli = true;
+                goo.Broccoli = false;
             });
 
             Assert.PropertyChanged(goo, "Broccoli", () =>
             {
-                goo.Broccoli = false;
+                goo.Broccoli = true;
             });
         }
 
@@ -32,12 +32,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var goo = new GardenOrcOmelette();
             Assert.PropertyChanged(goo, "Mushrooms", () =>
             {
-                goo.Mushrooms = true;
+                goo.Mushrooms = false;
             });
 
             Assert.PropertyChanged(goo, "Mushrooms", () =>
             {
-                goo.Mushrooms = false;
+                goo.Mushrooms = true;
             });
         }
 
@@ -47,12 +47,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var goo = new GardenOrcOmelette();
             Assert.PropertyChanged(goo, "Tomato", () =>
             {
-                goo.Tomato = true;
+                goo.Tomato = false;
             });
 
             Assert.PropertyChanged(goo, "Tomato", () =>
             {
-                goo.Tomato = false;
+                goo.Tomato = true;
             });
         }
 
@@ -62,12 +62,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var goo = new GardenOrcOmelette();
             Assert.PropertyChanged(goo, "Cheddar", () =>
             {
-                goo.Cheddar = true;
+                goo.Cheddar = false;
             });
 
             Assert.PropertyChanged(goo, "Cheddar", () =>
             {
-                goo.Cheddar = false;
+                goo.Cheddar = true;
             });
         }
 

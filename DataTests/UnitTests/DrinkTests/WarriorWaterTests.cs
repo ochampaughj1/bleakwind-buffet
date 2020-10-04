@@ -134,6 +134,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifySizeProperty(Size size)
         {
             var ww = new WarriorWater();
+            if(size == Size.Small) { ww.Size = Size.Medium; }
             Assert.PropertyChanged(ww, "Size", () =>
             {
                 ww.Size = size;
@@ -147,6 +148,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifyPriceProperty(Size size)
         {
             var ww = new WarriorWater();
+            if (size == Size.Small) { ww.Size = Size.Medium; }
             Assert.PropertyChanged(ww, "Price", () =>
             {
                 ww.Size = size;
@@ -160,6 +162,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
         {
             var ww = new WarriorWater();
+            if (size == Size.Small) { ww.Size = Size.Medium; }
             Assert.PropertyChanged(ww, "Calories", () =>
             {
                 ww.Size = size;

@@ -11,13 +11,8 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class DoubleDraugr : Entree, INotifyPropertyChanged
+    public class DoubleDraugr : Entree
     {
-        /// <summary>
-        /// Implements the interface of INotifyPropertyChanged
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// List to store instructions on holding toppings.
         /// </summary>
@@ -46,8 +41,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (bun != value)
                 {
                     bun = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
-
+                    OnPropertyChanged("Bun");
                 }
             }
         }
@@ -59,8 +53,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (ketchup != value)
                 {
                     ketchup = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
-
+                    OnPropertyChanged("Ketchup");
                 }
             }
         }
@@ -72,8 +65,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (mustard != value)
                 {
                     mustard = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
-
+                    OnPropertyChanged("Mustard");
                 }
             }
         }
@@ -85,8 +77,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (pickle != value)
                 {
                     pickle = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
-
+                    OnPropertyChanged("Pickle");
                 }
             }
         }
@@ -98,8 +89,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (cheese != value)
                 {
                     cheese = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
-
+                    OnPropertyChanged("Cheese");
                 }
             }
         }
@@ -111,8 +101,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (tomato != value)
                 {
                     tomato = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
-
+                    OnPropertyChanged("Tomato");
                 }
             }
         }
@@ -124,8 +113,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (lettuce != value)
                 {
                     lettuce = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
-
+                    OnPropertyChanged("Lettuce");
                 }
             }
         }
@@ -137,8 +125,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (mayo != value)
                 {
                     mayo = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
-
+                    OnPropertyChanged("Mayo");
                 }
             }
         }

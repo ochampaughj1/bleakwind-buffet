@@ -12,13 +12,8 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class WarriorWater : Drink, INotifyPropertyChanged
+    public class WarriorWater : Drink
     {
-        /// <summary>
-        /// Implements the interface of INotifyPropertyChanged
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// List to store instructions on holding ingredients
         /// </summary>
@@ -45,8 +40,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (ice != value)
                 {
                     ice = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-
+                    OnPropertyChanged("Ice");
                 }
             }
         }
@@ -62,8 +56,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (lemon != value)
                 {
                     lemon = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
-
+                    OnPropertyChanged("Lemon");
                 }
             }
         }

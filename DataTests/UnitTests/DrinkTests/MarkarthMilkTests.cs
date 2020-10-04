@@ -99,6 +99,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifySizeProperty(Size size)
         {
             var m = new MarkarthMilk();
+            if (size == Size.Small) { m.Size = Size.Medium; }
             Assert.PropertyChanged(m, "Size", () =>
             {
                 m.Size = size;
@@ -112,6 +113,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifyPriceProperty(Size size)
         {
             var m = new MarkarthMilk();
+            if (size == Size.Small) { m.Size = Size.Medium; }
             Assert.PropertyChanged(m, "Price", () =>
             {
                 m.Size = size;
@@ -125,12 +127,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
         {
             var m = new MarkarthMilk();
+            if (size == Size.Small) { m.Size = Size.Medium; }
             Assert.PropertyChanged(m, "Calories", () =>
             {
                 m.Size = size;
             });
         }
-
 
         [Theory]
         [InlineData(true)]

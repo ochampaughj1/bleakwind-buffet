@@ -12,13 +12,8 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class AretinoAppleJuice : Drink, INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Implements the interface of INotifyPropertyChanged
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
+    public class AretinoAppleJuice : Drink
+    { 
         /// <summary>
         /// List to store instructions on holding ingredients
         /// </summary>
@@ -40,7 +35,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (ice != value)
                 {
                     ice = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                    OnPropertyChanged("Ice");
 
                 }
             }

@@ -99,6 +99,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifySizeProperty(Size size)
         {
             var aj = new AretinoAppleJuice();
+            if (size == Size.Small) { aj.Size = Size.Medium; }
             Assert.PropertyChanged(aj, "Size", () =>
             {
                 aj.Size = size;
@@ -112,6 +113,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifyPriceProperty(Size size)
         {
             var aj = new AretinoAppleJuice();
+            if (size == Size.Small) { aj.Size = Size.Medium; }
             Assert.PropertyChanged(aj, "Price", () =>
             {
                 aj.Size = size;
@@ -125,6 +127,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
         {
             var aj = new AretinoAppleJuice();
+            if (size == Size.Small) { aj.Size = Size.Medium; }
             Assert.PropertyChanged(aj, "Calories", () =>
             {
                 aj.Size = size;

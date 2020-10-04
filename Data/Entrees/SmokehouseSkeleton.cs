@@ -10,13 +10,8 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton : Entree, INotifyPropertyChanged
+    public class SmokehouseSkeleton : Entree
     {
-        /// <summary>
-        /// Implements the interface of INotifyPropertyChanged
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// List to store instructions on holding food.
         /// </summary>
@@ -36,22 +31,50 @@ namespace BleakwindBuffet.Data.Entrees
         public bool SausageLink
         {
             get { return sausageLink; }
-            set { sausageLink = value; }
+            set
+            {
+                if (sausageLink != value)
+                {
+                    sausageLink = value;
+                    OnPropertyChanged("SausageLink");
+                }
+            }
         }
         public bool Egg
         {
             get { return egg; }
-            set { egg = value; }
+            set
+            {
+                if (egg != value)
+                {
+                    egg = value;
+                    OnPropertyChanged("Egg");
+                }
+            }
         }
         public bool HashBrowns
         {
             get { return hashBrowns; }
-            set { hashBrowns = value; }
+            set
+            {
+                if (hashBrowns != value)
+                {
+                    hashBrowns = value;
+                    OnPropertyChanged("HashBrowns");
+                }
+            }
         }
         public bool Pancake
         {
             get { return pancake; }
-            set { pancake = value; }
+            set
+            {
+                if (pancake != value)
+                {
+                    pancake = value;
+                    OnPropertyChanged("Pancake");
+                }
+            }
         }
 
         /// <summary>

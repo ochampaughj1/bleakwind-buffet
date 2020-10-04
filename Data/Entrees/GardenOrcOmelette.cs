@@ -11,13 +11,8 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmelette : Entree, INotifyPropertyChanged
+    public class GardenOrcOmelette : Entree
     {
-        /// <summary>
-        /// Implements the interface of INotifyPropertyChanged
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// List to store instructions on holding ingredients.
         /// </summary>
@@ -42,8 +37,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (broccoli != value)
                 {
                     broccoli = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
-
+                    OnPropertyChanged("Broccoli");
                 }
             }
         }
@@ -55,8 +49,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (mushrooms != value)
                 {
                     mushrooms = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
-
+                    OnPropertyChanged("Mushrooms");
                 }
             }
         }
@@ -68,8 +61,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (tomato != value)
                 {
                     tomato = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
-
+                    OnPropertyChanged("Tomato");
                 }
             }
         }
@@ -81,8 +73,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (cheddar != value)
                 {
                     cheddar = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
-
+                    OnPropertyChanged("Cheddar");
                 }
             }
         }

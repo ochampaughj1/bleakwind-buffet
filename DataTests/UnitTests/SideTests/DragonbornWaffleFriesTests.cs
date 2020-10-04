@@ -74,6 +74,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifySizeProperty(Size size)
         {
             var dwf = new DragonbornWaffleFries();
+            if (size == Size.Small) { dwf.Size = Size.Medium; }
             Assert.PropertyChanged(dwf, "Size", () =>
             {
                 dwf.Size = size;
@@ -87,6 +88,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifyPriceProperty(Size size)
         {
             var dwf = new DragonbornWaffleFries();
+            if (size == Size.Small) { dwf.Size = Size.Medium; }
             Assert.PropertyChanged(dwf, "Price", () =>
             {
                 dwf.Size = size;
@@ -100,6 +102,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
         {
             var dwf = new DragonbornWaffleFries();
+            if (size == Size.Small) { dwf.Size = Size.Medium; }
             Assert.PropertyChanged(dwf, "Calories", () =>
             {
                 dwf.Size = size;

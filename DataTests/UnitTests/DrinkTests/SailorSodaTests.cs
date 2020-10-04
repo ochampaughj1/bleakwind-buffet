@@ -137,6 +137,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifySizeProperty(Size size)
         {
             var ss = new SailorSoda();
+            if(size == Size.Small) { ss.Size = Size.Medium; }
             Assert.PropertyChanged(ss, "Size", () =>
             {
                 ss.Size = size;
@@ -150,6 +151,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifyPriceProperty(Size size)
         {
             var ss = new SailorSoda();
+            if (size == Size.Small) { ss.Size = Size.Medium; }
             Assert.PropertyChanged(ss, "Price", () =>
             {
                 ss.Size = size;
@@ -163,6 +165,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
         {
             var ss = new SailorSoda();
+            if (size == Size.Small) { ss.Size = Size.Medium; }
             Assert.PropertyChanged(ss, "Calories", () =>
             {
                 ss.Size = size;
@@ -170,8 +173,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Theory]
-        [InlineData(SodaFlavor.Cherry)]
         [InlineData(SodaFlavor.Blackberry)]
+        [InlineData(SodaFlavor.Cherry)]
         [InlineData(SodaFlavor.Grapefruit)]
         [InlineData(SodaFlavor.Lemon)]
         [InlineData(SodaFlavor.Peach)]
@@ -179,7 +182,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingFlavorShouldNotifySodaFlavorProperty(SodaFlavor flavor)
         {
             var ss = new SailorSoda();
-            Assert.PropertyChanged(ss, "SodaFlavor", () =>
+            if(flavor == SodaFlavor.Cherry) { ss.Flavor = SodaFlavor.Blackberry; }
+            Assert.PropertyChanged(ss, "Flavor", () =>
             {
                 ss.Flavor = flavor;
             });

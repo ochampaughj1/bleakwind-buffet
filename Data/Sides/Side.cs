@@ -22,6 +22,15 @@ namespace BleakwindBuffet.Data.Sides
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// Property Changed Invoke helper method
+        /// </summary>
+        /// <param name="name">Name of property being invoked</param>
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        /// <summary>
         /// Allows base class to access the earlier defined size variable to default small as the size.
         /// </summary>
         protected Size size = Size.Small;
@@ -37,10 +46,13 @@ namespace BleakwindBuffet.Data.Sides
             }
             set
             {
-                size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                if(size != value)
+                {
+                    size = value;
+                    OnPropertyChanged("Size");
+                    OnPropertyChanged("Price");
+                    OnPropertyChanged("Calories");
+                }
             }
         }
 

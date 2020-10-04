@@ -74,6 +74,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifySizeProperty(Size size)
         {
             var vs = new VokunSalad();
+            if(size == Size.Small) { vs.Size = Size.Medium; }
             Assert.PropertyChanged(vs, "Size", () =>
             {
                 vs.Size = size;
@@ -87,6 +88,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifyPriceProperty(Size size)
         {
             var vs = new VokunSalad();
+            if (size == Size.Small) { vs.Size = Size.Medium; }
             Assert.PropertyChanged(vs, "Price", () =>
             {
                 vs.Size = size;
@@ -100,6 +102,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
         {
             var vs = new VokunSalad();
+            if (size == Size.Small) { vs.Size = Size.Medium; }
             Assert.PropertyChanged(vs, "Calories", () =>
             {
                 vs.Size = size;

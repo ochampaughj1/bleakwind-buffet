@@ -74,6 +74,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifySizeProperty(Size size)
         {
             var fm = new FriedMiraak();
+            if (size == Size.Small) { fm.Size = Size.Medium; }
             Assert.PropertyChanged(fm, "Size", () =>
             {
                 fm.Size = size;
@@ -87,6 +88,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifyPriceProperty(Size size)
         {
             var fm = new FriedMiraak();
+            if (size == Size.Small) { fm.Size = Size.Medium; }
             Assert.PropertyChanged(fm, "Price", () =>
             {
                 fm.Size = size;
@@ -100,6 +102,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         public void ChangingSizeShouldNotifyCaloriesProperty(Size size)
         {
             var fm = new FriedMiraak();
+            if (size == Size.Small) { fm.Size = Size.Medium; }
             Assert.PropertyChanged(fm, "Calories", () =>
             {
                 fm.Size = size;

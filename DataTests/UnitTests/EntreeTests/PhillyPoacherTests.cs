@@ -17,12 +17,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var php = new PhillyPoacher();
             Assert.PropertyChanged(php, "Sirloin", () =>
             {
-                php.Sirloin = true;
+                php.Sirloin = false;
             });
 
             Assert.PropertyChanged(php, "Sirloin", () =>
             {
-                php.Sirloin = false;
+                php.Sirloin = true;
             });
         }
 
@@ -32,12 +32,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var php = new PhillyPoacher();
             Assert.PropertyChanged(php, "Onion", () =>
             {
-                php.Onion = true;
+                php.Onion = false;
             });
 
             Assert.PropertyChanged(php, "Onion", () =>
             {
-                php.Onion = false;
+                php.Onion = true;
             });
         }
 
@@ -47,12 +47,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var php = new PhillyPoacher();
             Assert.PropertyChanged(php, "Roll", () =>
             {
-                php.Roll = true;
+                php.Roll = false;
             });
 
             Assert.PropertyChanged(php, "Roll", () =>
             {
-                php.Roll = false;
+                php.Roll = true;
             });
         }
 
