@@ -68,7 +68,7 @@ namespace POS_Milestone_1.Drinks
         private void checkBoxChecked(object sender, RoutedEventArgs e)
         {
             Size s;
-            if (sender is CheckBox cb)
+            if (sender is CheckBox cb) 
             {
                 switch (cb.Name)
                 {
