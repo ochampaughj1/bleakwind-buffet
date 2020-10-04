@@ -31,7 +31,7 @@ namespace POS_Milestone_1.Drinks
         /// <summary>
         /// Temporary object made available to help change the size
         /// </summary>
-        SailorSoda temp;
+        private SailorSoda temp;
 
         /// <summary>
         /// New Menu Select instance
