@@ -65,10 +65,9 @@ namespace POS_Milestone_1.Drinks
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void checkBoxChecked(object sender, RoutedEventArgs e)
+        private void sizeCheckBoxChecked(object sender, RoutedEventArgs e)
         {
             Size s;
-            Flavor f;
             if (sender is CheckBox cb)
             {
                 switch (cb.Name)
@@ -94,6 +93,25 @@ namespace POS_Milestone_1.Drinks
                         s = Size.Large;
                         break;
 
+                    default:
+                        throw new NotImplementedException();
+                }
+                temp.Size = s;
+            }
+        }
+
+        /// <summary>
+        /// Check box event handler to make sure only one flavor is checked at a time.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void flavorCheckboxChecked(object sender, RoutedEventArgs e)
+        {
+            Flavor f;
+            if (sender is CheckBox cb)
+            {
+                switch (cb.Name)
+                {
                     case "blackberryCheckBox":
                         blackberryCheckBox.IsChecked = true;
                         cherryCheckBox.IsChecked = false;
@@ -157,7 +175,6 @@ namespace POS_Milestone_1.Drinks
                     default:
                         throw new NotImplementedException();
                 }
-                temp.Size = s;
                 temp.Flavor = f;
             }
         }

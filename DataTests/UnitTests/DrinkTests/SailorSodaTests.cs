@@ -20,12 +20,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var ss = new SailorSoda();
             Assert.PropertyChanged(ss, "Ice", () =>
             {
-                ss.Ice = true;
+                ss.Ice = false;
             });
 
             Assert.PropertyChanged(ss, "Ice", () =>
             {
-                ss.Ice = false;
+                ss.Ice = true;
             });
         }
 
@@ -170,8 +170,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Theory]
-        [InlineData(SodaFlavor.Blackberry)]
         [InlineData(SodaFlavor.Cherry)]
+        [InlineData(SodaFlavor.Blackberry)]
         [InlineData(SodaFlavor.Grapefruit)]
         [InlineData(SodaFlavor.Lemon)]
         [InlineData(SodaFlavor.Peach)]

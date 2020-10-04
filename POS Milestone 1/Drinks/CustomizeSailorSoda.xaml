@@ -53,16 +53,16 @@
 
         <!--CheckBoxes-->
         <!--Flavors-->
-        <CheckBox Name="blackberryCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="3" Content="Blackberry" Width="100" Height="20"/>
-        <CheckBox Name="cherryCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="2" Content="Cherry" Width="100" Height="20"/>
-        <CheckBox Name="grapefruitCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="4" Content="Grapefruit" Width="100" Height="20"/>
-        <CheckBox Name="lemonCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="5" Content="Lemon" Width="100" Height="20"/>
-        <CheckBox Name="peachCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="6" Content="Peach" Width="100" Height="20"/>
-        <CheckBox Name="watermelonCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="7" Content="Watermelon" Width="100" Height="20"/>
+        <CheckBox Name="blackberryCheckBox" Checked="flavorCheckboxChecked" Grid.Column="0" Grid.Row="3" Content="Blackberry" Width="100" Height="20"/>
+        <CheckBox Name="cherryCheckBox" Checked="flavorCheckboxChecked" Grid.Column="0" Grid.Row="2" Content="Cherry" Width="100" Height="20"/>
+        <CheckBox Name="grapefruitCheckBox" Checked="flavorCheckboxChecked" Grid.Column="0" Grid.Row="4" Content="Grapefruit" Width="100" Height="20"/>
+        <CheckBox Name="lemonCheckBox" Checked="flavorCheckboxChecked" Grid.Column="0" Grid.Row="5" Content="Lemon" Width="100" Height="20"/>
+        <CheckBox Name="peachCheckBox" Checked="flavorCheckboxChecked" Grid.Column="0" Grid.Row="6" Content="Peach" Width="100" Height="20"/>
+        <CheckBox Name="watermelonCheckBox" Checked="flavorCheckboxChecked" Grid.Column="0" Grid.Row="7" Content="Watermelon" Width="100" Height="20"/>
         <!--Sizes-->
-        <CheckBox Name="smallCheckBox" Checked="checkBoxChecked" Grid.Column="1" Grid.Row="4" Content="Small" Width="100" Height="20"/>
-        <CheckBox Name="mediumCheckBox" Checked="checkBoxChecked" Grid.Column="1" Grid.Row="5" Content="Medium" Width="100" Height="20"/>
-        <CheckBox Name="largeCheckBox" Checked="checkBoxChecked" Grid.Column="1" Grid.Row="6" Content="Large" Width="100" Height="20"/>
+        <CheckBox Name="smallCheckBox" Checked="sizeCheckBoxChecked" Grid.Column="1" Grid.Row="4" Content="Small" Width="100" Height="20"/>
+        <CheckBox Name="mediumCheckBox" Checked="sizeCheckBoxChecked" Grid.Column="1" Grid.Row="5" Content="Medium" Width="100" Height="20"/>
+        <CheckBox Name="largeCheckBox" Checked="sizeCheckBoxChecked" Grid.Column="1" Grid.Row="6" Content="Large" Width="100" Height="20"/>
         <!--Ice-->
         <CheckBox Name="iceCheckBox" IsChecked="{Binding Path= Ice}" Grid.Column="1" Grid.Row="2" Content="Ice" Width="100" Height="20"/>
 

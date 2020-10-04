@@ -21,12 +21,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var ww = new WarriorWater();
             Assert.PropertyChanged(ww, "Ice", () =>
             {
-                ww.Ice = true;
+                ww.Ice = false;
             });
 
             Assert.PropertyChanged(ww, "Ice", () =>
             {
-                ww.Ice = false;
+                ww.Ice = true;
             });
         }
 
