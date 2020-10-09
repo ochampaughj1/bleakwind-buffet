@@ -50,9 +50,9 @@ namespace BleakwindBuffet.Data.Drinks
                 if(size != value)
                 {
                     size = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                    OnPropertyChanged("Size");
+                    OnPropertyChanged("Price");
+                    OnPropertyChanged("Calories");
                 }
             }
         }

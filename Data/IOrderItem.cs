@@ -8,13 +8,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data
 {
     /// <summary>
     /// Interface to get the Price, Calories, and Special Instructions for menu items.
     /// </summary>
-    public interface IOrderItem
+    public interface IOrderItem : INotifyPropertyChanged
     {
         /// <summary>
         /// The price of the drink/entree/side
