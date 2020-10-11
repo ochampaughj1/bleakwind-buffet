@@ -20,6 +20,7 @@ using System.Windows.Shapes;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 using Flavor = BleakwindBuffet.Data.Enums.SodaFlavor;
+using BleakwindBuffet.Data;
 
 namespace POS_Milestone_1.Drinks
 {
@@ -29,9 +30,11 @@ namespace POS_Milestone_1.Drinks
     public partial class CustomizeSailorSoda : UserControl
     {
         /// <summary>
-        /// Temporary object made available to help change the size
+        /// 
         /// </summary>
-        private SailorSoda temp;
+        private SailorSoda currentItem = new SailorSoda();
+
+        private Order currentOrder;
 
         /// <summary>
         /// New Menu Select instance
@@ -42,12 +45,13 @@ namespace POS_Milestone_1.Drinks
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeSailorSoda(MenuSelect menuItem, SailorSoda ss)
+        public CustomizeSailorSoda(MenuSelect menuItem, SailorSoda ss, Order o)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = ss;
-            ss = temp;
+            currentItem = ss;
+            currentOrder = o;
         }
 
         /// <summary>
@@ -57,7 +61,23 @@ namespace POS_Milestone_1.Drinks
         /// <param name="e"></param>
         void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            ms.orderBorder.Child = ms.menu;
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
+            DataContext = currentOrder;
+            if (DataContext is Order order)
+            {
+                var itemBeingRemoved = currentItem;
+                order.Remove(itemBeingRemoved);
+            }
+        }
+
+        /// <summary>
+        /// Done Button Click Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void DoneButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
         }
 
         /// <summary>
@@ -96,7 +116,7 @@ namespace POS_Milestone_1.Drinks
                     default:
                         throw new NotImplementedException();
                 }
-                temp.Size = s;
+                currentItem.Size = s;
             }
         }
 
@@ -175,7 +195,7 @@ namespace POS_Milestone_1.Drinks
                     default:
                         throw new NotImplementedException();
                 }
-                temp.Flavor = f;
+                currentItem.Flavor = f;
             }
         }
     }

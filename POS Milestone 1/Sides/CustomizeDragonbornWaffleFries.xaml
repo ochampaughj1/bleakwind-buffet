@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <!--Button-->
-        <Button Name="doneButton" Grid.Column="4" Grid.Row="5" Content="Done"/>
+        <Button Name="doneButton" Click="DoneButtonClick" Grid.Column="4" Grid.Row="5" Content="Done"/>
         <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="5" Content="Cancel"/>
 
         <!--Labels-->
@@ -47,9 +47,9 @@
 
         <!--CheckBoxes-->
         <!--Size-->
-        <CheckBox Name="smallCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="2" Content="Small" Width="80" Height="20" IsChecked="True"/>
-        <CheckBox Name="mediumCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="3" Content="Medium" Width="80" Height="20" IsChecked="False"/>
-        <CheckBox Name="largeCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="4" Content="Large" Width="80" Height="20" IsChecked="False"/>
+        <CheckBox Name="smallCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="2" Content="Small" Width="80" Height="20"/>
+        <CheckBox Name="mediumCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="3" Content="Medium" Width="80" Height="20"/>
+        <CheckBox Name="largeCheckBox" Checked="checkBoxChecked" Grid.Column="0" Grid.Row="4" Content="Large" Width="80" Height="20"/>
 
     </Grid>
 </UserControl>

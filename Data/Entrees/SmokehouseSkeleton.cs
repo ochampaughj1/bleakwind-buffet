@@ -26,6 +26,14 @@ namespace BleakwindBuffet.Data.Entrees
         private bool pancake = true;
 
         /// <summary>
+        /// Gets the current name of the item
+        /// </summary>
+        public string Name
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
         /// Getters and setters for backing variables
         /// </summary>
         public bool SausageLink
@@ -37,6 +45,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     sausageLink = value;
                     OnPropertyChanged("SausageLink");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -49,6 +58,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     egg = value;
                     OnPropertyChanged("Egg");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -61,6 +71,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     hashBrowns = value;
                     OnPropertyChanged("HashBrowns");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -73,6 +84,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     pancake = value;
                     OnPropertyChanged("Pancake");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }

@@ -2,6 +2,7 @@
  * Class Name: CustomizeAretinoAppleJuice.cs
  * Purpose: Switches between screens based on buttons clicked
  */
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
-
 using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace POS_Milestone_1.Drinks
@@ -30,25 +30,28 @@ namespace POS_Milestone_1.Drinks
     public partial class CustomizeAretinoAppleJuice : UserControl
     {
         /// <summary>
-        /// Temporary object made available to help change the size
+        /// 
         /// </summary>
-        AretinoAppleJuice temp;
+        private AretinoAppleJuice currentItem = new AretinoAppleJuice();
 
         /// <summary>
         /// New Menu Select instance
         /// </summary>
         private MenuSelect ms = new MenuSelect();
 
+        private Order currentOrder;
+
         /// <summary>
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeAretinoAppleJuice(MenuSelect menuItem, AretinoAppleJuice aj)
+        public CustomizeAretinoAppleJuice(MenuSelect menuItem, AretinoAppleJuice aj, Order o)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = aj;
-            temp = aj;
+            currentItem = aj;
+            currentOrder = o;
         }
 
 
@@ -59,7 +62,23 @@ namespace POS_Milestone_1.Drinks
         /// <param name="e"></param>
         void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            ms.orderBorder.Child = ms.menu;
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
+            DataContext = currentOrder;
+            if (DataContext is Order order)
+            {
+                var itemBeingRemoved = currentItem;
+                order.Remove(itemBeingRemoved);
+            }
+        }
+
+        /// <summary>
+        /// Done Button Click Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void DoneButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
         }
 
         /// <summary>
@@ -98,8 +117,8 @@ namespace POS_Milestone_1.Drinks
                     default:
                         throw new NotImplementedException();
                 }
-                temp.Size = s;
-                DataContext = temp;
+                currentItem.Size = s;
+                DataContext = currentItem;
             }
         }
     }

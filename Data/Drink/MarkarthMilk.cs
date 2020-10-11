@@ -36,8 +36,17 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     ice = value;
                     OnPropertyChanged("Ice");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
+        }
+
+        /// <summary>
+        /// Gets the current name of the item
+        /// </summary>
+        public string Name
+        {
+            get { return this.ToString(); }
         }
 
         /// <summary>

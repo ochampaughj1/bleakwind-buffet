@@ -3,6 +3,7 @@
  * Purpose: Switches between screens based on buttons clicked
  */
 
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
@@ -29,9 +30,11 @@ namespace POS_Milestone_1.Sides
     public partial class CustomizeDragonbornWaffleFries : UserControl
     {
         /// <summary>
-        /// Temporary object made available to help change the size
+        /// 
         /// </summary>
-        DragonbornWaffleFries temp;
+        private DragonbornWaffleFries currentItem = new DragonbornWaffleFries();
+
+        private Order currentOrder;
 
         /// <summary>
         /// New Menu Select instance
@@ -42,12 +45,13 @@ namespace POS_Milestone_1.Sides
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeDragonbornWaffleFries(MenuSelect menuItem, DragonbornWaffleFries dwf)
+        public CustomizeDragonbornWaffleFries(MenuSelect menuItem, DragonbornWaffleFries dwf, Order o)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = dwf;
-            dwf = temp;
+            currentItem = dwf;
+            currentOrder = o;
         }
 
         /// <summary>
@@ -57,29 +61,24 @@ namespace POS_Milestone_1.Sides
         /// <param name="e"></param>
         void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            ms.orderBorder.Child = ms.menu;
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
+            DataContext = currentOrder;
+            if (DataContext is Order order)
+            {
+                var itemBeingRemoved = currentItem;
+                order.Remove(itemBeingRemoved);
+            }
         }
 
         /// <summary>
-        /// Small Check Box Click Event
+        /// Done Button Click Event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void SmallSizeChecked(object sender, RoutedEventArgs e) { mediumCheckBox.IsChecked = false; largeCheckBox.IsChecked = false; }
-
-        /// <summary>
-        /// Medium Check Box Click Event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void MediumSizeChecked(object sender, RoutedEventArgs e) { smallCheckBox.IsChecked = false; largeCheckBox.IsChecked = false; }
-
-        /// <summary>
-        /// Large Check Box Click Event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void LargeSizeChecked(object sender, RoutedEventArgs e) { smallCheckBox.IsChecked = false; mediumCheckBox.IsChecked = false; }
+        void DoneButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
+        }
 
         /// <summary>
         /// Check box event handler to make sure only one size is checked at a time.
@@ -117,7 +116,7 @@ namespace POS_Milestone_1.Sides
                     default:
                         throw new NotImplementedException();
                 }
-                temp.Size = s;
+                currentItem.Size = s;
             }
         }
     }

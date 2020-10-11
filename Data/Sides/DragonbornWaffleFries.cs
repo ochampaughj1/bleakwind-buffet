@@ -20,6 +20,14 @@ namespace BleakwindBuffet.Data.Sides
         private List<string> _instructions;
 
         /// <summary>
+        /// Gets the current name of the item
+        /// </summary>
+        public string Name
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
         /// Property to get and set the price of the side
         /// </summary>
         public override double Price

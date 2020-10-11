@@ -13,10 +13,10 @@
         </Grid.ColumnDefinitions>
         <!--Borders-->
         <Border Name="orderBorder" Width="570" BorderThickness="1" BorderBrush="Black" Margin="5,34,5,10">
-            <local:ButtonControlComponent/>
+            
         </Border>
         <Border Name="currentOrderBorder" BorderThickness="1" BorderBrush="Black" Grid.Column="1" Margin="10,34,10,10">
-            <local:CurrentOrderControlComponent/>
+            
         </Border>
 
 

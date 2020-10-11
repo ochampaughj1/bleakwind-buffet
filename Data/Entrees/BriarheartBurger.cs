@@ -11,7 +11,7 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class BriarheartBurger: Entree
+    public class BriarheartBurger: Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// List to store instructions on holding toppings.
@@ -28,6 +28,14 @@ namespace BleakwindBuffet.Data.Entrees
         private bool cheese = true;
 
         /// <summary>
+        /// Gets the current name of the item
+        /// </summary>
+        public string Name
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
         /// Getters and setters for backing variables
         /// </summary>
         public bool Bun
@@ -39,6 +47,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     bun = value;
                     OnPropertyChanged("Bun");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -51,6 +60,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     ketchup = value;
                     OnPropertyChanged("Ketchup");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -63,6 +73,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     mustard = value;
                     OnPropertyChanged("Mustard");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -75,6 +86,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     pickle = value;
                     OnPropertyChanged("Pickle");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -87,6 +99,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     cheese = value;
                     OnPropertyChanged("Cheese");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -110,7 +123,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// List property to get or set whether a topping is on the burger.
         /// </summary>
-        public override List<String> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -135,10 +148,8 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     _instructions.Add("Hold cheese");
                 }
-
                 return _instructions;
             }
-
         }
 
         /// <summary>

@@ -3,6 +3,7 @@
  * Purpose: Switches between screens based on buttons clicked
  */
 
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace POS_Milestone_1
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new Order();
         }
     }
 }

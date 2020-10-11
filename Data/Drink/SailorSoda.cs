@@ -30,6 +30,14 @@ namespace BleakwindBuffet.Data.Drinks
         private List<string> _instructions;
 
         /// <summary>
+        /// Gets the current name of the item
+        /// </summary>
+        public string Name
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
         /// Getter and setter for backing variable
         /// </summary>
         public bool Ice
@@ -41,6 +49,7 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     ice = value;
                     OnPropertyChanged("Ice");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -97,6 +106,8 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     flavor = value;
                     OnPropertyChanged("Flavor");
+                    OnPropertyChanged("SpecialInstructions");
+                    OnPropertyChanged("Name");
                 }
             }
         }

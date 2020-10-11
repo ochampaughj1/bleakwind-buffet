@@ -3,6 +3,7 @@
  * Purpose: Switches between screens based on buttons clicked
  */
 
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
@@ -31,15 +32,21 @@ namespace POS_Milestone_1.Entrees
         /// </summary>
         private MenuSelect ms = new MenuSelect();
 
+        private Order currentOrder;
+
+        private ThalmorTriple currentItem = new ThalmorTriple();
+
         /// <summary>
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeThalmorTriple(MenuSelect menuItem, ThalmorTriple tt)
+        public CustomizeThalmorTriple(MenuSelect menuItem, ThalmorTriple tt, Order o)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = tt;
+            currentItem = tt;
+            currentOrder = o;
         }
 
         /// <summary>
@@ -49,7 +56,23 @@ namespace POS_Milestone_1.Entrees
         /// <param name="e"></param>
         void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            ms.orderBorder.Child = ms.menu;
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
+            DataContext = currentOrder;
+            if (DataContext is Order order)
+            {
+                var itemBeingRemoved = currentItem;
+                order.Remove(itemBeingRemoved);
+            }
+        }
+
+        /// <summary>
+        /// Done Button Click Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void DoneButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
         }
     }
 }

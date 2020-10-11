@@ -17,10 +17,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using POS_Milestone_1.Drinks;
+using POS_Milestone_1.Entrees;
+using POS_Milestone_1.Sides;
 
 namespace POS_Milestone_1
 {
@@ -30,16 +34,33 @@ namespace POS_Milestone_1
     public partial class ButtonControlComponent : UserControl
     {
         /// <summary>
-        /// Event handler for selected items
+        /// PrivMenuSelect item 
         /// </summary>
-        public event EventHandler<SelectionEventHandler> SelectedItem;
+        private MenuSelect menu;
 
         /// <summary>
         /// Constructor for the class
         /// </summary>
-        public ButtonControlComponent()
+        public ButtonControlComponent(MenuSelect m)
         {
             InitializeComponent();
+            menu = m;
+        }
+
+        /// <summary>
+        /// Creates a new order and sets the data context
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void NewOrderClick(object sender, RoutedEventArgs e)
+        {
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            }
+            while (parent != null && !(parent is MainWindow)) ;
+            ((MainWindow)parent).DataContext = new Order();
         }
 
         /// <summary>
@@ -50,7 +71,11 @@ namespace POS_Milestone_1
         void BriarheartBurgerClick(object sender, RoutedEventArgs e)
         {
             BriarheartBurger bb = new BriarheartBurger();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = bb });
+            if(DataContext is Order temp)
+            {
+                temp.Add(bb);
+                menu.orderBorder.Child = new CustomizeBriarheartBurger(menu, bb, temp);
+            }
         }
 
         /// <summary>
@@ -61,7 +86,11 @@ namespace POS_Milestone_1
         void DoubleDraugrClick(object sender, RoutedEventArgs e)
         {
             DoubleDraugr dd = new DoubleDraugr();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = dd });
+            if (DataContext is Order temp)
+            {
+                temp.Add(dd);
+                menu.orderBorder.Child = new CustomizeDoubleDraugr(menu, dd, temp);
+            }
         }
 
         /// <summary>
@@ -72,7 +101,11 @@ namespace POS_Milestone_1
         void GardenOrcOmeletteClick(object sender, RoutedEventArgs e)
         {
             GardenOrcOmelette goo = new GardenOrcOmelette();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = goo });
+            if (DataContext is Order temp)
+            {
+                temp.Add(goo);
+                menu.orderBorder.Child = new CustomizeGardenOrcOmelette(menu, goo, temp);
+            }
         }
 
         /// <summary>
@@ -83,7 +116,11 @@ namespace POS_Milestone_1
         void PhillyPoacherClick(object sender, RoutedEventArgs e)
         {
             PhillyPoacher pp = new PhillyPoacher();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = pp });
+            if (DataContext is Order temp)
+            {
+                temp.Add(pp);
+                menu.orderBorder.Child = new CustomizePhillyPoacher(menu, pp, temp);
+            }
         }
 
         /// <summary>
@@ -94,7 +131,11 @@ namespace POS_Milestone_1
         void SmokehouseSkeletonClick(object sender, RoutedEventArgs e)
         {
             SmokehouseSkeleton sks = new SmokehouseSkeleton();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = sks });
+            if (DataContext is Order temp)
+            {
+                temp.Add(sks);
+                menu.orderBorder.Child = new CustomizeSmokehouseSkeleton(menu, sks, temp);
+            }
         }
 
         /// <summary>
@@ -105,7 +146,11 @@ namespace POS_Milestone_1
         void ThalmorTripleClick(object sender, RoutedEventArgs e)
         {
             ThalmorTriple tt = new ThalmorTriple();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = tt });
+            if (DataContext is Order temp)
+            {
+                temp.Add(tt);
+                menu.orderBorder.Child = new CustomizeThalmorTriple(menu, tt, temp);
+            }
         }
 
         /// <summary>
@@ -116,7 +161,11 @@ namespace POS_Milestone_1
         void ThugsTBoneClick(object sender, RoutedEventArgs e)
         {
             ThugsTBone ttb = new ThugsTBone();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = ttb });
+            if (DataContext is Order temp)
+            {
+                temp.Add(ttb);
+                menu.orderBorder.Child = new CustomizeThugsTBone(menu, ttb, temp);
+            }
         }
 
         /// <summary>
@@ -127,7 +176,11 @@ namespace POS_Milestone_1
         void AretinoAppleJuiceClick(object sender, RoutedEventArgs e)
         {
             AretinoAppleJuice aj = new AretinoAppleJuice();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = aj });
+            if (DataContext is Order temp)
+            {
+                temp.Add(aj);
+                menu.orderBorder.Child = new CustomizeAretinoAppleJuice(menu, aj, temp);
+            }
         }
 
         /// <summary>
@@ -138,7 +191,11 @@ namespace POS_Milestone_1
         void CandlehearthCoffeeClick(object sender, RoutedEventArgs e)
         {
             CandlehearthCoffee chc = new CandlehearthCoffee();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = chc });
+            if (DataContext is Order temp)
+            {
+                temp.Add(chc);
+                menu.orderBorder.Child = new CustomizeCandlehearthCoffee(menu, chc, temp);
+            }
         }
 
         /// <summary>
@@ -149,7 +206,11 @@ namespace POS_Milestone_1
         void MarkarthMilkClick(object sender, RoutedEventArgs e)
         {
             MarkarthMilk mm = new MarkarthMilk();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = mm });
+            if (DataContext is Order temp)
+            {
+                temp.Add(mm);
+                menu.orderBorder.Child = new CustomizeMarkarthMilk(menu, mm, temp);
+            }
         }
 
         /// <summary>
@@ -160,7 +221,11 @@ namespace POS_Milestone_1
         void SailorSodaClick(object sender, RoutedEventArgs e)
         {
             SailorSoda ss = new SailorSoda();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = ss });
+            if (DataContext is Order temp)
+            {
+                temp.Add(ss);
+                menu.orderBorder.Child = new CustomizeSailorSoda(menu, ss, temp);
+            }
         }
 
         /// <summary>
@@ -171,7 +236,11 @@ namespace POS_Milestone_1
         void WarriorWaterClick(object sender, RoutedEventArgs e)
         {
             WarriorWater ww = new WarriorWater();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = ww });
+            if (DataContext is Order temp)
+            {
+                temp.Add(ww);
+                menu.orderBorder.Child = new CustomizeWarriorWater(menu, ww, temp);
+            }
         }
 
         /// <summary>
@@ -182,7 +251,11 @@ namespace POS_Milestone_1
         void VokunSaladClick(object sender, RoutedEventArgs e)
         {
             VokunSalad vs = new VokunSalad();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = vs });
+            if (DataContext is Order temp)
+            {
+                temp.Add(vs);
+                menu.orderBorder.Child = new CustomizeVokunSalad(menu, vs, temp);
+            }
         }
 
         /// <summary>
@@ -193,7 +266,11 @@ namespace POS_Milestone_1
         void FriedMiraakClick(object sender, RoutedEventArgs e)
         {
             FriedMiraak fmc = new FriedMiraak();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = fmc });
+            if (DataContext is Order temp)
+            {
+                temp.Add(fmc);
+                menu.orderBorder.Child = new CustomizeFriedMiraak(menu, fmc, temp);
+            }
         }
 
         /// <summary>
@@ -204,7 +281,11 @@ namespace POS_Milestone_1
         void DragonbornWaffleFriesClick(object sender, RoutedEventArgs e)
         {
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = dwf });
+            if (DataContext is Order temp)
+            {
+                temp.Add(dwf);
+                menu.orderBorder.Child = new CustomizeDragonbornWaffleFries(menu, dwf, temp);
+            }
         }
 
         /// <summary>
@@ -215,7 +296,11 @@ namespace POS_Milestone_1
         void MadOtarGritsClick(object sender, RoutedEventArgs e)
         {
             MadOtarGrits mog = new MadOtarGrits();
-            SelectedItem?.Invoke(this, new SelectionEventHandler() { item = mog });
+            if (DataContext is Order temp)
+            {
+                temp.Add(mog);
+                menu.orderBorder.Child = new CustomizeMadOtarGrits(menu, mog, temp);
+            }
         }
     }
 }

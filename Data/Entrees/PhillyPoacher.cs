@@ -26,6 +26,14 @@ namespace BleakwindBuffet.Data.Entrees
         private bool roll = true;
 
         /// <summary>
+        /// Gets the current name of the item
+        /// </summary>
+        public string Name
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
         /// Getters and setters for backing variables
         /// </summary>
         public bool Sirloin
@@ -37,6 +45,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     sirloin = value;
                     OnPropertyChanged("Sirloin");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -49,6 +58,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     onion = value;
                     OnPropertyChanged("Onion");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -61,6 +71,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     roll = value;
                     OnPropertyChanged("Roll");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }

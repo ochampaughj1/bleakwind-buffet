@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace POS_Milestone_1.Entrees
 {
@@ -31,15 +32,21 @@ namespace POS_Milestone_1.Entrees
         /// </summary>
         private MenuSelect ms = new MenuSelect();
 
+        private Order currentOrder;
+
+        private BriarheartBurger currentBurger = new BriarheartBurger();
+
         /// <summary>
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeBriarheartBurger(MenuSelect menuItem, BriarheartBurger bb)
+        public CustomizeBriarheartBurger(MenuSelect menuItem, BriarheartBurger bb, Order o)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = bb;
+            currentOrder = o;
+            currentBurger = bb;
         }
 
         /// <summary>
@@ -49,7 +56,23 @@ namespace POS_Milestone_1.Entrees
         /// <param name="e"></param>
         void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            ms.orderBorder.Child = ms.menu;
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
+            DataContext = currentOrder;
+            if (DataContext is Order order)
+            {
+                var itemBeingRemoved = currentBurger;
+                order.Remove(itemBeingRemoved);
+            }
+        }
+
+        /// <summary>
+        /// Done Button Click Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void DoneButtonClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ButtonControlComponent(ms);
         }
     }
 }

@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <!--Button-->
-        <Button Name="doneButton" Grid.Column="4" Grid.Row="5" Content="Done"/>
+        <Button Name="doneButton" Click="DoneButtonClick" Grid.Column="4" Grid.Row="5" Content="Done"/>
         <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="5" Content="Cancel"/>
 
 

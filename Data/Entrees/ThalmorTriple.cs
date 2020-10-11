@@ -33,6 +33,14 @@ namespace BleakwindBuffet.Data.Entrees
         private bool egg = true;
 
         /// <summary>
+        /// Gets the current name of the item
+        /// </summary>
+        public string Name
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
         /// Getters and setters for backing variables
         /// </summary>
         public bool Bun
@@ -44,6 +52,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     bun = value;
                     OnPropertyChanged("Bun");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -56,6 +65,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     ketchup = value;
                     OnPropertyChanged("Ketchup");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -68,6 +78,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     mustard = value;
                     OnPropertyChanged("Mustard");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -80,6 +91,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     pickle = value;
                     OnPropertyChanged("Pickle");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -92,6 +104,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     cheese = value;
                     OnPropertyChanged("Cheese");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -104,6 +117,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     tomato = value;
                     OnPropertyChanged("Tomato");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -116,6 +130,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     lettuce = value;
                     OnPropertyChanged("Lettuce");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -128,6 +143,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     mayo = value;
                     OnPropertyChanged("Mayo");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -140,6 +156,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     bacon = value;
                     OnPropertyChanged("Bacon");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -152,6 +169,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     egg = value;
                     OnPropertyChanged("Egg");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }

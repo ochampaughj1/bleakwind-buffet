@@ -35,7 +35,7 @@
         <Label Grid.Column="4" Grid.Row="2" Content="843" Width="55" Height="30"/>
 
         <!--Button-->
-        <Button Name="doneButton" Grid.Column="4" Grid.Row="9" Content="Done"/>
+        <Button Name="doneButton" Click="DoneButtonClick" Grid.Column="4" Grid.Row="9" Content="Done"/>
         <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="9" Content="Cancel"/>
 
         <!--CheckBoxes-->

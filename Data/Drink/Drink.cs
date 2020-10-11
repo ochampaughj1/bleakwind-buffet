@@ -53,6 +53,8 @@ namespace BleakwindBuffet.Data.Drinks
                     OnPropertyChanged("Size");
                     OnPropertyChanged("Price");
                     OnPropertyChanged("Calories");
+                    OnPropertyChanged("SpecialInstructions");
+                    OnPropertyChanged("Name");
                 }
             }
         }

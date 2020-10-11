@@ -27,6 +27,14 @@ namespace BleakwindBuffet.Data.Entrees
         private bool cheddar = true;
 
         /// <summary>
+        /// Gets the current name of the item
+        /// </summary>
+        public string Name
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
         /// Getters and setters for backing variables
         /// </summary>
         public bool Broccoli
@@ -38,6 +46,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     broccoli = value;
                     OnPropertyChanged("Broccoli");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -50,6 +59,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     mushrooms = value;
                     OnPropertyChanged("Mushrooms");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -62,6 +72,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     tomato = value;
                     OnPropertyChanged("Tomato");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -74,6 +85,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     cheddar = value;
                     OnPropertyChanged("Cheddar");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
