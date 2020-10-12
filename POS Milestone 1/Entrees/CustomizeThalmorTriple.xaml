@@ -32,6 +32,7 @@
         <!--Button-->
         <Button Name="doneButton" Click="DoneButtonClick" Grid.Column="4" Grid.Row="11" Content="Done"/>
         <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="11" Content="Cancel"/>
+        <Button x:Name="returnToOrderbutton" Click="ReturnToOrderClick" Grid.Column="2" Grid.Row="11" Content="Return To Combo"/>
 
         <!--Labels-->
         <Label Grid.Column="2" Grid.Row="0" Content="Customize Thalmor Triple: " Width="179" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>

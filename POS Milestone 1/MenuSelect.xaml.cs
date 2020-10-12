@@ -60,30 +60,31 @@ namespace POS_Milestone_1
         {
             if(DataContext is Order order)
             {
+                Combo temp = new Combo(null, null, null);
                 if (e.item.GetType().IsSubclassOf(typeof(BleakwindBuffet.Data.Entrees.Entree)))
                 {
-                    if (e.item is BriarheartBurger) orderBorder.Child = new CustomizeBriarheartBurger(this, new BriarheartBurger(), order);
-                    else if (e.item is DoubleDraugr) orderBorder.Child = new CustomizeDoubleDraugr(this, new DoubleDraugr(), order);
-                    else if (e.item is GardenOrcOmelette) orderBorder.Child = new CustomizeGardenOrcOmelette(this, new GardenOrcOmelette(), order);
-                    else if (e.item is PhillyPoacher) orderBorder.Child = new CustomizePhillyPoacher(this, new PhillyPoacher(), order);
-                    else if (e.item is SmokehouseSkeleton) orderBorder.Child = new CustomizeSmokehouseSkeleton(this, new SmokehouseSkeleton(), order);
-                    else if (e.item is ThalmorTriple) orderBorder.Child = new CustomizeThalmorTriple(this, new ThalmorTriple(), order);
-                    else if (e.item is ThugsTBone) orderBorder.Child = new CustomizeThugsTBone(this, new ThugsTBone(), order);
+                    if (e.item is BriarheartBurger) orderBorder.Child = new CustomizeBriarheartBurger(this, new BriarheartBurger(), order, temp);
+                    else if (e.item is DoubleDraugr) orderBorder.Child = new CustomizeDoubleDraugr(this, new DoubleDraugr(), order, temp);
+                    else if (e.item is GardenOrcOmelette) orderBorder.Child = new CustomizeGardenOrcOmelette(this, new GardenOrcOmelette(), order, temp);
+                    else if (e.item is PhillyPoacher) orderBorder.Child = new CustomizePhillyPoacher(this, new PhillyPoacher(), order, temp);
+                    else if (e.item is SmokehouseSkeleton) orderBorder.Child = new CustomizeSmokehouseSkeleton(this, new SmokehouseSkeleton(), order, temp);
+                    else if (e.item is ThalmorTriple) orderBorder.Child = new CustomizeThalmorTriple(this, new ThalmorTriple(), order, temp);
+                    else if (e.item is ThugsTBone) orderBorder.Child = new CustomizeThugsTBone(this, new ThugsTBone(), order, temp);
                 }
                 else if(e.item.GetType().IsSubclassOf(typeof(BleakwindBuffet.Data.Drinks.Drink)))
                 {
-                    if (e.item is AretinoAppleJuice) orderBorder.Child = new CustomizeAretinoAppleJuice(this, new AretinoAppleJuice(), order);
-                    else if (e.item is CandlehearthCoffee) orderBorder.Child = new CustomizeCandlehearthCoffee(this, new CandlehearthCoffee(), order);
-                    else if (e.item is MarkarthMilk) orderBorder.Child = new CustomizeMarkarthMilk(this, new MarkarthMilk(), order);
-                    else if (e.item is SailorSoda) orderBorder.Child = new CustomizeSailorSoda(this, new SailorSoda(), order);
-                    else if (e.item is WarriorWater) orderBorder.Child = new CustomizeWarriorWater(this, new WarriorWater(), order);
+                    if (e.item is AretinoAppleJuice) orderBorder.Child = new CustomizeAretinoAppleJuice(this, new AretinoAppleJuice(), order, temp);
+                    else if (e.item is CandlehearthCoffee) orderBorder.Child = new CustomizeCandlehearthCoffee(this, new CandlehearthCoffee(), order, temp);
+                    else if (e.item is MarkarthMilk) orderBorder.Child = new CustomizeMarkarthMilk(this, new MarkarthMilk(), order, temp);
+                    else if (e.item is SailorSoda) orderBorder.Child = new CustomizeSailorSoda(this, new SailorSoda(), order, temp);
+                    else if (e.item is WarriorWater) orderBorder.Child = new CustomizeWarriorWater(this, new WarriorWater(), order, temp);
                 }
                 else if (e.item.GetType().IsSubclassOf(typeof(BleakwindBuffet.Data.Sides.Side)))
                 {
-                    if (e.item is VokunSalad) orderBorder.Child = new CustomizeVokunSalad(this, new VokunSalad(), order);
-                    else if (e.item is FriedMiraak) orderBorder.Child = new CustomizeFriedMiraak(this, new FriedMiraak(), order);
-                    else if (e.item is DragonbornWaffleFries) orderBorder.Child = new CustomizeDragonbornWaffleFries(this, new DragonbornWaffleFries(), order);
-                    else if (e.item is MadOtarGrits) orderBorder.Child = new CustomizeMadOtarGrits(this, new MadOtarGrits(), order);
+                    if (e.item is VokunSalad) orderBorder.Child = new CustomizeVokunSalad(this, new VokunSalad(), order, temp);
+                    else if (e.item is FriedMiraak) orderBorder.Child = new CustomizeFriedMiraak(this, new FriedMiraak(), order, temp);
+                    else if (e.item is DragonbornWaffleFries) orderBorder.Child = new CustomizeDragonbornWaffleFries(this, new DragonbornWaffleFries(), order, temp);
+                    else if (e.item is MadOtarGrits) orderBorder.Child = new CustomizeMadOtarGrits(this, new MadOtarGrits(), order, temp);
                 }
             }
             orderBorder.DataContext = e.item;

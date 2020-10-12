@@ -19,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using POS_Milestone_1.ComboControlComponents;
 
 namespace POS_Milestone_1.Entrees
 {
@@ -35,18 +36,25 @@ namespace POS_Milestone_1.Entrees
         private Order currentOrder;
 
         private SmokehouseSkeleton currentItem = new SmokehouseSkeleton();
+        private Combo currentCombo;
 
         /// <summary>
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeSmokehouseSkeleton(MenuSelect menuItem, SmokehouseSkeleton sks, Order o)
+        public CustomizeSmokehouseSkeleton(MenuSelect menuItem, SmokehouseSkeleton sks, Order o, Combo c)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = sks;
             currentItem = sks;
             currentOrder = o;
+            currentCombo = c;
+        }
+
+        void ReturnToOrderClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);
         }
 
         /// <summary>

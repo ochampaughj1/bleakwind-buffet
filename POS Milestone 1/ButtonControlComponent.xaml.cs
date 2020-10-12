@@ -22,6 +22,7 @@ using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using POS_Milestone_1.ComboControlComponents;
 using POS_Milestone_1.Drinks;
 using POS_Milestone_1.Entrees;
 using POS_Milestone_1.Sides;
@@ -63,6 +64,16 @@ namespace POS_Milestone_1
             ((MainWindow)parent).DataContext = new Order();
         }
 
+        void AddComboToOrderClick(object sender, RoutedEventArgs e)
+        {
+            Combo combo = new Combo(new BriarheartBurger(), new SailorSoda(), new DragonbornWaffleFries());
+            if(DataContext is Order order)
+            {
+                order.Add(combo);
+                menu.orderBorder.Child = new ComboControl(menu, combo, order);
+            }
+        }
+
         /// <summary>
         /// Briarheart Burger Click Event
         /// </summary>
@@ -71,10 +82,11 @@ namespace POS_Milestone_1
         void BriarheartBurgerClick(object sender, RoutedEventArgs e)
         {
             BriarheartBurger bb = new BriarheartBurger();
-            if(DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if(DataContext is Order order)
             {
-                temp.Add(bb);
-                menu.orderBorder.Child = new CustomizeBriarheartBurger(menu, bb, temp);
+                order.Add(bb);
+                menu.orderBorder.Child = new CustomizeBriarheartBurger(menu, bb, order, temp);
             }
         }
 
@@ -86,10 +98,11 @@ namespace POS_Milestone_1
         void DoubleDraugrClick(object sender, RoutedEventArgs e)
         {
             DoubleDraugr dd = new DoubleDraugr();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(dd);
-                menu.orderBorder.Child = new CustomizeDoubleDraugr(menu, dd, temp);
+                order.Add(dd);
+                menu.orderBorder.Child = new CustomizeDoubleDraugr(menu, dd, order, temp);
             }
         }
 
@@ -101,10 +114,11 @@ namespace POS_Milestone_1
         void GardenOrcOmeletteClick(object sender, RoutedEventArgs e)
         {
             GardenOrcOmelette goo = new GardenOrcOmelette();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(goo);
-                menu.orderBorder.Child = new CustomizeGardenOrcOmelette(menu, goo, temp);
+                order.Add(goo);
+                menu.orderBorder.Child = new CustomizeGardenOrcOmelette(menu, goo, order, temp);
             }
         }
 
@@ -116,10 +130,11 @@ namespace POS_Milestone_1
         void PhillyPoacherClick(object sender, RoutedEventArgs e)
         {
             PhillyPoacher pp = new PhillyPoacher();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(pp);
-                menu.orderBorder.Child = new CustomizePhillyPoacher(menu, pp, temp);
+                order.Add(pp);
+                menu.orderBorder.Child = new CustomizePhillyPoacher(menu, pp, order, temp);
             }
         }
 
@@ -131,10 +146,11 @@ namespace POS_Milestone_1
         void SmokehouseSkeletonClick(object sender, RoutedEventArgs e)
         {
             SmokehouseSkeleton sks = new SmokehouseSkeleton();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(sks);
-                menu.orderBorder.Child = new CustomizeSmokehouseSkeleton(menu, sks, temp);
+                order.Add(sks);
+                menu.orderBorder.Child = new CustomizeSmokehouseSkeleton(menu, sks, order, temp);
             }
         }
 
@@ -146,10 +162,11 @@ namespace POS_Milestone_1
         void ThalmorTripleClick(object sender, RoutedEventArgs e)
         {
             ThalmorTriple tt = new ThalmorTriple();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(tt);
-                menu.orderBorder.Child = new CustomizeThalmorTriple(menu, tt, temp);
+                order.Add(tt);
+                menu.orderBorder.Child = new CustomizeThalmorTriple(menu, tt, order, temp);
             }
         }
 
@@ -161,10 +178,11 @@ namespace POS_Milestone_1
         void ThugsTBoneClick(object sender, RoutedEventArgs e)
         {
             ThugsTBone ttb = new ThugsTBone();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(ttb);
-                menu.orderBorder.Child = new CustomizeThugsTBone(menu, ttb, temp);
+                order.Add(ttb);
+                menu.orderBorder.Child = new CustomizeThugsTBone(menu, ttb, order, temp);
             }
         }
 
@@ -176,10 +194,11 @@ namespace POS_Milestone_1
         void AretinoAppleJuiceClick(object sender, RoutedEventArgs e)
         {
             AretinoAppleJuice aj = new AretinoAppleJuice();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(aj);
-                menu.orderBorder.Child = new CustomizeAretinoAppleJuice(menu, aj, temp);
+                order.Add(aj);
+                menu.orderBorder.Child = new CustomizeAretinoAppleJuice(menu, aj, order, temp);
             }
         }
 
@@ -191,10 +210,11 @@ namespace POS_Milestone_1
         void CandlehearthCoffeeClick(object sender, RoutedEventArgs e)
         {
             CandlehearthCoffee chc = new CandlehearthCoffee();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(chc);
-                menu.orderBorder.Child = new CustomizeCandlehearthCoffee(menu, chc, temp);
+                order.Add(chc);
+                menu.orderBorder.Child = new CustomizeCandlehearthCoffee(menu, chc, order, temp);
             }
         }
 
@@ -206,10 +226,11 @@ namespace POS_Milestone_1
         void MarkarthMilkClick(object sender, RoutedEventArgs e)
         {
             MarkarthMilk mm = new MarkarthMilk();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(mm);
-                menu.orderBorder.Child = new CustomizeMarkarthMilk(menu, mm, temp);
+                order.Add(mm);
+                menu.orderBorder.Child = new CustomizeMarkarthMilk(menu, mm, order, temp);
             }
         }
 
@@ -221,10 +242,11 @@ namespace POS_Milestone_1
         void SailorSodaClick(object sender, RoutedEventArgs e)
         {
             SailorSoda ss = new SailorSoda();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(ss);
-                menu.orderBorder.Child = new CustomizeSailorSoda(menu, ss, temp);
+                order.Add(ss);
+                menu.orderBorder.Child = new CustomizeSailorSoda(menu, ss, order, temp);
             }
         }
 
@@ -236,10 +258,11 @@ namespace POS_Milestone_1
         void WarriorWaterClick(object sender, RoutedEventArgs e)
         {
             WarriorWater ww = new WarriorWater();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(ww);
-                menu.orderBorder.Child = new CustomizeWarriorWater(menu, ww, temp);
+                order.Add(ww);
+                menu.orderBorder.Child = new CustomizeWarriorWater(menu, ww, order, temp);
             }
         }
 
@@ -251,10 +274,11 @@ namespace POS_Milestone_1
         void VokunSaladClick(object sender, RoutedEventArgs e)
         {
             VokunSalad vs = new VokunSalad();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(vs);
-                menu.orderBorder.Child = new CustomizeVokunSalad(menu, vs, temp);
+                order.Add(vs);
+                menu.orderBorder.Child = new CustomizeVokunSalad(menu, vs, order, temp);
             }
         }
 
@@ -266,10 +290,11 @@ namespace POS_Milestone_1
         void FriedMiraakClick(object sender, RoutedEventArgs e)
         {
             FriedMiraak fmc = new FriedMiraak();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(fmc);
-                menu.orderBorder.Child = new CustomizeFriedMiraak(menu, fmc, temp);
+                order.Add(fmc);
+                menu.orderBorder.Child = new CustomizeFriedMiraak(menu, fmc, order, temp);
             }
         }
 
@@ -281,10 +306,11 @@ namespace POS_Milestone_1
         void DragonbornWaffleFriesClick(object sender, RoutedEventArgs e)
         {
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(dwf);
-                menu.orderBorder.Child = new CustomizeDragonbornWaffleFries(menu, dwf, temp);
+                order.Add(dwf);
+                menu.orderBorder.Child = new CustomizeDragonbornWaffleFries(menu, dwf, order, temp);
             }
         }
 
@@ -296,10 +322,11 @@ namespace POS_Milestone_1
         void MadOtarGritsClick(object sender, RoutedEventArgs e)
         {
             MadOtarGrits mog = new MadOtarGrits();
-            if (DataContext is Order temp)
+            Combo temp = new Combo(null, null, null);
+            if (DataContext is Order order)
             {
-                temp.Add(mog);
-                menu.orderBorder.Child = new CustomizeMadOtarGrits(menu, mog, temp);
+                order.Add(mog);
+                menu.orderBorder.Child = new CustomizeMadOtarGrits(menu, mog, order, temp);
             }
         }
     }

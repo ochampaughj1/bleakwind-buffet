@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using POS_Milestone_1.ComboControlComponents;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
@@ -32,7 +33,7 @@ namespace POS_Milestone_1.Drinks
         /// 
         /// </summary>
         private CandlehearthCoffee currentItem = new CandlehearthCoffee();
-
+        private Combo currentCombo;
         private Order currentOrder;
 
         /// <summary>
@@ -44,13 +45,19 @@ namespace POS_Milestone_1.Drinks
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeCandlehearthCoffee(MenuSelect menuItem, CandlehearthCoffee chc, Order o)
+        public CustomizeCandlehearthCoffee(MenuSelect menuItem, CandlehearthCoffee chc, Order o, Combo c)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = chc;
             currentItem = chc;
             currentOrder = o;
+            currentCombo = c;
+        }
+
+        void ReturnToOrderClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);
         }
 
 

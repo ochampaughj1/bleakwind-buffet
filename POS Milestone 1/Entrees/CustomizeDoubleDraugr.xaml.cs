@@ -19,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using POS_Milestone_1.ComboControlComponents;
 
 namespace POS_Milestone_1.Entrees
 {
@@ -36,17 +37,26 @@ namespace POS_Milestone_1.Entrees
 
         private DoubleDraugr currentItem = new DoubleDraugr();
 
+        private Combo currentCombo;
+
+
         /// <summary>
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeDoubleDraugr(MenuSelect menuItem, DoubleDraugr dd, Order o)
+        public CustomizeDoubleDraugr(MenuSelect menuItem, DoubleDraugr dd, Order o, Combo c)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = dd;
             currentItem = dd;
             currentOrder = o;
+            currentCombo = c;
+        }
+
+        void ReturnToOrderClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);
         }
 
         /// <summary>

@@ -58,6 +58,18 @@
     <Compile Include="ButtonControlComponent.xaml.cs">
       <DependentUpon>ButtonControlComponent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ComboControlComponents\ComboControl.xaml.cs">
+      <DependentUpon>ComboControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComboControlComponents\DrinkComboControlComponent.xaml.cs">
+      <DependentUpon>DrinkComboControlComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComboControlComponents\EntreeControl.xaml.cs">
+      <DependentUpon>EntreeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComboControlComponents\SideComboControlComponent.xaml.cs">
+      <DependentUpon>SideComboControlComponent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CurrentOrderControlComponent.xaml.cs">
       <DependentUpon>CurrentOrderControlComponent.xaml</DependentUpon>
     </Compile>
@@ -114,6 +126,22 @@
       <DependentUpon>CustomizeVokunSalad.xaml</DependentUpon>
     </Compile>
     <Page Include="ButtonControlComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComboControlComponents\ComboControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComboControlComponents\DrinkComboControlComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComboControlComponents\EntreeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComboControlComponents\SideComboControlComponent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

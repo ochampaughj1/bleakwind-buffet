@@ -35,9 +35,8 @@
                 <DataTemplate>
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Path=Name}"/>
-                            <TextBlock Text="  $"/>
-                            <TextBlock Name="currentPriceTextBock" HorizontalAlignment="Right" Text="{Binding Path=Price}"/>
+                            <TextBlock FontWeight="Bold" Text="{Binding Path=Name}"/>
+                            <TextBlock Text=": "/>
                         </StackPanel>
                         <StackPanel>
                             <ListView Name="specialInstructionsTextBlock" ItemsSource="{Binding Path=SpecialInstructions}" >
@@ -47,6 +46,10 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Price: $"/>
+                                <TextBlock Name="currentPriceTextBlock" HorizontalAlignment="Right" Text="{Binding Path=Price}"/>
+                            </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Calories: "/>
                                 <TextBlock Text="{Binding Path=Calories}"/>

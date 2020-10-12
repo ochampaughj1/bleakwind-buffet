@@ -53,5 +53,6 @@
         
         <!--Finish/Pay Button-->
         <Button Name ="NewOrder" Click="NewOrderClick" Grid.Column="2" Grid.Row="8" Margin="2" Content="NewOrder"/>
+        <Button Name="AddComboButton" Click="AddComboToOrderClick" Grid.Row="8" Grid.Column="1" Margin="2" Content="Add Combo"/>
     </Grid>
 </UserControl>

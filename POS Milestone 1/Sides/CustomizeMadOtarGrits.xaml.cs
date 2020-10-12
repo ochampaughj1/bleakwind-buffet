@@ -19,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using POS_Milestone_1.ComboControlComponents;
 
 using Size = BleakwindBuffet.Data.Enums.Size;
 
@@ -33,7 +34,7 @@ namespace POS_Milestone_1.Sides
         /// 
         /// </summary>
         private MadOtarGrits currentItem = new MadOtarGrits();
-
+        private Combo currentCombo;
         private Order currentOrder;
 
         /// <summary>
@@ -45,13 +46,19 @@ namespace POS_Milestone_1.Sides
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeMadOtarGrits(MenuSelect menuItem, MadOtarGrits mog, Order o)
+        public CustomizeMadOtarGrits(MenuSelect menuItem, MadOtarGrits mog, Order o, Combo c)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = mog;
             currentItem = mog;
             currentOrder = o;
+            currentCombo = c;
+        }
+
+        void ReturnToOrderClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);
         }
 
         /// <summary>

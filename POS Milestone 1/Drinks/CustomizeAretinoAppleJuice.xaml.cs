@@ -21,6 +21,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
 using Size = BleakwindBuffet.Data.Enums.Size;
+using POS_Milestone_1.ComboControlComponents;
 
 namespace POS_Milestone_1.Drinks
 {
@@ -38,20 +39,26 @@ namespace POS_Milestone_1.Drinks
         /// New Menu Select instance
         /// </summary>
         private MenuSelect ms = new MenuSelect();
-
+        private Combo currentCombo;
         private Order currentOrder;
 
         /// <summary>
         /// Constuctor to initialize Menu Select item
         /// </summary>
         /// <param name="menuItem">Menu Item being passed into this class</param>
-        public CustomizeAretinoAppleJuice(MenuSelect menuItem, AretinoAppleJuice aj, Order o)
+        public CustomizeAretinoAppleJuice(MenuSelect menuItem, AretinoAppleJuice aj, Order o, Combo c)
         {
             InitializeComponent();
             ms = menuItem;
             DataContext = aj;
             currentItem = aj;
             currentOrder = o;
+            currentCombo = c;
+        }
+
+        void ReturnToOrderClick(object sender, RoutedEventArgs e)
+        {
+            ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);
         }
 
 

@@ -37,6 +37,7 @@
         <!--Button-->
         <Button Name="doneButton" Click="DoneButtonClick" Grid.Column="4" Grid.Row="9" Content="Done"/>
         <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="9" Content="Cancel"/>
+        <Button x:Name="returnToOrderbutton" Click="ReturnToOrderClick" Grid.Column="2" Grid.Row="9" Content="Return To Combo"/>
 
         <!--CheckBoxes-->
         <CheckBox x:Name="bunCheckBox" IsChecked="{Binding Path= Bun}" Grid.Column="0" Grid.Row="1" Content="Bun" Width="80" Height="20" />

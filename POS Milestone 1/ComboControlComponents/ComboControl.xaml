@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="POS_Milestone_1.ComboControlComponents.ComboControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:POS_Milestone_1.ComboControlComponents"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--Labels-->
+        <Label Name="addToOrderLabel" Grid.ColumnSpan="2"  Content="Add To Combo:" Width="96" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+        <!--Combo Control Buttons-->
+        <Button x:Name="ChangeEntreeButton" Click="ChangeEntreeControlClick" Grid.Row="2" Margin="5"  Content="Change Entree"/>
+        <Button x:Name="ChangeDrinkButton" Click="ChangeDrinkControlClick" Grid.Row="3" Margin="5"  Content="Change Drink"/>
+        <Button x:Name="ChangeSideButton" Click="ChangeSideControlClick" Grid.Row="4" Margin="5"  Content="Change Side"/>
+        <Button x:Name="Done" Click="DoneButtonClick" Grid.Row="5" Margin="5" Content="Done"/>
+        <Button x:Name="Cancel" Click="CancelButtonClick" Grid.Row="6" Margin="5" Content="Cancel"/>
+    </Grid>
+</UserControl>

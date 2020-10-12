@@ -26,6 +26,7 @@
         <!--Button-->
         <Button Name="doneButton" Click="DoneButtonClick" Grid.Column="4" Grid.Row="5" Content="Done"/>
         <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="5" Content="Cancel"/>
+        <Button x:Name="returnToOrderbutton" Click="ReturnToOrderClick" Grid.Column="2" Grid.Row="5" Content="Return To Combo"/>
 
         <!--Labels-->
         <Label Grid.Column="2" Content="Customize Fried Miraak: " Width="192" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
