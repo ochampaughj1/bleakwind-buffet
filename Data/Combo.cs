@@ -94,7 +94,7 @@ namespace BleakwindBuffet.Data
                     if (drink != null) drink.PropertyChanged -= ItemPropertyChangedListener;
                     drink = value;
                     drink.PropertyChanged += ItemPropertyChangedListener;
-                    OnPropertyChanged("Entree");
+                    OnPropertyChanged("Drink");
                     OnPropertyChanged("Price");
                     OnPropertyChanged("Calories");
                     OnPropertyChanged("SpecialInstructions");
@@ -118,7 +118,7 @@ namespace BleakwindBuffet.Data
                     if (side != null) side.PropertyChanged -= ItemPropertyChangedListener;
                     side = value;
                     side.PropertyChanged += ItemPropertyChangedListener;
-                    OnPropertyChanged("Entree");
+                    OnPropertyChanged("Side");
                     OnPropertyChanged("Price");
                     OnPropertyChanged("Calories");
                     OnPropertyChanged("SpecialInstructions");

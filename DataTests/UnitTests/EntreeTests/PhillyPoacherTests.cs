@@ -152,5 +152,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             PhillyPoacher p = new PhillyPoacher();
             Assert.Equal("Philly Poacher", p.ToString());
         }
+
+        [Fact]
+        public void ShouldReturnCorrectName()
+        {
+            PhillyPoacher p = new PhillyPoacher();
+            Assert.Equal("Philly Poacher", p.Name);
+        }
     }
 }

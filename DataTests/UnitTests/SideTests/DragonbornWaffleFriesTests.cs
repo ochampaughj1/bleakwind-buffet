@@ -19,6 +19,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.IsAssignableFrom<Side>(dwf);
         }
 
+
         [Fact]
         public void ShouldBeSmallByDefault()
         {
@@ -118,6 +119,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
             dwf.Size = size;
             Assert.Equal(name, dwf.ToString());
+        }
+
+        [Theory]
+        [InlineData(Size.Small, "Small Dragonborn Waffle Fries")]
+        [InlineData(Size.Medium, "Medium Dragonborn Waffle Fries")]
+        [InlineData(Size.Large, "Large Dragonborn Waffle Fries")]
+        public void ShouldReturnCorrectName(Size size, string name)
+        {
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            dwf.Size = size;
+            Assert.Equal(name, dwf.Name);
         }
     }
 }

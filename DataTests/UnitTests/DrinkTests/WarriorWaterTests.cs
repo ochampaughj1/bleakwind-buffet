@@ -206,5 +206,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             w.Size = size;
             Assert.Equal(name, w.ToString());
         }
+
+        [Theory]
+        [InlineData(Size.Small, "Small Warrior Water")]
+        [InlineData(Size.Medium, "Medium Warrior Water")]
+        [InlineData(Size.Large, "Large Warrior Water")]
+        public void ShouldReturnCorrectNameBasedOnSize(Size size, string name)
+        {
+            WarriorWater w = new WarriorWater();
+            w.Size = size;
+            Assert.Equal(name, w.Name);
+        }
     }
 }

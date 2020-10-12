@@ -119,5 +119,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             fm.Size = size;
             Assert.Equal(name, fm.ToString());
         }
+
+        [Theory]
+        [InlineData(Size.Small, "Small Fried Miraak")]
+        [InlineData(Size.Medium, "Medium Fried Miraak")]
+        [InlineData(Size.Large, "Large Fried Miraak")]
+        public void ShouldReturnCorrectName(Size size, string name)
+        {
+            FriedMiraak fm = new FriedMiraak();
+            fm.Size = size;
+            Assert.Equal(name, fm.Name);
+        }
     }
 }

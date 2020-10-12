@@ -155,5 +155,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             aj.Size = size;
             Assert.Equal(name, aj.ToString());
         }
+
+        [Theory]
+        [InlineData(Size.Small, "Small Aretino Apple Juice")]
+        [InlineData(Size.Medium, "Medium Aretino Apple Juice")]
+        [InlineData(Size.Large, "Large Aretino Apple Juice")]
+        public void ShouldReturnCorrectNameBasedOnSize(Size size, string name)
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            aj.Size = size;
+            Assert.Equal(name, aj.Name);
+        }
     }
 }

@@ -155,5 +155,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             m.Size = size;
             Assert.Equal(name, m.ToString());
         }
+
+        [Theory]
+        [InlineData(Size.Small, "Small Markarth Milk")]
+        [InlineData(Size.Medium, "Medium Markarth Milk")]
+        [InlineData(Size.Large, "Large Markarth Milk")]
+        public void ShouldReturnCorrectNameBasedOnSize(Size size, string name)
+        {
+            MarkarthMilk m = new MarkarthMilk();
+            m.Size = size;
+            Assert.Equal(name, m.Name);
+        }
     }
 }

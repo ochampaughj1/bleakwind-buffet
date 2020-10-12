@@ -39,7 +39,7 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// List of all IOrderItems within the order
         /// </summary>
-        List<IOrderItem> order = new List<IOrderItem>();
+        public List<IOrderItem> order = new List<IOrderItem>();
 
         /// <summary>
         /// Backing variable with the initial order number

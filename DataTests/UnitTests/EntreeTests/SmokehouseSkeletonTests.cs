@@ -186,5 +186,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             SmokehouseSkeleton sk = new SmokehouseSkeleton();
             Assert.Equal("Smokehouse Skeleton", sk.ToString());
         }
+
+        [Fact]
+        public void ShouldReturnCorrectName()
+        {
+            SmokehouseSkeleton sk = new SmokehouseSkeleton();
+            Assert.Equal("Smokehouse Skeleton", sk.Name);
+        }
     }
 }
