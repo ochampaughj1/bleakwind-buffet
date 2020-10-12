@@ -29,21 +29,21 @@ namespace POS_Milestone_1.Entrees
     public partial class CustomizeDoubleDraugr : UserControl
     {
         /// <summary>
-        /// New Menu Select instance
+        /// Backing variables for current drink, MenuSelect item, the potential current combo, and the current order
         /// </summary>
-        private MenuSelect ms = new MenuSelect();
-
+        private MenuSelect ms;
         private Order currentOrder;
-
-        private DoubleDraugr currentItem = new DoubleDraugr();
-
+        private DoubleDraugr currentItem;
         private Combo currentCombo;
 
 
         /// <summary>
-        /// Constuctor to initialize Menu Select item
+        /// Constuctor to initialize Menu Select item, current entree item, current order, current combo
         /// </summary>
-        /// <param name="menuItem">Menu Item being passed into this class</param>
+        /// <param name="menuItem">MenuSelect item to have access to the screens borders</param>
+        /// <param name="dd">Entree item to be customized</param>
+        /// <param name="o">Order to add the entree to</param>
+        /// <param name="c">Combo to add the entree to</param>
         public CustomizeDoubleDraugr(MenuSelect menuItem, DoubleDraugr dd, Order o, Combo c)
         {
             InitializeComponent();
@@ -54,6 +54,11 @@ namespace POS_Milestone_1.Entrees
             currentCombo = c;
         }
 
+        /// <summary>
+        /// Click Event for returning to the menu screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ReturnToOrderClick(object sender, RoutedEventArgs e)
         {
             ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);

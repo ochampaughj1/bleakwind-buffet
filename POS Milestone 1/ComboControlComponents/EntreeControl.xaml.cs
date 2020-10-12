@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data;
+﻿/*
+ * Author: Jonathan Ochampaugh
+ * Class: EntreeControl.xaml.cs
+ * Purpose: Controls manipulation of the entree in the current combo
+ */
+
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
@@ -25,9 +31,18 @@ namespace POS_Milestone_1.ComboControlComponents
     /// </summary>
     public partial class EntreeControl : UserControl
     {
+        /// <summary>
+        /// Backing variables for the MenuSelect and Combo Items
+        /// </summary>
         private MenuSelect menu;
         private Combo combo;
 
+        /// <summary>
+        /// Initializes the MenuSelect and combo items, also sets the current DataContext to the current order
+        /// </summary>
+        /// <param name="m">MenuSelect item kept to access the borders of the screen</param>
+        /// <param name="c">Combo currently being manipulated</param>
+        /// <param name="o">Order combo is being added to</param>
         public EntreeControl(MenuSelect m, Combo c, Order o)
         {
             InitializeComponent();
@@ -36,6 +51,11 @@ namespace POS_Milestone_1.ComboControlComponents
             combo = c;
         }
 
+        /// <summary>
+        /// Click Event for returning to the combo customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ReturnToComboClick(object sender, RoutedEventArgs e)
         {
             if(DataContext is Order order)
@@ -44,6 +64,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the entree of the combo to Briarheart Burger and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void BriarheartBurgerClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -54,6 +79,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the entree of the combo to Double Draugr and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void DoubleDraugrClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -64,7 +94,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
-        
+        /// <summary>
+        /// Click Event for switching the entree of the combo to Garden Orc Omelette and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void GardenOrcOmeletteClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -75,6 +109,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the entree of the combo to Philly Poacher and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void PhillyPoacherClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -85,6 +124,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the entree of the combo to Smokehouse Skeleton and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void SmokehouseSkeletonClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -95,6 +139,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the entree of the combo to Thalmor Triple and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ThalmorTripleClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -105,6 +154,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the entree of the combo to Thugs TBone and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ThugsTBoneClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)

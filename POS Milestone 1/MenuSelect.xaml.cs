@@ -33,14 +33,13 @@ namespace POS_Milestone_1
     public partial class MenuSelect : UserControl
     {
         /// <summary>
-        /// Button Control Component variable
+        /// Backing variables for the ButtonControlComponent and the CurrentOrderControlComponent
         /// </summary>
         private ButtonControlComponent menu;
-
         private CurrentOrderControlComponent receipt;
 
         /// <summary>
-        /// Constuctor to initialize values and click events
+        /// Initializes the menu ButtonControlComponent, the receipt CurrentOrderControlComponent, and sets the button menu border to menu and sets the receipt border to the receipt
         /// </summary>
         public MenuSelect()
         {

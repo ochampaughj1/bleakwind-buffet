@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data;
+﻿/*
+ * Author: Jonathan Ochampaugh
+ * Class: DrinkComboControlComponent.xaml.cs
+ * Purpose: Controls manipulation of the drink in the current combo
+ */
+
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using POS_Milestone_1.Drinks;
 using System;
@@ -23,9 +29,18 @@ namespace POS_Milestone_1.ComboControlComponents
     /// </summary>
     public partial class DrinkComboControlComponent : UserControl
     {
+        /// <summary>
+        /// Backing variables for the MenuSelect and Combo Items
+        /// </summary>
         private MenuSelect menu;
         private Combo combo;
 
+        /// <summary>
+        /// Initializes the MenuSelect and combo items, also sets the current DataContext to the current order
+        /// </summary>
+        /// <param name="m">MenuSelect item kept to access the borders of the screen</param>
+        /// <param name="c">Combo currently being manipulated</param>
+        /// <param name="o">Order combo is being added to</param>
         public DrinkComboControlComponent(MenuSelect m, Combo c, Order o)
         {
             InitializeComponent();
@@ -34,6 +49,11 @@ namespace POS_Milestone_1.ComboControlComponents
             combo = c;
         }
 
+        /// <summary>
+        /// Click Event for returning to the combo customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ReturnToComboClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -42,6 +62,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the drink of the combo to Aretino Apple Juice and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void AretinoAppleJuiceClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -52,6 +77,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the drink of the combo to Candlehearth Coffee and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void CandlehearthCoffeeClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -62,6 +92,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the drink of the combo to Markarth Milk and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void MarkarthMilkClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -72,6 +107,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the drink of the combo to Sailor Soda and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void SailorSodaClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -82,6 +122,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the drink of the combo to Warrior Water and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void WarriorWaterClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)

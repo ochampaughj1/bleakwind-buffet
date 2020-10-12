@@ -31,21 +31,20 @@ namespace POS_Milestone_1.Sides
     public partial class CustomizeFriedMiraak : UserControl
     {
         /// <summary>
-        /// 
+        /// Backing variables for current drink, MenuSelect item, the potential current combo, and the current order
         /// </summary>
-        private FriedMiraak currentItem = new FriedMiraak();
+        private FriedMiraak currentItem;
         private Combo currentCombo;
         private Order currentOrder;
+        private MenuSelect ms;
 
         /// <summary>
-        /// New Menu Select instance
+        /// Constuctor to initialize Menu Select item, current side item, current order, current combo
         /// </summary>
-        private MenuSelect ms = new MenuSelect();
-
-        /// <summary>
-        /// Constuctor to initialize Menu Select item
-        /// </summary>
-        /// <param name="menuItem">Menu Item being passed into this class</param>
+        /// <param name="menuItem">MenuSelect item to have access to the screens borders</param>
+        /// <param name="fm">Side item to be customized</param>
+        /// <param name="o">Order to add the side to</param>
+        /// <param name="c">Combo to add the side to</param>
         public CustomizeFriedMiraak(MenuSelect menuItem, FriedMiraak fm, Order o, Combo c)
         {
             InitializeComponent();
@@ -56,6 +55,11 @@ namespace POS_Milestone_1.Sides
             currentCombo = c;
         }
 
+        /// <summary>
+        /// Click Event for returning to the combo screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ReturnToOrderClick(object sender, RoutedEventArgs e)
         {
             ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);

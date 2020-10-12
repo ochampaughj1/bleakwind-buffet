@@ -26,6 +26,9 @@ namespace POS_Milestone_1
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Initializes the Data Context to a new order
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();

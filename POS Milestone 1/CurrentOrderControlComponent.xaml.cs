@@ -33,14 +33,26 @@ namespace POS_Milestone_1
     /// </summary>
     public partial class CurrentOrderControlComponent : UserControl
     {
+        /// <summary>
+        /// Backing variable for MenuSelect item
+        /// </summary>
         private MenuSelect menu;
 
+        /// <summary>
+        /// Initializes MenuSelect 
+        /// </summary>
+        /// <param name="m">MenuSelect item to access MenuSelect borders</param>
         public CurrentOrderControlComponent(MenuSelect m)
         {
             InitializeComponent();
             menu = m;
         }
 
+        /// <summary>
+        /// Click event to delete an item from the current order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void DeleteItemFromOrder(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -50,6 +62,11 @@ namespace POS_Milestone_1
             }
         }
 
+        /// <summary>
+        /// Click event to edit an existing item in the current order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditExistingItem(object sender, RoutedEventArgs e)
         {
             if(DataContext is Order order)

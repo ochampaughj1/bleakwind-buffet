@@ -31,21 +31,20 @@ namespace POS_Milestone_1.Drinks
     public partial class CustomizeSailorSoda : UserControl
     {
         /// <summary>
-        /// 
+        /// Backing variables for current drink, MenuSelect item, the potential current combo, and the current order
         /// </summary>
-        private SailorSoda currentItem = new SailorSoda();
+        private SailorSoda currentItem;
         private Combo currentCombo;
         private Order currentOrder;
+        private MenuSelect ms;
 
         /// <summary>
-        /// New Menu Select instance
+        /// Constuctor to initialize Menu Select item, current drink item, current order, current combo
         /// </summary>
-        private MenuSelect ms = new MenuSelect();
-
-        /// <summary>
-        /// Constuctor to initialize Menu Select item
-        /// </summary>
-        /// <param name="menuItem">Menu Item being passed into this class</param>
+        /// <param name="menuItem">MenuSelect item to have access to the screens borders</param>
+        /// <param name="ss">Drink item to be customized</param>
+        /// <param name="o">Order to add the drink to</param>
+        /// <param name="c">Combo to add the drink to</param>
         public CustomizeSailorSoda(MenuSelect menuItem, SailorSoda ss, Order o, Combo c)
         {
             InitializeComponent();
@@ -56,6 +55,11 @@ namespace POS_Milestone_1.Drinks
             currentCombo = c;
         }
 
+        /// <summary>
+        /// Click Event for returning to the menu screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ReturnToOrderClick(object sender, RoutedEventArgs e)
         {
             ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);

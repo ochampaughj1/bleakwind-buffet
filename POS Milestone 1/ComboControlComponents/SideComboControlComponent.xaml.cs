@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Jonathan Ochampaugh
+ * Class: SideComboControlComponent.xaml.cs
+ * Purpose: Controls manipulation of the side in the current combo
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +29,18 @@ namespace POS_Milestone_1.ComboControlComponents
     /// </summary>
     public partial class SideComboControlComponent : UserControl
     {
+        /// <summary>
+        /// Backing variables for the MenuSelect and Combo Items
+        /// </summary>
         private MenuSelect menu;
         private Combo combo;
 
+        /// <summary>
+        /// Initializes the MenuSelect and combo items, also sets the current DataContext to the current order
+        /// </summary>
+        /// <param name="m">MenuSelect item kept to access the borders of the screen</param>
+        /// <param name="c">Combo currently being manipulated</param>
+        /// <param name="o">Order combo is being added to</param>
         public SideComboControlComponent(MenuSelect m, Combo c, Order o)
         {
             InitializeComponent();
@@ -34,6 +49,11 @@ namespace POS_Milestone_1.ComboControlComponents
             combo = c;
         }
 
+        /// <summary>
+        /// Click Event for returning to the combo customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ReturnToComboClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -42,6 +62,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the side of the combo to Dragonborn Waffle Fries and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void DragonbornWaffleFriesClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -52,6 +77,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the side of the combo to Fried Miraak and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void FriedMiraakClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -62,6 +92,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the side of the combo to Mad Otar Grits and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void MadOtarGritsClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -72,6 +107,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Click Event for switching the side of the combo to Vokun Salad and switches to its customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void VokunSaladClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)

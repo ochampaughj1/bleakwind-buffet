@@ -15,6 +15,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data
 {
+    /// <summary>
+    /// Class representing an Order from the Bleakwind Buffet
+    /// </summary>
     public class Order : INotifyPropertyChanged, ICollection<IOrderItem>, INotifyCollectionChanged
     {
         /// <summary>
@@ -168,6 +171,11 @@ namespace BleakwindBuffet.Data
             return remove;
         }
 
+        /// <summary>
+        /// Event listener that updates subtotal, tax, total, and calories when price and calorie properties of the order change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void CollectionItemChangedListener(object sender, PropertyChangedEventArgs e)
         {
             if(e.PropertyName == "Price")
@@ -182,11 +190,19 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// The number of items within the order
+        /// </summary>
         public int Count => order.Count;
 
+        /// <summary>
+        /// Allows order to be manipulated
+        /// </summary>
         public bool IsReadOnly => false;
 
-        //DOUBLE CHECK THIS METHOD
+        /// <summary>
+        /// Clears all items in the order
+        /// </summary>
         public void Clear()
         {
             //remove all items within collection;
@@ -198,21 +214,39 @@ namespace BleakwindBuffet.Data
             order.Clear();
         }
 
+        /// <summary>
+        /// Determines whether a specified item is within the order
+        /// </summary>
+        /// <param name="item">IOrderItem to be checked for</param>
+        /// <returns>Whether or not the Order contains the given item</returns>
         public bool Contains(IOrderItem item)
         {
             return order.Contains(item);
         }
 
+        /// <summary>
+        /// Copies an item to the given array index
+        /// </summary>
+        /// <param name="array">Array of items to be copied to</param>
+        /// <param name="arrayIndex">Index of current copy</param>
         public void CopyTo(IOrderItem[] array, int arrayIndex)
         {
             order.CopyTo(array, arrayIndex);
         }
 
+        /// <summary>
+        /// Iterates over the collection/order
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<IOrderItem> GetEnumerator()
         {
             return order.GetEnumerator();
         }
 
+        /// <summary>
+        /// Retrieves an Enumerator
+        /// </summary>
+        /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return order.GetEnumerator();

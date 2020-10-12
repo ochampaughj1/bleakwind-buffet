@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data;
+﻿/*
+ * Author: Jonathan Ochampaugh
+ * Class: ComboControl.xaml.cs
+ * Purpose: Controls manipulation of a combo
+ */
+
+
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +31,18 @@ namespace POS_Milestone_1.ComboControlComponents
     /// </summary>
     public partial class ComboControl : UserControl
     {
+        /// <summary>
+        /// Backing variables for the MenuSelect and Combo Items
+        /// </summary>
         private MenuSelect menu;
         private Combo combo;
+
+        /// <summary>
+        /// Initializes the MenuSelect and combo items, also sets the current DataContext to the current order
+        /// </summary>
+        /// <param name="m">MenuSelect item kept to access the borders of the screen</param>
+        /// <param name="c">Combo currently being manipulated</param>
+        /// <param name="o">Order combo is being added to</param>
         public ComboControl(MenuSelect m, Combo c, Order o)
         {
             InitializeComponent();
@@ -34,6 +51,11 @@ namespace POS_Milestone_1.ComboControlComponents
             combo = c;
         }
 
+        /// <summary>
+        /// Switches to a screen that manipulates the entree of the combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ChangeEntreeControlClick(object sender, RoutedEventArgs e)
         {
             if(DataContext is Order order)
@@ -42,6 +64,11 @@ namespace POS_Milestone_1.ComboControlComponents
             }
         }
 
+        /// <summary>
+        /// Switches to a screen that manipulates the drink of the combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ChangeDrinkControlClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -49,7 +76,12 @@ namespace POS_Milestone_1.ComboControlComponents
                 menu.orderBorder.Child = new DrinkComboControlComponent(menu, combo, order);
             }
         }
-        
+
+        /// <summary>
+        /// Switches to a screen that manipulates the side of the combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ChangeSideControlClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)

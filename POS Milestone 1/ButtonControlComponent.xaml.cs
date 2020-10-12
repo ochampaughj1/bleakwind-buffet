@@ -35,13 +35,14 @@ namespace POS_Milestone_1
     public partial class ButtonControlComponent : UserControl
     {
         /// <summary>
-        /// PrivMenuSelect item 
+        /// Backing variable for MenuSelect 
         /// </summary>
         private MenuSelect menu;
 
         /// <summary>
-        /// Constructor for the class
+        /// Initializes MenuSelect item
         /// </summary>
+        /// <param name="m">MenuSelect item to access MenuSelects borders</param>
         public ButtonControlComponent(MenuSelect m)
         {
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Creates a new order and sets the data context
+        /// Click Event to create a new order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -64,6 +65,11 @@ namespace POS_Milestone_1
             ((MainWindow)parent).DataContext = new Order();
         }
 
+        /// <summary>
+        /// Click event to add a combo to the current order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void AddComboToOrderClick(object sender, RoutedEventArgs e)
         {
             Combo combo = new Combo(new BriarheartBurger(), new SailorSoda(), new DragonbornWaffleFries());
@@ -75,7 +81,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Briarheart Burger Click Event
+        /// Click event to add a Briarheart Burger to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -91,7 +97,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Double Draugr Click Event
+        /// Click event to add a Double Draugr to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -107,7 +113,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// GardenOrcOmelette Click Event
+        /// Click event to add a Garden Orc Omelette to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -123,7 +129,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Philly Poacher Click Event
+        /// Click event to add a Philly Poacher to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -139,7 +145,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Smokehouse Skeleton Click Event
+        /// Click event to add a Smokehouse Skeleton to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -155,7 +161,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Thalmor Triple Click Event
+        /// Click event to add a Thalmor Triple to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -171,7 +177,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Thugs T-Bone Click Event
+        /// Click event to add a Thugs TBone to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -187,7 +193,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Aretino Apple Juice Click Event
+        /// Click event to add a Aretino Apple Juice to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -203,7 +209,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Candlehearth Coffee Click Event
+        /// Click event to add a Candlehearth Coffee to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -219,7 +225,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Markarth Milk Click Event
+        /// Click event to add a Markarth Milk to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -235,7 +241,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Sailor Soda Click Event
+        /// Click event to add a Sailor Soda to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -251,7 +257,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Warrior Water Click Event
+        /// Click event to add a Warrior Water to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -267,7 +273,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Vokun Salad Click Event
+        /// Click event to add a Vokun Salad to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -283,7 +289,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Fried Miraak Click Event
+        /// Click event to add a Fried Miraak to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -299,7 +305,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Dragonborn Waffle Fries Click Event
+        /// Click event to add a Dragonborn Waffle Fries to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -315,7 +321,7 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Mad Otar Grits Click Event
+        /// Click event to add a Mad Otar Grits to the current order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
