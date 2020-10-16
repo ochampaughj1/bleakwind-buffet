@@ -28,7 +28,7 @@
         <!--Button-->
         <Button Name="doneButton" Click="DoneButtonClick" Grid.Column="4" Grid.Row="7" Content="Done"/>
         <Button Name="cancelButton" Click="CancelButtonClick" Grid.Column="3" Grid.Row="7" Content="Cancel"/>
-        <Button x:Name="returnToOrderbutton" Click="ReturnToOrderClick" Grid.Column="2" Grid.Row="7" Content="Return To Combo"/>
+        <Button x:Name="returnToOrderbutton" Click="ReturnToComboClick" Grid.Column="2" Grid.Row="7" Content="Return To Combo"/>
 
         <!--Labels-->
         <Label Grid.Column="2" Grid.Row="0" Content="Customize Sailor Soda: " Width="179" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>

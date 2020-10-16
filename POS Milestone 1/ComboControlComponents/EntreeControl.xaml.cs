@@ -23,6 +23,7 @@ using System.Windows.Shapes;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Sides;
 using POS_Milestone_1.Entrees;
+using POS_Milestone_1.Sides;
 
 namespace POS_Milestone_1.ComboControlComponents
 {
@@ -75,7 +76,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 BriarheartBurger bb = new BriarheartBurger();
                 combo.Entree = bb;
-                menu.orderBorder.Child = new CustomizeBriarheartBurger(menu, bb, order, combo);
+                CustomizeBriarheartBurger temp = new CustomizeBriarheartBurger(menu, bb, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -90,7 +94,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 DoubleDraugr dd = new DoubleDraugr();
                 combo.Entree = dd;
-                menu.orderBorder.Child = new CustomizeDoubleDraugr(menu, dd, order, combo);
+                CustomizeDoubleDraugr temp = new CustomizeDoubleDraugr(menu, dd, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -105,7 +112,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 GardenOrcOmelette goo = new GardenOrcOmelette();
                 combo.Entree = goo;
-                menu.orderBorder.Child = new CustomizeGardenOrcOmelette(menu, goo, order, combo);
+                CustomizeGardenOrcOmelette temp = new CustomizeGardenOrcOmelette(menu, goo, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -120,7 +130,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 PhillyPoacher php = new PhillyPoacher();
                 combo.Entree = php;
-                menu.orderBorder.Child = new CustomizePhillyPoacher(menu, php, order, combo);
+                CustomizePhillyPoacher temp = new CustomizePhillyPoacher(menu, php, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -135,7 +148,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 SmokehouseSkeleton sks = new SmokehouseSkeleton();
                 combo.Entree = sks;
-                menu.orderBorder.Child = new CustomizeSmokehouseSkeleton(menu, sks, order, combo);
+                CustomizeSmokehouseSkeleton temp = new CustomizeSmokehouseSkeleton(menu, sks, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -150,7 +166,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 ThalmorTriple tt = new ThalmorTriple();
                 combo.Entree = tt;
-                menu.orderBorder.Child = new CustomizeThalmorTriple(menu, tt, order, combo);
+                CustomizeThalmorTriple temp = new CustomizeThalmorTriple(menu, tt, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -165,7 +184,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 ThugsTBone ttb = new ThugsTBone();
                 combo.Entree = ttb;
-                menu.orderBorder.Child = new CustomizeThugsTBone(menu, ttb, order, combo);
+                CustomizeThugsTBone temp = new CustomizeThugsTBone(menu, ttb, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
         

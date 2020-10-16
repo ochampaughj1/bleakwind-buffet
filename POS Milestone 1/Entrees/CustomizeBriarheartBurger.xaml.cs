@@ -33,7 +33,7 @@ namespace POS_Milestone_1.Entrees
         /// </summary>
         private MenuSelect ms;
         private Order currentOrder;
-        private BriarheartBurger currentBurger;
+        private BriarheartBurger currentItem;
         private Combo currentCombo;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace POS_Milestone_1.Entrees
             ms = menuItem;
             DataContext = bb;
             currentOrder = o;
-            currentBurger = bb;
+            currentItem = bb;
             currentCombo = c;
         }
 
@@ -58,7 +58,7 @@ namespace POS_Milestone_1.Entrees
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void ReturnToOrderClick(object sender, RoutedEventArgs e)
+        void ReturnToComboClick(object sender, RoutedEventArgs e)
         { 
             ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);
         }
@@ -74,7 +74,7 @@ namespace POS_Milestone_1.Entrees
             DataContext = currentOrder;
             if (DataContext is Order order)
             {
-                var itemBeingRemoved = currentBurger;
+                var itemBeingRemoved = currentItem;
                 order.Remove(itemBeingRemoved);
             }
         }

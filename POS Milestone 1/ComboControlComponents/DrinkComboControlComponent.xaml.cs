@@ -73,7 +73,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 AretinoAppleJuice aj = new AretinoAppleJuice();
                 combo.Drink = aj;
-                menu.orderBorder.Child = new CustomizeAretinoAppleJuice(menu, aj, order, combo);
+                CustomizeAretinoAppleJuice temp = new CustomizeAretinoAppleJuice(menu, aj, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -88,7 +91,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 CandlehearthCoffee chc = new CandlehearthCoffee();
                 combo.Drink = chc;
-                menu.orderBorder.Child = new CustomizeCandlehearthCoffee(menu, chc, order, combo);
+                CustomizeCandlehearthCoffee temp = new CustomizeCandlehearthCoffee(menu, chc, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp; 
             }
         }
 
@@ -103,7 +109,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 MarkarthMilk mm = new MarkarthMilk();
                 combo.Drink = mm;
-                menu.orderBorder.Child = new CustomizeMarkarthMilk(menu, mm, order, combo);
+                CustomizeMarkarthMilk temp = new CustomizeMarkarthMilk(menu, mm, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -118,7 +127,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 SailorSoda ss = new SailorSoda();
                 combo.Drink = ss;
-                menu.orderBorder.Child = new CustomizeSailorSoda(menu, ss, order, combo);
+                CustomizeSailorSoda temp = new CustomizeSailorSoda(menu, ss, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -133,7 +145,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 WarriorWater ww = new WarriorWater();
                 combo.Drink = ww;
-                menu.orderBorder.Child = new CustomizeWarriorWater(menu, ww, order, combo);
+                CustomizeWarriorWater temp = new CustomizeWarriorWater(menu, ww, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
     }

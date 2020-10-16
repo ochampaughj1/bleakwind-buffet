@@ -50,20 +50,15 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
-        /// Click Event to create a new order
+        /// Combo number in the order
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void NewOrderClick(object sender, RoutedEventArgs e)
-        {
-            DependencyObject parent = this;
-            do
-            {
-                parent = LogicalTreeHelper.GetParent(parent);
-            }
-            while (parent != null && !(parent is MainWindow)) ;
-            ((MainWindow)parent).DataContext = new Order();
-        }
+        private int nextComboNumber = 1;
+
+        /// <summary>
+        /// Gets and sets the current combo number in the order
+        /// </summary>
+        public int ComboNumber { get; set; }
+
 
         /// <summary>
         /// Click event to add a combo to the current order
@@ -72,6 +67,7 @@ namespace POS_Milestone_1
         /// <param name="e"></param>
         void AddComboToOrderClick(object sender, RoutedEventArgs e)
         {
+            nextComboNumber++;
             Combo combo = new Combo(new BriarheartBurger(), new SailorSoda(), new DragonbornWaffleFries());
             if(DataContext is Order order)
             {
@@ -92,7 +88,9 @@ namespace POS_Milestone_1
             if(DataContext is Order order)
             {
                 order.Add(bb);
-                menu.orderBorder.Child = new CustomizeBriarheartBurger(menu, bb, order, temp);
+                CustomizeBriarheartBurger newScreen = new CustomizeBriarheartBurger(menu, bb, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -108,7 +106,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(dd);
-                menu.orderBorder.Child = new CustomizeDoubleDraugr(menu, dd, order, temp);
+                CustomizeDoubleDraugr newScreen = new CustomizeDoubleDraugr(menu, dd, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -124,7 +124,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(goo);
-                menu.orderBorder.Child = new CustomizeGardenOrcOmelette(menu, goo, order, temp);
+                CustomizeGardenOrcOmelette newScreen = new CustomizeGardenOrcOmelette(menu, goo, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -140,7 +142,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(pp);
-                menu.orderBorder.Child = new CustomizePhillyPoacher(menu, pp, order, temp);
+                CustomizePhillyPoacher newScreen = new CustomizePhillyPoacher(menu, pp, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -156,7 +160,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(sks);
-                menu.orderBorder.Child = new CustomizeSmokehouseSkeleton(menu, sks, order, temp);
+                CustomizeSmokehouseSkeleton newScreen = new CustomizeSmokehouseSkeleton(menu, sks, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -172,7 +178,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(tt);
-                menu.orderBorder.Child = new CustomizeThalmorTriple(menu, tt, order, temp);
+                CustomizeThalmorTriple newScreen = new CustomizeThalmorTriple(menu, tt, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -188,7 +196,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(ttb);
-                menu.orderBorder.Child = new CustomizeThugsTBone(menu, ttb, order, temp);
+                CustomizeThugsTBone newScreen = new CustomizeThugsTBone(menu, ttb, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -204,7 +214,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(aj);
-                menu.orderBorder.Child = new CustomizeAretinoAppleJuice(menu, aj, order, temp);
+                CustomizeAretinoAppleJuice newScreen = new CustomizeAretinoAppleJuice(menu, aj, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -220,7 +232,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(chc);
-                menu.orderBorder.Child = new CustomizeCandlehearthCoffee(menu, chc, order, temp);
+                CustomizeCandlehearthCoffee newScreen = new CustomizeCandlehearthCoffee(menu, chc, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -236,7 +250,10 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(mm);
-                menu.orderBorder.Child = new CustomizeMarkarthMilk(menu, mm, order, temp);
+                CustomizeMarkarthMilk newScreen = new CustomizeMarkarthMilk(menu, mm, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
+
             }
         }
 
@@ -252,7 +269,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(ss);
-                menu.orderBorder.Child = new CustomizeSailorSoda(menu, ss, order, temp);
+                CustomizeSailorSoda newScreen = new CustomizeSailorSoda(menu, ss, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -268,7 +287,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(ww);
-                menu.orderBorder.Child = new CustomizeWarriorWater(menu, ww, order, temp);
+                CustomizeWarriorWater newScreen = new CustomizeWarriorWater(menu, ww, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -284,7 +305,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(vs);
-                menu.orderBorder.Child = new CustomizeVokunSalad(menu, vs, order, temp);
+                CustomizeVokunSalad newScreen = new CustomizeVokunSalad(menu, vs, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -300,7 +323,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(fmc);
-                menu.orderBorder.Child = new CustomizeFriedMiraak(menu, fmc, order, temp);
+                CustomizeFriedMiraak newScreen = new CustomizeFriedMiraak(menu, fmc, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -316,7 +341,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(dwf);
-                menu.orderBorder.Child = new CustomizeDragonbornWaffleFries(menu, dwf, order, temp);
+                CustomizeDragonbornWaffleFries newScreen = new CustomizeDragonbornWaffleFries(menu, dwf, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
 
@@ -332,7 +359,9 @@ namespace POS_Milestone_1
             if (DataContext is Order order)
             {
                 order.Add(mog);
-                menu.orderBorder.Child = new CustomizeMadOtarGrits(menu, mog, order, temp);
+                CustomizeMadOtarGrits newScreen = new CustomizeMadOtarGrits(menu, mog, order, temp);
+                newScreen.returnToOrderbutton.IsEnabled = false;
+                menu.orderBorder.Child = newScreen;
             }
         }
     }

@@ -108,7 +108,7 @@ namespace BleakwindBuffet.Data
             get
             {
                 double tax;
-                tax = Subtotal * salesTaxRate;
+                tax = Subtotal * SalesTaxRate;
                 return tax;
             }
         }

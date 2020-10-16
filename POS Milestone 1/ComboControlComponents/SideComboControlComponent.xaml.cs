@@ -73,7 +73,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 DragonbornWaffleFries dwf = new DragonbornWaffleFries();
                 combo.Side = dwf;
-                menu.orderBorder.Child = new CustomizeDragonbornWaffleFries(menu, dwf, order, combo);
+                CustomizeDragonbornWaffleFries temp = new CustomizeDragonbornWaffleFries(menu, dwf, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -88,7 +91,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 FriedMiraak fm = new FriedMiraak();
                 combo.Side = fm;
-                menu.orderBorder.Child = new CustomizeFriedMiraak(menu, fm, order, combo);
+                CustomizeFriedMiraak temp = new CustomizeFriedMiraak(menu, fm, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -103,7 +109,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 MadOtarGrits mog = new MadOtarGrits();
                 combo.Side = mog;
-                menu.orderBorder.Child = new CustomizeMadOtarGrits(menu, mog, order, combo);
+                CustomizeMadOtarGrits temp = new CustomizeMadOtarGrits(menu, mog, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
 
@@ -118,7 +127,10 @@ namespace POS_Milestone_1.ComboControlComponents
             {
                 VokunSalad vs = new VokunSalad();
                 combo.Side = vs;
-                menu.orderBorder.Child = new CustomizeVokunSalad(menu, vs, order, combo);
+                CustomizeVokunSalad temp = new CustomizeVokunSalad(menu, vs, order, combo);
+                temp.doneButton.IsEnabled = false;
+                temp.cancelButton.IsEnabled = false;
+                menu.orderBorder.Child = temp;
             }
         }
     }

@@ -26,7 +26,7 @@
         <Button x:Name="ChangeEntreeButton" Click="ChangeEntreeControlClick" Grid.Row="2" Margin="5"  Content="Change Entree"/>
         <Button x:Name="ChangeDrinkButton" Click="ChangeDrinkControlClick" Grid.Row="3" Margin="5"  Content="Change Drink"/>
         <Button x:Name="ChangeSideButton" Click="ChangeSideControlClick" Grid.Row="4" Margin="5"  Content="Change Side"/>
-        <Button x:Name="Done" Click="DoneButtonClick" Grid.Row="5" Margin="5" Content="Done"/>
+        <Button x:Name="Done" Click="DoneButtonClick" Grid.Row="5" Margin="5" Content="Add To Order"/>
         <Button x:Name="Cancel" Click="CancelButtonClick" Grid.Row="6" Margin="5" Content="Cancel"/>
     </Grid>
 </UserControl>

@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RoundRegister">
+      <HintPath>..\DLL Files and UML\RoundRegister.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -111,6 +114,16 @@
     </Compile>
     <Compile Include="MenuSelect.xaml.cs">
       <DependentUpon>MenuSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentControls\CashRegister.xaml.cs">
+      <DependentUpon>CashRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentControls\CashRegisterViewModel.cs" />
+    <Compile Include="PaymentControls\NumberBox.xaml.cs">
+      <DependentUpon>NumberBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentControls\PaymentOptionsScreen.xaml.cs">
+      <DependentUpon>PaymentOptionsScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="SelectionEventHandler.cs" />
     <Compile Include="Sides\CustomizeDragonbornWaffleFries.xaml.cs">
@@ -213,6 +226,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PaymentControls\CashRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PaymentControls\NumberBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PaymentControls\PaymentOptionsScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sides\CustomizeDragonbornWaffleFries.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -262,5 +287,6 @@
       <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

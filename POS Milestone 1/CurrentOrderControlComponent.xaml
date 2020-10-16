@@ -9,22 +9,24 @@
     <DockPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Top">
             <TextBlock Text="Order #" FontSize="20"/>
-            <TextBlock Name="currentOrderTextBlock" FontSize="20" TextAlignment="Center" Text="{Binding Path=Number}"/>
+            <TextBlock Name="currentOrderNumberTextBlock" FontSize="20" TextAlignment="Center" Text="{Binding Path=Number}"/>
         </StackPanel>
+        <Button Name="CompleteOrderButton" Click="CompleteOrderClick" DockPanel.Dock="Bottom" Height="20" Content="Complete Order"/>
+        <Button Name="CancelOrderButton" Click="CancelOrderClick" DockPanel.Dock="Bottom" Height="20" Content="Cancel Order"/>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
             <TextBlock FontWeight="Bold" Text="Total: "/>
             <TextBlock Text="$"/>
-            <TextBlock Name="totalTextBlock" Text="{Binding StringFormat={}{0:#.00}, Path=Total}"/>
+            <TextBlock Name="totalTextBlock" Text="{Binding StringFormat={}{0:0.00}, Path=Total}"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
             <TextBlock FontWeight="Bold" Text="Tax: "/>
             <TextBlock Text="$"/>
-            <TextBlock Name="taxTextBlock" Text="{Binding StringFormat={}{0:#.00}, Path=Tax}"/>
+            <TextBlock Name="taxTextBlock" Text="{Binding StringFormat={}{0:0.00}, Path=Tax}"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
             <TextBlock FontWeight="Bold"  Text="Subtotal: "/>
             <TextBlock Text="$"/>
-            <TextBlock Name="subtotalTextBlock" Text="{Binding StringFormat={}{0:#.00}, Path=Subtotal}"/>
+            <TextBlock Name="subtotalTextBlock" Text="{Binding StringFormat={}{0:0.00}, Path=Subtotal}"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
             <TextBlock FontWeight="Bold"  Text="Total Calories Of Order: "/>

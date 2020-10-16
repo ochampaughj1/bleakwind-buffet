@@ -49,6 +49,37 @@ namespace POS_Milestone_1
         }
 
         /// <summary>
+        /// Click event to complete the order and move to the payment screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void CompleteOrderClick(object sender, RoutedEventArgs e)
+        {
+            menu.orderBorder.Child = new PaymentOptionsScreen(menu);
+        }
+
+        /// <summary>
+        /// Click Event to create a new order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void CancelOrderClick(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                order.Clear();
+                menu.orderBorder.Child = new ButtonControlComponent(menu);
+            }
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            }
+            while (parent != null && !(parent is MainWindow));
+            ((MainWindow)parent).DataContext = new Order();
+        }
+
+        /// <summary>
         /// Click event to delete an item from the current order
         /// </summary>
         /// <param name="sender"></param>

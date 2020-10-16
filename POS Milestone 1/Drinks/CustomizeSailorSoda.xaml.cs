@@ -60,7 +60,7 @@ namespace POS_Milestone_1.Drinks
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void ReturnToOrderClick(object sender, RoutedEventArgs e)
+        void ReturnToComboClick(object sender, RoutedEventArgs e)
         {
             ms.orderBorder.Child = new ComboControl(ms, currentCombo, currentOrder);
         }

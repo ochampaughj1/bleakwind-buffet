@@ -42,6 +42,16 @@ namespace BleakwindBuffet.Data
         private Side side = null;
 
         /// <summary>
+        /// Combo number in the order
+        /// </summary>
+        private int nextComboNumber = 1;
+
+        /// <summary>
+        /// Gets and sets the current combo number in the order
+        /// </summary>
+        public int ComboNumber { get; set; }
+
+        /// <summary>
         /// Constructor initializing the entree, side, and drink contained within the combo 
         /// </summary>
         /// <param name="e"></param>
@@ -49,9 +59,16 @@ namespace BleakwindBuffet.Data
         /// <param name="s"></param>
         public Combo(Entree e, Drink d, Side s)
         {
+            ComboNumber = nextComboNumber;
+            nextComboNumber++;
             entree = e;
             drink = d;
             side = s;
+        }
+
+        public string Name
+        {
+            get { return "Combo #" + ComboNumber; }
         }
 
         /// <summary>
@@ -184,10 +201,6 @@ namespace BleakwindBuffet.Data
                     instructions.Add(s + ", ");
                 }
                 return instructions;
-            }
-            set
-            {
-                OnPropertyChanged("SpecialInstructions");
             }
         }
 
