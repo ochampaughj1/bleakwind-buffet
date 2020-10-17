@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data;
+﻿/*
+ * Author: Jonathan Ochampaugh
+ * Class: CashRegister.xaml.cs
+ * Purpose: Controls cash register payment controls
+ */
+
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +27,20 @@ namespace POS_Milestone_1.PaymentControls
     /// </summary>
     public partial class CashRegister : UserControl
     {
+        /// <summary>
+        /// Backing variables for current MenuSelect, Order, and CurrentOrderControlComponent
+        /// </summary>
         private MenuSelect menu;
         private Order currentOrder;
+        private CurrentOrderControlComponent receipt;
 
-        public CashRegister(MenuSelect m, Order order)
+        /// <summary>
+        /// Initializes menu, currentOrder, and receipt and sets data context.
+        /// </summary>
+        /// <param name="m">Current MenuSelect</param>
+        /// <param name="order">Current Order</param>
+        /// <param name="temp">Current CurrentOrderControlComponent(receipt)</param>
+        public CashRegister(MenuSelect m, Order order, CurrentOrderControlComponent temp)
         {
             InitializeComponent();
             DataContext = order;
@@ -32,13 +48,24 @@ namespace POS_Milestone_1.PaymentControls
             menu = m;
             DataContext = new CashRegisterViewModel(order, this);
             currentOrder = order;
+            receipt = temp;
         }
 
+        /// <summary>
+        /// Click event for returning to the order selection screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ReturnToOrderClick(object sender, RoutedEventArgs e)
         {
             menu.orderBorder.Child = new ButtonControlComponent(menu);
         }
 
+        /// <summary>
+        /// Click event for finalizing the current order sale
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void FinalizeSaleClick(object sender, RoutedEventArgs e)
         {
             if(DataContext is CashRegisterViewModel crv)
@@ -54,6 +81,7 @@ namespace POS_Milestone_1.PaymentControls
             }
             while (parent != null && !(parent is MainWindow));
             ((MainWindow)parent).DataContext = new Order();
+            receipt.CompleteOrderButton.IsEnabled = true;
         }
     }
 }

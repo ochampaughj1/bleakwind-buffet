@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Jonathan Ochampaugh
+ * Class: CashRegisterViewModel.cs
+ * Purpose: View Model of cash register acting as a mediator between the CashRegister class and the CashDrawer class in the RoundRegister.dll
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +19,9 @@ namespace POS_Milestone_1.PaymentControls
 {
     public class CashRegisterViewModel: INotifyPropertyChanged
     {
+        /// <summary>
+        /// Implements the interface of INotifyPropertyChanged
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
@@ -24,20 +33,34 @@ namespace POS_Milestone_1.PaymentControls
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        /// <summary>
+        /// Backing variables for the current Order and CashRegister
+        /// </summary>
         private CashRegister cashRegister;
         private Order Order;
 
+        /// <summary>
+        /// Initializes the current order and cash register
+        /// </summary>
+        /// <param name="order">Current Order</param>
+        /// <param name="cr">Current CashRegister</param>
         public CashRegisterViewModel(Order order, CashRegister cr)
         {
             Order = order;
             cashRegister = cr;
         }
 
+        /// <summary>
+        /// Property to get the total of the current order
+        /// </summary>
         public double Total
         {
             get => Order.Total;
         }
 
+        /// <summary>
+        /// Property to get the total payment from the customer
+        /// </summary>
         public double Payment
         {
             get => (PaymentHundreds * 100) + (PaymentFifties * 50) + (PaymentTwenites * 20) + (paymentTens * 10) +
@@ -45,6 +68,9 @@ namespace POS_Milestone_1.PaymentControls
                 (PaymentQuarters * 0.25) + (PaymentDimes * 0.10) + (PaymentNickels * 0.05) + (PaymentPennies * 0.01);
         }
 
+        /// <summary>
+        /// Property to get the amount owed by customer display
+        /// </summary>
         public double AmountOwedDisplay
         {
             get
@@ -54,12 +80,17 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Property to get the amount owed by the customer
+        /// </summary>
         public double AmountOwed
         {
             get => Total - Payment;
         }
 
-        
+        /// <summary>
+        /// Property to get the change due to the customer
+        /// </summary>
         public double ChangeDue
         {
             get 
@@ -69,6 +100,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Hundred bills in the register
+        /// </summary>
         public int RegisterHundreds
         {
             get
@@ -82,6 +116,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Hundreds given by the customer
+        /// </summary>
         private int paymentHundreds = 0;
         public int PaymentHundreds
         {
@@ -103,6 +140,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Hundreds owed to the customer
+        /// </summary>
         private int changeHundreds = 0;
 
         public int ChangeHundreds
@@ -110,7 +150,9 @@ namespace POS_Milestone_1.PaymentControls
             get { return changeHundreds; }
         }
 
-
+        /// <summary>
+        /// Property to get and set the amount of Fifty bills in the register
+        /// </summary>
         public int RegisterFifties
         {
             get
@@ -124,6 +166,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Fifties given by the customer
+        /// </summary>
         private int paymentFifties = 0;
         public int PaymentFifties
         {
@@ -145,13 +190,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Fifties owed to the customer
+        /// </summary>
         private int changeFifties = 0;
-
         public int ChangeFifties
         {
             get { return changeFifties; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Twenty bills in the register
+        /// </summary>
         public int RegisterTwenties
         {
             get
@@ -165,6 +215,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Twenties given by the customer
+        /// </summary>
         private int paymentTwenties = 0;
         public int PaymentTwenites
         {
@@ -186,13 +239,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Twenties owed to the customer
+        /// </summary>
         private int changeTwenties = 0;
-
         public int ChangeTwenties
         {
             get { return changeTwenties; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Ten bills in the register
+        /// </summary>
         public int RegisterTens
         {
             get
@@ -206,6 +264,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Tens given by the customer
+        /// </summary>
         private int paymentTens = 0;
         public int PaymentTens
         {
@@ -227,13 +288,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Tens owed to the customer
+        /// </summary>
         private int changeTens = 0;
-
         public int ChangeTens
         {
             get { return changeTens; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Five bills in the register
+        /// </summary>
         public int RegisterFives
         {
             get
@@ -247,6 +313,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Fives given by the customer
+        /// </summary>
         private int paymentFives = 0;
         public int PaymentFives
         {
@@ -268,13 +337,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Fives owed to the customer
+        /// </summary>
         private int changeFives = 0;
-
         public int ChangeFives
         {
             get { return changeFives; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Two bills in the register
+        /// </summary>
         public int RegisterTwos
         {
             get
@@ -288,6 +362,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Twos given by the customer
+        /// </summary>
         private int paymentTwos = 0;
         public int PaymentTwos
         {
@@ -309,13 +386,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Twos owed to the customer
+        /// </summary>
         private int changeTwos = 0;
-
         public int ChangeTwos
         {
             get { return changeTwos; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of One bills in the register
+        /// </summary>
         public int RegisterOnes
         {
             get
@@ -329,6 +411,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Ones given by the customer
+        /// </summary>
         private int paymentOnes = 0;
         public int PaymentOnes
         {
@@ -350,13 +435,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Ones owed to the customer
+        /// </summary>
         private int changeOnes = 0;
-
         public int ChangeOnes
         {
             get { return changeOnes; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Dollar coins in the register
+        /// </summary>
         public int RegisterDollarCoin
         {
             get
@@ -370,6 +460,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Dollar Coins given by the customer
+        /// </summary>
         private int paymentDollarCoins = 0;
         public int PaymentDollarCoins
         {
@@ -391,13 +484,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Dollar Coins owed to the customer
+        /// </summary>
         private int changeDollarCoins = 0;
-
         public int ChangeDollarCoins
         {
             get { return changeDollarCoins; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Half Dollar coins in the register
+        /// </summary>
         public int RegisterHalfDollars
         {
             get
@@ -411,6 +509,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Half Dollar coins given by the customer
+        /// </summary>
         private int paymentHalfDollars = 0;
         public int PaymentHalfDollars
         {
@@ -432,13 +533,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Half Dollar Coins owed to the customer
+        /// </summary>
         private int changeHalfDollars = 0;
-
         public int ChangeHalfDollars
         {
             get { return changeHalfDollars; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Quarters in the register
+        /// </summary>
         public int RegisterQuarters
         {
             get
@@ -452,6 +558,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Quarters given by the customer
+        /// </summary>
         private int paymentQuarters = 0;
         public int PaymentQuarters
         {
@@ -473,13 +582,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Quarters owed to the customer
+        /// </summary>
         private int changeQuarters = 0;
-
         public int ChangeQuarters
         {
             get { return changeQuarters; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Dimes in the register
+        /// </summary>
         public int RegisterDimes
         {
             get
@@ -493,6 +607,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Dimes given by the customer
+        /// </summary>
         private int paymentDimes = 0;
         public int PaymentDimes
         {
@@ -514,13 +631,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Dimes owed to the customer
+        /// </summary>
         private int changeDimes = 0;
-
         public int ChangeDimes
         {
             get { return changeDimes; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Nickels in the register
+        /// </summary>
         public int RegisterNickels
         {
             get
@@ -534,6 +656,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Nickels given by the customer
+        /// </summary>
         private int paymentNickels = 0;
         public int PaymentNickels
         {
@@ -555,13 +680,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Nickels owed to the customer
+        /// </summary>
         private int changeNickles = 0;
-
         public int ChangeNickles
         {
             get { return changeNickles; }
         }
 
+        /// <summary>
+        /// Property to get and set the amount of Pennies in the register
+        /// </summary>
         public int RegisterPennies
         {
             get
@@ -575,6 +705,9 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Pennies given by the customer
+        /// </summary>
         private int paymentPennies = 0;
         public int PaymentPennies
         {
@@ -596,14 +729,18 @@ namespace POS_Milestone_1.PaymentControls
             }
         }
 
+        /// <summary>
+        /// Backing variable and property to get and set the amount of Pennies owed to the customer
+        /// </summary>
         private int changePennies = 0;
-
         public int ChangePennies
         {
             get { return changePennies; }
         }
 
-
+        /// <summary>
+        /// Finalizes sale by adding payment to the register, giving change to the customer, resetting the payment, and prints a reciept of the order
+        /// </summary>
         public void FinializeSale()
         {
             CashDrawer.OpenDrawer();
@@ -666,6 +803,9 @@ namespace POS_Milestone_1.PaymentControls
 
         }
         
+        /// <summary>
+        /// Calculates and sets change owed to the customer
+        /// </summary>
         void ChangeOwedToCustomer()
         {
             double originalAmount = ChangeDue;
@@ -817,6 +957,9 @@ namespace POS_Milestone_1.PaymentControls
             OnPropertyChanged("ChangePennies");
         }
 
+        /// <summary>
+        /// Prints a reciept of the current order
+        /// </summary>
         void PrintReciept()
         {
             List<string> currentOrder = new List<string>();

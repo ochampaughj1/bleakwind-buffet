@@ -26,26 +26,29 @@ namespace POS_Milestone_1
     public partial class PaymentOptionsScreen : UserControl
     {
         private MenuSelect menu;
+        private CurrentOrderControlComponent receipt;
 
-        public PaymentOptionsScreen(MenuSelect m)
+        public PaymentOptionsScreen(MenuSelect m, CurrentOrderControlComponent temp)
         {
             InitializeComponent();
             menu = m;
+            temp.CompleteOrderButton.IsEnabled = false;
+            receipt = temp;
         }
 
         void ReturnToOrderClick(object sender, RoutedEventArgs e)
         {
             menu.orderBorder.Child = new ButtonControlComponent(menu);
+            receipt.CompleteOrderButton.IsEnabled = true;
         }
 
         void CashButtonClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
             {
-                CashRegister temp = new CashRegister(menu, order);
+                CashRegister temp = new CashRegister(menu, order, receipt);
                 menu.orderBorder.Child = temp;
             }
-
         }
 
         void CreditOrDebitClick(object sender, RoutedEventArgs e)
@@ -58,7 +61,7 @@ namespace POS_Milestone_1
                     PrintReciept();
                     order.Clear();
                     menu.orderBorder.Child = new ButtonControlComponent(menu);
-                    DependencyObject parent = this;
+                    DependencyObject parent = menu;
                     do
                     {
                         parent = LogicalTreeHelper.GetParent(parent);

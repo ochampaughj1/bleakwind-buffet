@@ -49,16 +49,6 @@ namespace POS_Milestone_1
             menu = m;
         }
 
-        /// <summary>
-        /// Combo number in the order
-        /// </summary>
-        private int nextComboNumber = 1;
-
-        /// <summary>
-        /// Gets and sets the current combo number in the order
-        /// </summary>
-        public int ComboNumber { get; set; }
-
 
         /// <summary>
         /// Click event to add a combo to the current order
@@ -67,7 +57,6 @@ namespace POS_Milestone_1
         /// <param name="e"></param>
         void AddComboToOrderClick(object sender, RoutedEventArgs e)
         {
-            nextComboNumber++;
             Combo combo = new Combo(new BriarheartBurger(), new SailorSoda(), new DragonbornWaffleFries());
             if(DataContext is Order order)
             {

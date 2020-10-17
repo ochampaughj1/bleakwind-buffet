@@ -55,7 +55,7 @@ namespace POS_Milestone_1
         /// <param name="e"></param>
         void CompleteOrderClick(object sender, RoutedEventArgs e)
         {
-            menu.orderBorder.Child = new PaymentOptionsScreen(menu);
+            menu.orderBorder.Child = new PaymentOptionsScreen(menu, this);
         }
 
         /// <summary>
@@ -104,22 +104,105 @@ namespace POS_Milestone_1
             {
                 Combo temp = new Combo(null, null, null);
                 var currentItem = ((Button)sender).DataContext;
-                if (currentItem is BriarheartBurger bb) menu.orderBorder.Child = new CustomizeBriarheartBurger(menu, bb, order, temp);
-                else if (currentItem is DoubleDraugr dd) menu.orderBorder.Child = new CustomizeDoubleDraugr(menu, dd, order, temp);
-                else if (currentItem is GardenOrcOmelette goo) menu.orderBorder.Child = new CustomizeGardenOrcOmelette(menu, goo, order, temp);
-                else if (currentItem is PhillyPoacher php) menu.orderBorder.Child = new CustomizePhillyPoacher(menu, php, order, temp);
-                else if (currentItem is SmokehouseSkeleton sks) menu.orderBorder.Child = new CustomizeSmokehouseSkeleton(menu, sks, order, temp);
-                else if (currentItem is ThalmorTriple tt) menu.orderBorder.Child = new CustomizeThalmorTriple(menu, tt, order, temp);
-                else if (currentItem is ThugsTBone ttb) menu.orderBorder.Child = new CustomizeThugsTBone(menu, ttb, order, temp);
-                else if (currentItem is AretinoAppleJuice aj) menu.orderBorder.Child = new CustomizeAretinoAppleJuice(menu, aj, order, temp);
-                else if (currentItem is CandlehearthCoffee chc) menu.orderBorder.Child = new CustomizeCandlehearthCoffee(menu, chc, order, temp);
-                else if (currentItem is MarkarthMilk mm) menu.orderBorder.Child = new CustomizeMarkarthMilk(menu, mm, order, temp);
-                else if (currentItem is SailorSoda ss) menu.orderBorder.Child = new CustomizeSailorSoda(menu, ss, order, temp);
-                else if (currentItem is WarriorWater ww) menu.orderBorder.Child = new CustomizeWarriorWater(menu, ww, order, temp);
-                else if (currentItem is DragonbornWaffleFries dwf) menu.orderBorder.Child = new CustomizeDragonbornWaffleFries(menu, dwf, order, temp);
-                else if (currentItem is FriedMiraak fm) menu.orderBorder.Child = new CustomizeFriedMiraak(menu, fm, order, temp);
-                else if (currentItem is MadOtarGrits mog) menu.orderBorder.Child = new CustomizeMadOtarGrits(menu, mog, order, temp);
-                else if (currentItem is VokunSalad vs) menu.orderBorder.Child = new CustomizeVokunSalad(menu, vs, order, temp);
+
+                if (currentItem is BriarheartBurger bb)
+                {
+                    CustomizeBriarheartBurger screen = new CustomizeBriarheartBurger(menu, bb, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+
+                else if (currentItem is DoubleDraugr dd)
+                {
+                    CustomizeDoubleDraugr screen = new CustomizeDoubleDraugr(menu, dd, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is GardenOrcOmelette goo)
+                {
+                    CustomizeGardenOrcOmelette screen = new CustomizeGardenOrcOmelette(menu, goo, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is PhillyPoacher php)
+                {
+                    CustomizePhillyPoacher screen = new CustomizePhillyPoacher(menu, php, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is SmokehouseSkeleton sks)
+                {
+                    CustomizeSmokehouseSkeleton screen = new CustomizeSmokehouseSkeleton(menu, sks, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is ThalmorTriple tt)
+                {
+                    CustomizeThalmorTriple screen = new CustomizeThalmorTriple(menu, tt, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+
+                else if (currentItem is ThugsTBone ttb)
+                {
+                    CustomizeThugsTBone screen = new CustomizeThugsTBone(menu, ttb, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is AretinoAppleJuice aj)
+                {
+                    CustomizeAretinoAppleJuice screen = new CustomizeAretinoAppleJuice(menu, aj, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is CandlehearthCoffee chc)
+                {
+                    CustomizeCandlehearthCoffee screen = new CustomizeCandlehearthCoffee(menu, chc, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is MarkarthMilk mm)
+                {
+                    CustomizeMarkarthMilk screen = new CustomizeMarkarthMilk(menu, mm, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is SailorSoda ss)
+                {
+                    CustomizeSailorSoda screen = new CustomizeSailorSoda(menu, ss, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is WarriorWater ww)
+                {
+                    CustomizeWarriorWater screen = new CustomizeWarriorWater(menu, ww, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is DragonbornWaffleFries dwf)
+                {
+                    CustomizeDragonbornWaffleFries screen = new CustomizeDragonbornWaffleFries(menu, dwf, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is FriedMiraak fm)
+                {
+                    CustomizeFriedMiraak screen = new CustomizeFriedMiraak(menu, fm, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is MadOtarGrits mog)
+                {
+                    CustomizeMadOtarGrits screen = new CustomizeMadOtarGrits(menu, mog, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
+                else if (currentItem is VokunSalad vs)
+                {
+                    CustomizeVokunSalad screen = new CustomizeVokunSalad(menu, vs, order, temp);
+                    screen.returnToOrderbutton.IsEnabled = false;
+                    menu.orderBorder.Child = screen;
+                }
 
                 //Combo
                 else if (currentItem is Combo c) menu.orderBorder.Child = new ComboControl(menu, c, order);
