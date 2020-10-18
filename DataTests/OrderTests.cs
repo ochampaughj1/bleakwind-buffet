@@ -21,13 +21,6 @@ namespace BleakwindBuffet.DataTests
     public class OrderTests
     {
         [Fact]
-        public void ShouldBeAnOrder()
-        {
-            Order order = new Order();
-            Assert.IsAssignableFrom<Order>(order);
-        }
-
-        [Fact]
         public void OrderNumberShouldBeOneByDefault()
         {
             Order order = new Order();
@@ -35,7 +28,14 @@ namespace BleakwindBuffet.DataTests
         }
 
         [Fact]
-        public void ShouldChangeTotal()
+        public void ShouldBeAnOrder()
+        {
+            Order order = new Order();
+            Assert.IsAssignableFrom<Order>(order);
+        }
+
+        [Fact]
+        public void AddingAnItemShouldChangeTotal()
         {
             Order order = new Order();
             BriarheartBurger bb = new BriarheartBurger();
@@ -46,7 +46,7 @@ namespace BleakwindBuffet.DataTests
         }
 
         [Fact]
-        public void ShouldChangeTax()
+        public void AddingAnItemShouldChangeTax()
         {
             Order order = new Order();
             BriarheartBurger bb = new BriarheartBurger();
@@ -57,7 +57,7 @@ namespace BleakwindBuffet.DataTests
         }
 
         [Fact]
-        public void ShouldChangeSubtotal()
+        public void AddingAnItemShouldChangeSubtotal()
         {
             Order order = new Order();
             BriarheartBurger bb = new BriarheartBurger();
@@ -68,13 +68,61 @@ namespace BleakwindBuffet.DataTests
         }
 
         [Fact]
-        public void ShouldChangeCalories()
+        public void AddingAnItemShouldChangeCalories()
         {
             Order order = new Order();
             BriarheartBurger bb = new BriarheartBurger();
             Assert.PropertyChanged(order, "Calories", () =>
             {
                 order.Add(bb);
+            });
+        }
+
+        [Fact]
+        public void RemovingAnItemShouldChangeTotal()
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            order.Add(bb);
+            Assert.PropertyChanged(order, "Total", () =>
+            {
+                order.Remove(bb);
+            });
+        }
+
+        [Fact]
+        public void RemovingAnItemShouldChangeTax()
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            order.Add(bb);
+            Assert.PropertyChanged(order, "Tax", () =>
+            {
+                order.Remove(bb);
+            });
+        }
+
+        [Fact]
+        public void RemovingAnItemShouldChangeSubtotal()
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            order.Add(bb);
+            Assert.PropertyChanged(order, "Subtotal", () =>
+            {
+                order.Remove(bb);
+            });
+        }
+
+        [Fact]
+        public void RemovingAnItemShouldChangeCalories()
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            order.Add(bb);
+            Assert.PropertyChanged(order, "Calories", () =>
+            {
+                order.Remove(bb);
             });
         }
 
@@ -128,13 +176,58 @@ namespace BleakwindBuffet.DataTests
         }
 
         [Theory]
+        [InlineData(Size.Large, 7.54)]
+        [InlineData(Size.Medium, 7.43)]
+        [InlineData(Size.Small, 7.37)]
+        public void ShouldGetSubtotal(Size size, double sub)
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            MarkarthMilk mm = new MarkarthMilk();
+            mm.Size = size;
+            order.Add(bb);
+            order.Add(mm);
+            Assert.Equal(sub, Math.Round(order.Subtotal, 2));
+        }
+
+        [Theory]
+        [InlineData(Size.Large, 8.44)]
+        [InlineData(Size.Medium, 8.32)]
+        [InlineData(Size.Small, 8.25)]
+        public void ShouldGetTotal(Size size, double total)
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            MarkarthMilk mm = new MarkarthMilk();
+            mm.Size = size;
+            order.Add(bb);
+            order.Add(mm);
+            Assert.Equal(total, Math.Round(order.Total, 2));
+        }
+
+        [Theory]
+        [InlineData(Size.Large, 0.90)]
+        [InlineData(Size.Medium, 0.89)]
+        [InlineData(Size.Small, 0.88)]
+        public void ShouldGetTax(Size size, double tax)
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            MarkarthMilk mm = new MarkarthMilk();
+            mm.Size = size;
+            order.Add(bb);
+            order.Add(mm);
+            Assert.Equal(tax, Math.Round(order.Tax, 2));
+        }
+
+        [Theory]
         [InlineData(0.50)]
         [InlineData(0.25)]
         public void ShouldSetSalesTaxRate(double salesTaxRate)
         {
             Order order = new Order();
             order.SalesTaxRate = salesTaxRate;
-            Assert.Equal(salesTaxRate, order.SalesTaxRate);
+            Assert.Equal(salesTaxRate, Math.Round(order.SalesTaxRate, 2));
         }
 
         
@@ -151,6 +244,54 @@ namespace BleakwindBuffet.DataTests
             order.Add(bb);
             order.Add(mm);
             Assert.Equal(cal, order.Calories);
+        }
+
+        [Theory]
+        [InlineData(3)]
+        public void ShouldGetCountOfItemsInOrder(int count)
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            MarkarthMilk mm = new MarkarthMilk();
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            order.Add(bb);
+            order.Add(mm);
+            order.Add(dwf);
+            Assert.Equal(count, order.Count);
+        }
+
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ShouldClearOrder(Size size)
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            MarkarthMilk mm = new MarkarthMilk();
+            mm.Size = size;
+            order.Add(bb);
+            order.Add(mm);
+            order.Clear();
+            Assert.DoesNotContain(bb, order.order);
+            Assert.DoesNotContain(mm, order.order);
+        }
+
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ShouldContainItems(Size size)
+        {
+            Order order = new Order();
+            BriarheartBurger bb = new BriarheartBurger();
+            MarkarthMilk mm = new MarkarthMilk();
+            mm.Size = size;
+            order.Add(mm);
+            bool temp = order.Contains(mm);
+            Assert.True(temp);
+            temp = order.Contains(bb);
+            Assert.False(temp);
         }
     }
 }
