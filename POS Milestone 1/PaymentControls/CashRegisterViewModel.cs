@@ -743,7 +743,6 @@ namespace POS_Milestone_1.PaymentControls
         /// </summary>
         public void FinializeSale()
         {
-            CashDrawer.OpenDrawer();
             //Hundreds
             RegisterHundreds += PaymentHundreds;
             RegisterHundreds -= ChangeHundreds;
@@ -806,7 +805,7 @@ namespace POS_Milestone_1.PaymentControls
         /// <summary>
         /// Calculates and sets change owed to the customer
         /// </summary>
-        void ChangeOwedToCustomer()
+        public void ChangeOwedToCustomer()
         {
             double originalAmount = ChangeDue;
             double remainingAmount = originalAmount;
@@ -824,120 +823,146 @@ namespace POS_Milestone_1.PaymentControls
             changeNickles = 0;
             changePennies = 0;
 
-            while ((originalAmount % 100) < originalAmount && RegisterHundreds > 0)
+            int temp = RegisterHundreds;
+            while ((originalAmount % 100) < originalAmount && temp > 0)
             {
                 if(originalAmount - 100 > 0)
                 {
                     changeHundreds++;
+                    temp--;
                     remainingAmount = originalAmount - 100;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 50) < originalAmount && RegisterFifties > 0)
+            temp = RegisterFifties;
+            while ((originalAmount % 50) < originalAmount && temp > 0)
             {
                 if (originalAmount - 50 > 0)
                 {
                     changeFifties++;
+                    temp--;
                     remainingAmount = originalAmount - 50;
                     originalAmount = remainingAmount;
                 }  
             }
-            while ((originalAmount % 20) < originalAmount && RegisterTwenties > 0)
+            temp = RegisterTwenties;
+            while ((originalAmount % 20) < originalAmount && temp > 0)
             {
                 if (originalAmount - 20 > 0)
                 {
                     changeTwenties++;
+                    temp--;
                     remainingAmount = originalAmount - 20;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 10) < originalAmount && RegisterTens > 0)
+            temp = RegisterTens;
+            while ((originalAmount % 10) < originalAmount && temp > 0)
             {
                 if (originalAmount - 10 > 0)
                 {
                     changeTens++;
+                    temp--;
                     remainingAmount = originalAmount - 10;
                     originalAmount = remainingAmount;
                 }
                     
             }
-            while ((originalAmount % 5) < originalAmount && RegisterFives > 0)
+            temp = RegisterFives;
+            while ((originalAmount % 5) < originalAmount && temp > 0)
             {
                 if (originalAmount - 5 > 0)
                 {
                     changeFives++;
+                    temp--;
                     remainingAmount = originalAmount - 5;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 2) < originalAmount && RegisterTwos > 0)
+            temp = RegisterTwos;
+            while ((originalAmount % 2) < originalAmount && temp > 0)
             {
                 if (originalAmount - 2 > 0)
                 {
                     changeTwos++;
+                    temp--;
                     remainingAmount = originalAmount - 2;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 1) < originalAmount && RegisterOnes > 0)
+            temp = RegisterOnes;
+            while ((originalAmount % 1) < originalAmount && temp > 0)
             {
                 if (originalAmount - 1 > 0)
                 {
                     changeOnes++;
+                    temp--;
                     remainingAmount = originalAmount - 1;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 1) < originalAmount && RegisterDollarCoin > 0)
+            temp = RegisterDollarCoin;
+            while ((originalAmount % 1) < originalAmount && temp > 0)
             {
                 if (originalAmount - 1 > 0)
                 {
                     changeDollarCoins++;
+                    temp--;
                     remainingAmount = originalAmount - 1;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 0.50) < originalAmount && RegisterHalfDollars > 0)
+            temp = RegisterHalfDollars;
+            while ((originalAmount % 0.50) < originalAmount && temp > 0)
             {
                 if (originalAmount - 0.50 > 0)
                 {
                     changeHalfDollars++;
+                    temp--;
                     remainingAmount = originalAmount - 0.50;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 0.25) < originalAmount && RegisterQuarters > 0)
+            temp = RegisterQuarters;
+            while ((originalAmount % 0.25) < originalAmount && temp > 0)
             {
                 if (originalAmount - 0.25 > 0)
                 {
                     changeQuarters++;
+                    temp--;
                     remainingAmount = originalAmount - 0.25;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 0.10) < originalAmount && RegisterDimes > 0)
+            temp = RegisterDimes;
+            while ((originalAmount % 0.10) < originalAmount && temp > 0)
             {
                 if (originalAmount - 0.10 > 0)
                 {
                     changeDimes++;
+                    temp--;
                     remainingAmount = originalAmount - 0.10;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 0.05) < originalAmount && RegisterNickels > 0)
+            temp = RegisterNickels;
+            while ((originalAmount % 0.05) < originalAmount && temp > 0)
             {
                 if (originalAmount - 0.05 > 0)
                 {
                     changeNickles++;
+                    temp--;
                     remainingAmount = originalAmount - 0.05;
                     originalAmount = remainingAmount;
                 }
             }
-            while ((originalAmount % 0.01) < originalAmount && RegisterPennies > 0)
+            temp = RegisterPennies;
+            while ((originalAmount % 0.01) < originalAmount && temp > 0)
             {
                 if (originalAmount - 0.01 > 0)
                 {
                     changePennies++;
+                    temp--;
                     remainingAmount = originalAmount - 0.01;
                     originalAmount = remainingAmount;
                 }

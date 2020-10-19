@@ -65,6 +65,7 @@ namespace POS_Milestone_1
         /// <param name="e"></param>
         void CancelOrderClick(object sender, RoutedEventArgs e)
         {
+            this.CompleteOrderButton.IsEnabled = true;
             if (DataContext is Order order)
             {
                 order.Clear();
