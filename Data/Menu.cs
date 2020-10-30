@@ -45,8 +45,17 @@ namespace BleakwindBuffet.Data
             foreach(Size size in Enum.GetValues(typeof(Size)))
             {
                 sides.Add(new DragonbornWaffleFries() { Size = size});
+            }
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 sides.Add(new FriedMiraak() { Size = size });
+            }
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 sides.Add(new MadOtarGrits() { Size = size });
+            }
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 sides.Add(new VokunSalad() { Size = size });
             }
             return sides;
@@ -62,12 +71,24 @@ namespace BleakwindBuffet.Data
             foreach(Size size in Enum.GetValues(typeof(Size)))
             {
                 drinks.Add(new AretinoAppleJuice() { Size = size });
+            }
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 drinks.Add(new CandlehearthCoffee() { Size = size });
+            }
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 drinks.Add(new MarkarthMilk() { Size = size });
+            }
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 foreach(SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
                 {
                     drinks.Add(new SailorSoda() { Size = size, Flavor = flavor });
                 }
+            }
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 drinks.Add(new WarriorWater() { Size = size });
             }
             return drinks;

@@ -798,8 +798,6 @@ namespace POS_Milestone_1.PaymentControls
 
             ChangeOwedToCustomer();
             PrintReciept();
-            
-
         }
         
         /// <summary>

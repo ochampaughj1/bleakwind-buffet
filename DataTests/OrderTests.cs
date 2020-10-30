@@ -83,7 +83,6 @@ namespace BleakwindBuffet.DataTests
         {
             Order order = new Order();
             BriarheartBurger bb = new BriarheartBurger();
-            order.Add(bb);
             Assert.PropertyChanged(order, "Total", () =>
             {
                 order.Remove(bb);
