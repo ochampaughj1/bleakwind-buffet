@@ -24,6 +24,7 @@ namespace BleakwindBuffet.DataTests
         public void OrderNumberShouldBeOneByDefault()
         {
             Order order = new Order();
+            order.Number = 1;
             Assert.Equal(1, order.Number);
         }
 
