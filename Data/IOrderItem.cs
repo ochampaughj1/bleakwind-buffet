@@ -34,5 +34,10 @@ namespace BleakwindBuffet.Data
         /// Special instructions to prepare the drink/entree/side
         /// </summary>
         List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Returns the description of the current menu item
+        /// </summary>
+        string Description { get; }
     }
 }

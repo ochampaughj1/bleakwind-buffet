@@ -159,5 +159,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             PhillyPoacher p = new PhillyPoacher();
             Assert.Equal("Philly Poacher", p.Name);
         }
+
+        [Theory]
+        [InlineData("Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.")]
+        public void ShouldReturnCorrectDescription(string description)
+        {
+            PhillyPoacher php = new PhillyPoacher();
+            Assert.Equal(description, php.Description);
+        }
     }
 }

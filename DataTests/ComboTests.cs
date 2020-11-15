@@ -221,5 +221,16 @@ namespace BleakwindBuffet.DataTests
                 Assert.Contains("Hold bun, ", c.SpecialInstructions);
             }
         }
+
+        [Theory]
+        [InlineData("")]
+        public void ShouldReturnCorrectDescription(string description)
+        {
+            FriedMiraak fm = new FriedMiraak();
+            MarkarthMilk mm = new MarkarthMilk();
+            BriarheartBurger bb = new BriarheartBurger();
+            Combo c = new Combo(bb, mm, fm);
+            Assert.Equal(description, c.Description);
+        }
     }
 }

@@ -53,6 +53,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        public override string Description
+        {
+            get
+            {
+                return "Juicy T-Bone, not much else to say.";
+            }
+        }
+
         /// <summary>
         /// Override string method to return the name of the steak.
         /// </summary>

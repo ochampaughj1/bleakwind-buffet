@@ -132,6 +132,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        public override string Description
+        {
+            get { return "It’s water. Just water."; }
+        }
+
         /// <summary>
         /// Override string method to return the name of the drink
         /// </summary>

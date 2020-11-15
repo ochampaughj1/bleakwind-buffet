@@ -11,7 +11,7 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class BriarheartBurger: Entree, INotifyPropertyChanged
+    public class BriarheartBurger: Entree, IOrderItem,  INotifyPropertyChanged
     {
         /// <summary>
         /// List to store instructions on holding toppings.
@@ -149,6 +149,14 @@ namespace BleakwindBuffet.Data.Entrees
                     _instructions.Add("Hold cheese");
                 }
                 return _instructions;
+            }
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.";
             }
         }
 

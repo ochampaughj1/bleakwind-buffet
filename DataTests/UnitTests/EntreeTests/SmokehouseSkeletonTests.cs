@@ -193,5 +193,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             SmokehouseSkeleton sk = new SmokehouseSkeleton();
             Assert.Equal("Smokehouse Skeleton", sk.Name);
         }
+
+        [Theory]
+        [InlineData("Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.")]
+        public void ShouldReturnCorrectDescription(string description)
+        {
+            SmokehouseSkeleton sks = new SmokehouseSkeleton();
+            Assert.Equal(description, sks.Description);
+        }
     }
 }

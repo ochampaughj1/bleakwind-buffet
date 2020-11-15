@@ -80,6 +80,11 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        public override string Description
+        {
+            get { return "Crispy fried potato waffle fries."; }
+        }
+
         /// <summary>
         /// Override string method to return the name of the side
         /// </summary>

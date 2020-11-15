@@ -131,5 +131,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             dwf.Size = size;
             Assert.Equal(name, dwf.Name);
         }
+
+        [Theory]
+        [InlineData("Crispy fried potato waffle fries.")]
+        public void ShouldReturnCorrectDescription(string description)
+        {
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            Assert.Equal(description, dwf.Description);
+        }
     }
 }

@@ -11,7 +11,7 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class DoubleDraugr : Entree
+    public class DoubleDraugr : Entree, IOrderItem
     {
         /// <summary>
         /// List to store instructions on holding toppings.
@@ -201,6 +201,13 @@ namespace BleakwindBuffet.Data.Entrees
                 }
 
                 return _instructions;
+            }
+        }
+        public override string Description
+        {
+            get
+            {
+                return "Double patty burger on a brioche bun. Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo.";
             }
         }
 

@@ -79,6 +79,11 @@ namespace BleakwindBuffet.Data.Sides
                 return _instructions;
             }
         }
+        public override string Description
+        {
+            get { return "Perfectly prepared hash brown pancakes."; }
+        }
+
 
         /// <summary>
         /// Override string method to return the name of the side

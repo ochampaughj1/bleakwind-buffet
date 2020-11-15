@@ -232,5 +232,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             BriarheartBurger b = new BriarheartBurger();
             Assert.Equal("Briarheart Burger", b.Name);
         }
+
+        [Theory]
+        [InlineData("Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.")]
+        public void ShouldReturnCorrectDescription(string description)
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.Equal(description, bb.Description);
+        }
     }
 }

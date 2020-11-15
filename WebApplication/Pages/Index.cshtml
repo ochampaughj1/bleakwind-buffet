@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -38,7 +38,7 @@
             Between
             <input name="CalorieMin" type="number" min="0" max="10000" step="1" placeholder="min" value="@Model.CalorieMin" />
             and
-            <input name="CalorieMax" type="number" min="0" max="10000" step="1" placeholder="min" value="@Model.CalorieMax"/>
+            <input name="CalorieMax" type="number" min="0" max="10000" step="1" placeholder="max" value="@Model.CalorieMax"/>
         </div>
 
         <h4>Price Range</h4>
@@ -64,187 +64,201 @@
     <p>Any entree, side, and drink can be combined into a combo with a $1 discount!</p>
     <p> </p>
 
-    <!--HELP WITH ACCESSING-->
-    <!--Entrees-->
-    <p> </p>
-    <h2 class="entrees">Entrees</h2>
-    <div class="menu-item">
-        @foreach (BleakwindBuffet.Data.IOrderItem item in @Model.MenuItems)
-        {
-            if (item is BleakwindBuffet.Data.Entrees.Entree)
+    <div class="types">
+        <!--HELP WITH ACCESSING-->
+        <!--Entrees-->
+        <p> </p>
+        <div class="menu-item">
+        <h2 class="entrees">Entrees</h2>
+            @foreach (BleakwindBuffet.Data.IOrderItem item in Model.MenuItems)
             {
-                <div class="entree-name">@item.ToString()</div>
-                <div class="entree-details">
-                    <div class="entree-price">Price: $@item.Price</div>
-                    <div class="entree-calories">Calories: @item.Calories</div>
-                </div>
-                <p> </p>
-            }
-        }
-    </div>
+                if (item is BleakwindBuffet.Data.Entrees.Entree)
+                {
 
-    <!--Sides-->
-    <p> </p>
-    <h2 class="sides">Sides</h2>
-    <div class="menu-item">
-        @foreach (BleakwindBuffet.Data.IOrderItem item in @Model.MenuItems)
-        {
-            if (item is BleakwindBuffet.Data.Sides.Side side)
-            {
-                string name = side.ToString();
-                if (side.ToString().Contains("Small Dragonborn Waffle Fries"))
-                {
-                    name = "Dragonborn Waffle Fries";
-                    <div class="side-name">@name</div>
-                }
-                if (side.ToString().Contains("Small Fried Miraak"))
-                {
-                    name = "Fried Miraak";
-                    <div class="side-name">@name</div>
-                }
-                if (side.ToString().Contains("Small Mad Otar Grits"))
-                {
-                    name = "Mad Otar Grits";
-                    <div class="side-name">@name</div>
-                }
-                if (side.ToString().Contains("Small Vokun Salad"))
-                {
-                    name = "Vokun Salad";
-                    <div class="side-name">@name</div>
-                }
-                switch (side.Size)
-                {
-                    case BleakwindBuffet.Data.Enums.Size.Small:
-                        <div class="side-size">• Small</div>
-                        <div class="side-details">
-                            <div class="side-price">Price: $@side.Price</div>
-                            <div class="side-calories">Calories: @side.Calories</div>
-                        </div>
-                        break;
-
-                    case BleakwindBuffet.Data.Enums.Size.Medium:
-                        <div class="side-size">• Medium</div>
-                        <div class="side-details">
-                            <div class="side-price">Price: $@side.Price</div>
-                            <div class="side-calories">Calories: @side.Calories</div>
-                        </div>
-                        break;
-
-                    case BleakwindBuffet.Data.Enums.Size.Large:
-                        <div class="side-size">• Large</div>
-                        <div class="side-details">
-                            <div class="side-price">Price: $@side.Price</div>
-                            <div class="side-calories">Calories: @side.Calories</div>
-                        </div>
-                        break;
-                }
-            }
-
-            <p> </p>
-        }
-
-    </div>
-
-    <!--Drinks-->
-    <p> </p>
-    <h2 class="drinks">Drinks</h2>
-    <div class="menu-item">
-        @foreach (BleakwindBuffet.Data.IOrderItem item in @Model.MenuItems)
-        {
-            if (item is BleakwindBuffet.Data.Drinks.Drink drink)
-            {
-                string name = drink.ToString();
-                if (name.ToString().Contains("Small Aretino Apple Juice"))
-                {
-                    name = "Aretino Apple Juice";
-                    <div class="drink-name">@name</div>
-                }
-                if (name.ToString().Contains("Small Candlehearth Coffee"))
-                {
-                    name = "Candlehearth Coffee";
-                    <div class="drink-name">@name</div>
-                }
-                if (name.ToString().Contains("Small Markarth Milk"))
-                {
-                    name = "Markarth Milk";
-                    <div class="drink-name">@name</div>
-                }
-                if (name.ToString().Contains("Small Blackberry Sailor Soda"))
-                {
-                    name = "Sailor Soda";
-                    <div class="drink-name">@name</div>
-                    <div class="drink-size">• Flavors</div>
-                    <div class="drink-details">Cherry</div>
-                    <div class="drink-details">Blackberry</div>
-                    <div class="drink-details">Grapefruit</div>
-                    <div class="drink-details">Lemon</div>
-                    <div class="drink-details">Peach</div>
-                    <div class="drink-details">Watermelon</div>
-
-                    <div class="drink-size">• Small</div>
-                    <div class="drink-details">
-                        <div class="drink-price">Price: $@drink.Price</div>
-                        <div class="drink-calories">Calories: @drink.Calories</div>
+                    <div class="name">@item.ToString()</div>
+                    <div class="item-details">
+                        <div class="entree-price">Price: $@item.Price</div>
+                        <div class="entree-calories">Calories: @item.Calories</div>
                     </div>
+                    <p>@item.Description</p>
+                    <p> </p>
                 }
-                if (name.ToString().Contains("Small Warrior Water"))
+            }
+        </div>
+
+        <!--Sides-->
+        <!--Check exists methods to display names from the list-->
+        <p> </p>
+        <div class="menu-item">
+        <h2 class="sides">Sides</h2>
+            @foreach (BleakwindBuffet.Data.IOrderItem item in @Model.MenuItems)
+            {
+                if (item is BleakwindBuffet.Data.Sides.Side side)
                 {
-                    name = "Warrior Water";
-                    <div class="drink-name">@name</div>
-                }
-                if (!(name.ToString().Contains("Sailor Soda")))
-                {
-                    switch (drink.Size)
+                    string name = side.ToString();
+                    if (side.ToString().Contains("Small Dragonborn Waffle Fries"))
+                    {
+                        name = "Dragonborn Waffle Fries";
+                        <div class="name">@name</div>
+                    }
+                    if (side.ToString().Contains("Small Fried Miraak"))
+                    {
+                        name = "Fried Miraak";
+                        <div class="name">@name</div>
+                    }
+                    if (side.ToString().Contains("Small Mad Otar Grits"))
+                    {
+                        name = "Mad Otar Grits";
+                        <div class="name">@name</div>
+                    }
+                    if (side.ToString().Contains("Small Vokun Salad"))
+                    {
+                        name = "Vokun Salad";
+                        <div class="name">@name</div>
+                    }
+                    switch (side.Size)
                     {
                         case BleakwindBuffet.Data.Enums.Size.Small:
-                            <div class="drink-size">• Small</div>
-                            <div class="drink-details">
-                                <div class="drink-price">Price: $@drink.Price</div>
-                                <div class="drink-calories">Calories: @drink.Calories</div>
+                            <div class="side-size">• Small</div>
+                            <div class="item-details">
+                                <div class="side-price">Price: $@side.Price</div>
+                                <div class="side-calories">Calories: @side.Calories</div>
                             </div>
+                            <p>@item.Description</p>
                             break;
 
                         case BleakwindBuffet.Data.Enums.Size.Medium:
-                            <div class="drink-size">• Medium</div>
-                            <div class="drink-details">
-                                <div class="drink-price">Price: $@drink.Price</div>
-                                <div class="drink-calories">Calories: @drink.Calories</div>
+                            <div class="side-size">• Medium</div>
+                            <div class="item-details">
+                                <div class="side-price">Price: $@side.Price</div>
+                                <div class="side-calories">Calories: @side.Calories</div>
                             </div>
+                            <p>@item.Description</p>
                             break;
 
                         case BleakwindBuffet.Data.Enums.Size.Large:
-                            <div class="drink-size">• Large</div>
-                            <div class="drink-details">
-                                <div class="drink-price">Price: $@drink.Price</div>
-                                <div class="drink-calories">Calories: @drink.Calories</div>
+                            <div class="side-size">• Large</div>
+                            <div class="item-details">
+                                <div class="side-price">Price: $@side.Price</div>
+                                <div class="side-calories">Calories: @side.Calories</div>
                             </div>
+                            <p>@item.Description</p>
                             break;
                     }
                 }
-                if (name.ToString().Contains("Blackberry Sailor Soda"))
-                {
-                    switch (drink.Size)
-                    {
-                        case BleakwindBuffet.Data.Enums.Size.Medium:
-                            <div class="drink-size">• Medium</div>
-                            <div class="drink-details">
-                                <div class="drink-price">Price: $@drink.Price</div>
-                                <div class="drink-calories">Calories: @drink.Calories</div>
-                            </div>
-                            break;
 
-                        case BleakwindBuffet.Data.Enums.Size.Large:
-                            <div class="drink-size">• Large</div>
-                            <div class="drink-details">
-                                <div class="drink-price">Price: $@drink.Price</div>
-                                <div class="drink-calories">Calories: @drink.Calories</div>
-                            </div>
-                            break;
-                    }
-                }
                 <p> </p>
             }
 
-        }
+        </div>
+
+        <!--Drinks-->
+        <p> </p>
+        <div class="menu-item">
+        <h2 class="drinks">Drinks</h2>
+            @foreach (BleakwindBuffet.Data.IOrderItem item in @Model.MenuItems)
+            {
+                if (item is BleakwindBuffet.Data.Drinks.Drink drink)
+                {
+                    string name = drink.ToString();
+                    if (name.ToString().Contains("Small Aretino Apple Juice"))
+                    {
+                        name = "Aretino Apple Juice";
+                        <div class="name">@name</div>
+                    }
+                    if (name.ToString().Contains("Small Candlehearth Coffee"))
+                    {
+                        name = "Candlehearth Coffee";
+                        <div class="name">@name</div>
+                    }
+                    if (name.ToString().Contains("Small Markarth Milk"))
+                    {
+                        name = "Markarth Milk";
+                        <div class="name">@name</div>
+                    }
+                    if (name.ToString().Contains("Small Blackberry Sailor Soda"))
+                    {
+                        name = "Sailor Soda";
+                        <div class="name">@name</div>
+                        <div class="drink-size">• Flavors</div>
+                        <div class="item-details">Cherry</div>
+                        <div class="item-details">Blackberry</div>
+                        <div class="item-details">Grapefruit</div>
+                        <div class="item-details">Lemon</div>
+                        <div class="item-details">Peach</div>
+                        <div class="item-details">Watermelon</div>
+
+                        <div class="drink-size">• Small</div>
+                        <div class="item-details">
+                            <div class="drink-price">Price: $@drink.Price</div>
+                            <div class="drink-calories">Calories: @drink.Calories</div>
+                        </div>
+                        <p>@item.Description</p>
+                    }
+                    if (name.ToString().Contains("Small Warrior Water"))
+                    {
+                        name = "Warrior Water";
+                        <div class="name">@name</div>
+                    }
+                    if (!(name.ToString().Contains("Sailor Soda")))
+                    {
+                        switch (drink.Size)
+                        {
+                            case BleakwindBuffet.Data.Enums.Size.Small:
+                                <div class="drink-size">• Small</div>
+                                <div class="item-details">
+                                    <div class="drink-price">Price: $@drink.Price</div>
+                                    <div class="drink-calories">Calories: @drink.Calories</div>
+                                </div>
+                                <p>@item.Description</p>
+                                break;
+
+                            case BleakwindBuffet.Data.Enums.Size.Medium:
+                                <div class="drink-size">• Medium</div>
+                                <div class="item-details">
+                                    <div class="drink-price">Price: $@drink.Price</div>
+                                    <div class="drink-calories">Calories: @drink.Calories</div>
+                                </div>
+                                <p>@item.Description</p>
+                                break;
+
+                            case BleakwindBuffet.Data.Enums.Size.Large:
+                                <div class="drink-size">• Large</div>
+                                <div class="item-details">
+                                    <div class="drink-price">Price: $@drink.Price</div>
+                                    <div class="drink-calories">Calories: @drink.Calories</div>
+                                </div>
+                                <p>@item.Description</p>
+                                break;
+                        }
+                    }
+                    if (name.ToString().Contains("Blackberry Sailor Soda"))
+                    {
+                        switch (drink.Size)
+                        {
+                            case BleakwindBuffet.Data.Enums.Size.Medium:
+                                <div class="drink-size">• Medium</div>
+                                <div class="item-details">
+                                    <div class="drink-price">Price: $@drink.Price</div>
+                                    <div class="drink-calories">Calories: @drink.Calories</div>
+                                </div>
+                                <p>@item.Description</p>
+                                break;
+
+                            case BleakwindBuffet.Data.Enums.Size.Large:
+                                <div class="drink-size">• Large</div>
+                                <div class="item-details">
+                                    <div class="drink-price">Price: $@drink.Price</div>
+                                    <div class="drink-calories">Calories: @drink.Calories</div>
+                                </div>
+                                <p>@item.Description</p>
+                                break;
+                        }
+                    }
+                    <p> </p>
+                }
+
+            }
+        </div>
     </div>
 </div>

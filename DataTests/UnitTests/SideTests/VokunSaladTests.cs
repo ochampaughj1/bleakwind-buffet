@@ -130,5 +130,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             vs.Size = size;
             Assert.Equal(name, vs.Name);
         }
+
+        [Theory]
+        [InlineData("A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.")]
+        public void ShouldReturnCorrectDescription(string description)
+        {
+            VokunSalad vs = new VokunSalad();
+            Assert.Equal(description, vs.Description);
+        }
     }
 }

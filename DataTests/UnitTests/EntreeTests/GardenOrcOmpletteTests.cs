@@ -194,5 +194,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             GardenOrcOmelette g = new GardenOrcOmelette();
             Assert.Equal("Garden Orc Omelette", g.Name);
         }
+
+        [Theory]
+        [InlineData("Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.")]
+        public void ShouldReturnCorrectDescription(string description)
+        {
+            GardenOrcOmelette goc = new GardenOrcOmelette();
+            Assert.Equal(description, goc.Description);
+        }
     }
 }

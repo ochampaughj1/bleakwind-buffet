@@ -204,6 +204,12 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        public string Description
+        {
+            get { return ""; }
+        }
+        
+
         /// <summary>
         /// Event listener for properties being changed within the combo
         /// </summary>
